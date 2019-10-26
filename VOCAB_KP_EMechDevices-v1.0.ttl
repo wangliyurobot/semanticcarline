@@ -1,0 +1,3282 @@
+# baseURI: http://siemens.com/vocab/kps/electromech
+# imports: http://qudt.org/1.2/schema/datatype
+# imports: http://siemens.com/schemas/kps/electromech
+# imports: http://www.linkedmodel.org/1.2/schema/vaem
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xics
+# imports: http://www.linkedmodel.org/1.2/schema/vaem-xina
+# prefix: emech
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix em: <http://siemens.com/schemas/kps/electromech#> .
+@prefix emech: <http://siemens.com/vocab/kps/electromech#> .
+@prefix fonm: <http://fonm.org/schema/fonm#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix qudt-refdata: <http://qudt.org/vocab/refdata/> .
+@prefix qudt-type: <http://qudt.org/vocab/type/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sc: <http://data.nasa.gov/core/schema/sc#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ssf: <http://siemens.com/schemas/ssf#> .
+@prefix ssn: <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "contributor" ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "creator" ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "description" ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "rights" ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "subject" ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "title" ;
+  rdfs:range xsd:string ;
+.
+<http://siemens.com/vocab/kps/electromech>
+  rdf:type owl:Ontology ;
+  dc:contributor "Jack Hodges" ;
+  dc:creator "Jack Hodges" ;
+  dc:description "The ElectroMechanical KP vocabulary of individuals populates the ElectroMechanical ontology." ;
+  dc:subject "EMech Individuals" ;
+  dc:title "The EMech Vocabulary" ;
+  vaem:hasCatalogEntry voag:CPPS-VocabularyCatalogEntry ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "This vocabulary is to be used by other ontologies that need to reference ElectroMechanical devices." ;
+  vaem:namespacePrefix "emech" ;
+  vaem:specificity "1"^^xsd:int ;
+  rdfs:label "EMech Individuals" ;
+  owl:imports <http://qudt.org/1.2/schema/datatype> ;
+  owl:imports <http://siemens.com/schemas/kps/electromech> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xics> ;
+  owl:imports <http://www.linkedmodel.org/1.2/schema/vaem-xina> ;
+  owl:versionInfo "$Id: $" ;
+.
+emech:SandTable_Accel01-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "447.5"^^xsd:float ;
+  qudt:float_Y "291"^^xsd:float ;
+  qudt:float_Z "160"^^xsd:float ;
+  rdfs:label "Accelerometer sensor 1 cartesian coordinates" ;
+  skos:prefLabel "Sand table accelerometer sensor 1 cartesian coordinates" ;
+.
+emech:SandTable_Accel01-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_Accel01-Cartesian3DCoordinates ;
+  rdfs:label "Accelerometer sensor 1 position" ;
+  skos:prefLabel "Sand table accelerometer sensor 1 position" ;
+.
+emech:SandTable_Accel01-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "10"^^xsd:float ;
+  ssf:size_Length "10"^^xsd:float ;
+  ssf:size_Width "10"^^xsd:float ;
+  rdfs:label "Accelerometer 1 size" ;
+  skos:prefLabel "Sand table accelerometer 1 size" ;
+.
+emech:SandTable_Accel01-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_AccelerometerSensor_1 ;
+  fonm:hasPVal emech:SandTable_Accel01-CartesianPosition ;
+  rdfs:label "Accelerometer sensor 1 position state" ;
+  skos:prefLabel "Sand table accelerometer sensore 1 position state" ;
+.
+emech:SandTable_Accel01-SizeState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_AccelerometerSensor_1 ;
+  fonm:hasPVal emech:SandTable_Accel01-CartesianSize ;
+  rdfs:label "Accelerometer sensor 1 size state" ;
+  skos:prefLabel "Sand table accelerometer sensor 1 size state" ;
+.
+emech:SandTable_Accel01_MountEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFLLoc ;
+  rdfs:label "Accelerometer 1 mount end" ;
+  skos:prefLabel "Sand table accelerometer 1 mount end" ;
+.
+emech:SandTable_Accel01_MountEnd_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutDepth ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutWidth ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Accelerometer 01 mount fixed restraint dimr" ;
+  skos:prefLabel "Sand table Accel 01 mount fixed restraint dimr" ;
+.
+emech:SandTable_Accel01_MountEnd_M01FoundationMount-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_M01_Mount_1 ;
+  fonm:hasSrc emech:SandTable_Accel01_MountEnd ;
+  fonm:hasTo emech:SandTable_Accel01_MountEnd_To_M01Mount1_FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_Accel01_MountEnd_To_M01Mount1_FixedRestraintState ;
+  rdfs:label "Accelerometer 01 mount end to motor 1 housing mount 1 fixed connection" ;
+  skos:prefLabel "Sand table accelerometer 1 mount end to motor 1 housing mount 1 fixed connection" ;
+.
+emech:SandTable_Accel01_MountEnd_To_M01Mount1_FixedRestraintState
+  rdf:type fonm:FixedRestraintState ;
+  fonm:hasDimr emech:SandTable_Accel01_MountEnd_FixedRestraint-Dimr ;
+  rdfs:label "Accelerometer 1 to motor 1 mount connection" ;
+  skos:prefLabel "Sand table accelerometer 1 to motor 1 mount connection" ;
+.
+emech:SandTable_Accel01_SensorEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFRLoc ;
+  rdfs:label "Accelerometer 01 sensor end" ;
+  skos:prefLabel "Sand table accelerometer 1 sensor end" ;
+.
+emech:SandTable_Accel02-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1037.5"^^xsd:float ;
+  qudt:float_Y "291"^^xsd:float ;
+  qudt:float_Z "160"^^xsd:float ;
+  rdfs:label "Acceleration sensor 02 cartesian coordinates" ;
+  skos:prefLabel "Sand table accelerometer sensor 2 cartesian coordinates" ;
+.
+emech:SandTable_Accel02-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_Accel02-Cartesian3DCoordinates ;
+  rdfs:label "Acceleration sensor 02 position" ;
+  skos:prefLabel "Sand table accelerometer sensor 2 position" ;
+.
+emech:SandTable_Accel02-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "10"^^xsd:float ;
+  ssf:size_Length "10"^^xsd:float ;
+  ssf:size_Width "10"^^xsd:float ;
+  rdfs:label "Accelerometer 02 size" ;
+  skos:prefLabel "Sand table accelerometer 2 size" ;
+.
+emech:SandTable_Accel02-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_AccelerometerSensor_2 ;
+  fonm:hasPVal emech:SandTable_Accel02-CartesianPosition ;
+  rdfs:label "Acceleration sensor 02 position state" ;
+  skos:prefLabel "Sand table accelerometer sensor 2 position state" ;
+.
+emech:SandTable_Accel02-SizeState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_AccelerometerSensor_2 ;
+  fonm:hasPVal emech:SandTable_Accel02-CartesianSize ;
+  rdfs:label "Acceleration sensor 02 size state" ;
+  skos:prefLabel "Sand table accelerometer sensor 2 size state" ;
+.
+emech:SandTable_Accel02_MountEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFLLoc ;
+  rdfs:label "Accelerometer 02 mount end" ;
+  skos:prefLabel "Sand table accelerometer 2 mount end" ;
+.
+emech:SandTable_Accel02_MountEnd_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutDepth ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutWidth ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Accelerometer 02 mount fixed restraint dimr" ;
+  skos:prefLabel "Sand table Accel 02 mount fixed restraint dimr" ;
+.
+emech:SandTable_Accel02_MountEnd_M02FoundationMount-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_M02_Mount_1 ;
+  fonm:hasSrc emech:SandTable_Accel02_MountEnd ;
+  fonm:hasTo emech:SandTable_Accel02_MountEnd_To_M02Mount1_FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_Accel02_MountEnd_To_M02Mount1_FixedRestraintState ;
+  rdfs:label "Accelerometer 02 mount end to motor 2 housing mount 1 fixed connection" ;
+  skos:prefLabel "Sand table accelerometer 02 mount end to motor 2 housing mount 1 fixed connection" ;
+.
+emech:SandTable_Accel02_MountEnd_To_M02Mount1_FixedRestraintState
+  rdf:type fonm:FixedRestraintState ;
+  fonm:hasDimr emech:SandTable_Accel02_MountEnd_FixedRestraint-Dimr ;
+  rdfs:label "Accelerometer 02 to motor 02 mount connection" ;
+  skos:prefLabel "Sand table accelerometer 02 to motor 2 mount connection" ;
+.
+emech:SandTable_Accel02_SensorEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFRLoc ;
+  rdfs:label "Accelerometer 02 sensor end" ;
+  skos:prefLabel "Sand table accelerometer 02 sensor end" ;
+.
+emech:SandTable_Accel03-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1547.5"^^xsd:float ;
+  qudt:float_Y "291"^^xsd:float ;
+  qudt:float_Z "160"^^xsd:float ;
+  rdfs:label "Acceleration sensor 03 cartesian coordinates" ;
+  skos:prefLabel "Sand table accelerometer sensor 03 cartesian coordinates" ;
+.
+emech:SandTable_Accel03-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_Accel03-Cartesian3DCoordinates ;
+  rdfs:label "Acceleration sensor 03 position" ;
+  skos:prefLabel "Sand table accelerometer sensor 03 position" ;
+.
+emech:SandTable_Accel03-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "10"^^xsd:float ;
+  ssf:size_Length "10"^^xsd:float ;
+  ssf:size_Width "10"^^xsd:float ;
+  rdfs:label "Accelerometer 03 size" ;
+  skos:prefLabel "Sand table accelerometer 03 size" ;
+.
+emech:SandTable_Accel03-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_AccelerometerSensor_3 ;
+  fonm:hasPVal emech:SandTable_Accel03-CartesianPosition ;
+  rdfs:label "Acceleration sensor 03 position state" ;
+  skos:prefLabel "Sand table accelerometer sensor 03 position state" ;
+.
+emech:SandTable_Accel03-SizeState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_AccelerometerSensor_3 ;
+  fonm:hasPVal emech:SandTable_Accel03-CartesianSize ;
+  rdfs:label "Acceleration sensor 03 size state" ;
+  skos:prefLabel "Sand table accelerometer sensor 03 size state" ;
+.
+emech:SandTable_Accel03_MountEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFLLoc ;
+  rdfs:label "Accelerometer 03 mount end" ;
+  skos:prefLabel "Sand table accelerometer 03 mount end" ;
+.
+emech:SandTable_Accel03_MountEnd_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutDepth ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutWidth ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Accelerometer 03 mount fixed restraint dimr" ;
+  skos:prefLabel "Sand table Accel 03 mount fixed restraint dimr" ;
+.
+emech:SandTable_Accel03_MountEnd_M03FoundationMount-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_M03_Mount_1 ;
+  fonm:hasSrc emech:SandTable_Accel03_MountEnd ;
+  fonm:hasTo emech:SandTable_Accel03_MountEnd_To_M03Mount1_FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_Accel03_MountEnd_To_M03Mount1_FixedRestraintState ;
+  rdfs:label "Accelerometer 03 mount end to motor 03 housing mount 1 fixed connection" ;
+  skos:prefLabel "Sand table accelerometer 03 mount end to motor 03 housing mount 1 fixed connection" ;
+.
+emech:SandTable_Accel03_MountEnd_To_M03Mount1_FixedRestraintState
+  rdf:type fonm:FixedRestraintState ;
+  fonm:hasDimr emech:SandTable_Accel03_MountEnd_FixedRestraint-Dimr ;
+  rdfs:label "Accelerometer 03 to motor 03 mount connection" ;
+  skos:prefLabel "Sand table accelerometer 03 to motor 03 mount connection" ;
+.
+emech:SandTable_Accel03_SensorEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFRLoc ;
+  rdfs:label "Accelerometer 03 sensor end" ;
+  skos:prefLabel "Sand table accelerometer 03 sensor end" ;
+.
+emech:SandTable_AccelerometerSensor_1
+  rdf:type ssf:AccelerationSensingDevice ;
+  fonm:hasRegion emech:SandTable_Accel01_MountEnd ;
+  fonm:hasRegion emech:SandTable_Accel01_SensorEnd ;
+  fonm:hasState emech:SandTable_Accel01-PositionState ;
+  fonm:hasState emech:SandTable_Accel01-SizeState ;
+  ssn:hasProperty quantity:Acceleration ;
+  ssn:hasValue emech:SandTable_AccelerometerSensor_1_Accelerometer-Value ;
+  rdfs:label "Acceleration sensor 01" ;
+  skos:prefLabel "Sand table accelerometer sensor 01" ;
+.
+emech:SandTable_AccelerometerSensor_1_Accelerometer-Value
+  rdf:type ssf:AccelerationValue ;
+  qudt:applicableUnit <http://qudt.org/vocab/unit#M-PER-SEC2> ;
+  ssf:numericValue "1.2"^^dtype:numericUnion ;
+  rdfs:label "Acceleration sensor 01 acceleration" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue "1.2"^^xsd:float ;
+      owl:onProperty qudt:numericValue ;
+    ] ;
+  skos:prefLabel "Sand table accelerometer sensor 01 acceleration" ;
+.
+emech:SandTable_AccelerometerSensor_2
+  rdf:type ssf:AccelerationSensingDevice ;
+  fonm:hasRegion emech:SandTable_Accel02_MountEnd ;
+  fonm:hasRegion emech:SandTable_Accel02_SensorEnd ;
+  fonm:hasState emech:SandTable_Accel02-PositionState ;
+  fonm:hasState emech:SandTable_Accel02-SizeState ;
+  ssn:hasProperty quantity:Acceleration ;
+  ssn:hasValue emech:SandTable_AccelerometerSensor_2_Accelerometer-Value ;
+  rdfs:label "Acceleration sensor 02" ;
+  skos:prefLabel "Sand table accelerometer sensor 02" ;
+.
+emech:SandTable_AccelerometerSensor_2_Accelerometer-Value
+  rdf:type ssf:AccelerationValue ;
+  qudt:applicableUnit <http://qudt.org/vocab/unit#M-PER-SEC2> ;
+  ssf:numericValue "1.44"^^dtype:numericUnion ;
+  rdfs:label "Acceleration sensor 02 acceleration" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue "1.44"^^xsd:float ;
+      owl:onProperty qudt:numericValue ;
+    ] ;
+  skos:prefLabel "Sand table accelerometer sensor 02 acceleration" ;
+.
+emech:SandTable_AccelerometerSensor_3
+  rdf:type ssf:AccelerationSensingDevice ;
+  fonm:hasRegion emech:SandTable_Accel03_MountEnd ;
+  fonm:hasRegion emech:SandTable_Accel03_SensorEnd ;
+  fonm:hasState emech:SandTable_Accel03-PositionState ;
+  fonm:hasState emech:SandTable_Accel03-SizeState ;
+  ssn:hasProperty quantity:Acceleration ;
+  ssn:hasValue emech:SandTable_AccelerometerSensor_3_Accelerometer-Value ;
+  rdfs:label "Acceleration sensor 03" ;
+  skos:prefLabel "Sand table accelerometer sensor 03" ;
+.
+emech:SandTable_AccelerometerSensor_3_Accelerometer-Value
+  rdf:type ssf:AccelerationValue ;
+  qudt:applicableUnit <http://qudt.org/vocab/unit#M-PER-SEC2> ;
+  ssf:numericValue "1.66"^^dtype:numericUnion ;
+  rdfs:label "Acceleration sensor 03 acceleration" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue "1.66"^^xsd:float ;
+      owl:onProperty qudt:numericValue ;
+    ] ;
+  skos:prefLabel "Sand table accelerometer sensor 03 acceleration" ;
+.
+emech:SandTable_Conveyor
+  rdf:type em:Conveyor ;
+  ssn:hasSubSystem emech:SandTable_Skid ;
+  ssn:hasSubSystem emech:SandTable_Skid_Rail ;
+  ssf:deviceFunction ssf:LinkageFunction ;
+  rdfs:label "Conveyor" ;
+  skos:prefLabel "Sand table conveyor" ;
+.
+emech:SandTable_DW01
+  rdf:type ssf:Wheel ;
+  fonm:hasRegion emech:SandTable_DW01_Center ;
+  fonm:hasRegion emech:SandTable_DW01_WheelAxle ;
+  fonm:hasRegion emech:SandTable_DW01_WheelEdge ;
+  fonm:hasState emech:SandTable_DW01-PositionState ;
+  fonm:hasState emech:SandTable_DW01-SizeState ;
+  rdfs:label "Drive wheel 01" ;
+  skos:prefLabel "Sand table drive wheel 01" ;
+.
+emech:SandTable_DW01-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "447.5"^^xsd:float ;
+  qudt:float_Y "256"^^xsd:float ;
+  qudt:float_Z "220"^^xsd:float ;
+  rdfs:label "Drive wheel 01 cartesian coordinates" ;
+  skos:prefLabel "Sand table drive wheel 01 cartesian coordinates" ;
+.
+emech:SandTable_DW01-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_DW01-Cartesian3DCoordinates ;
+  rdfs:label "Drive wheel 01 position" ;
+  skos:prefLabel "Sand table drive wheel 01 position" ;
+.
+emech:SandTable_DW01-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "30"^^xsd:float ;
+  ssf:size_Length "40"^^xsd:float ;
+  ssf:size_Width "40"^^xsd:float ;
+  rdfs:label "Drive wheel 01 size" ;
+  skos:prefLabel "Sand table drive wheel 01 size" ;
+.
+emech:SandTable_DW01-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_DW01 ;
+  fonm:hasPVal emech:SandTable_DW01-CartesianPosition ;
+  rdfs:label "Drive wheel 01 position state" ;
+  skos:prefLabel "Sand table drive wheel 01 position state" ;
+.
+emech:SandTable_DW01-SizeState
+  rdf:type fonm:SizeState ;
+  fonm:hasObject emech:SandTable_DW01 ;
+  fonm:hasPVal emech:SandTable_DW01-CartesianSize ;
+  rdfs:label "Drive wheel 01 size state" ;
+  skos:prefLabel "Sand table drive wheel 01 size state" ;
+.
+emech:SandTable_DW01Axle_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutRadius ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongRadius ;
+  rdfs:label "Drive wheel 01 axle fixed restraint dimr" ;
+  skos:prefLabel "Sand table DW01 axle fixed restraint dimr" ;
+.
+emech:SandTable_DW01Axle_M01Axle_FixedConnection-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_M01_Axle_End2 ;
+  fonm:hasSrc emech:SandTable_DW01_WheelAxle ;
+  fonm:hasTo emech:SandTable_DW01Axle_To_M01Axle-FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_DW01Axle_To_M01Axle-FixedRestraintState ;
+  rdfs:label "Drive wheel 01 axle to motor 01 axle fixed connection" ;
+  skos:prefLabel "Sand table drive wheel 01 axle to M01 axle fixed connection" ;
+.
+emech:SandTable_DW01Axle_To_M01Axle-FixedRestraintState
+  rdf:type fonm:FixedRestraintState ;
+  fonm:hasDimr emech:SandTable_DW01Axle_FixedRestraint-Dimr ;
+  rdfs:label "Drive wehhl 01 axle to motor 01 axle fixed restraint" ;
+  skos:prefLabel "Sand table DW01 axle to M01 axle fixed restraint" ;
+.
+emech:SandTable_DW01Edge_ContactRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AlongRadius ;
+  fonm:hasDirection fonm:Pos ;
+  rdfs:label "Drive wheel 01 edge contact restraint dimr" ;
+  skos:prefLabel "Sand table DW01 edge contact restraint dimr" ;
+.
+emech:SandTable_DW01Edge_SkidDEdge_RadialContact-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Skid_Drive_Edge ;
+  fonm:hasSrc emech:SandTable_DW01_WheelEdge ;
+  fonm:hasTo emech:SandTable_DW01Edge_To_SkidEdge_Radial-ContactRestraintState ;
+  fonm:resultsIn emech:SandTable_DW01Edge_To_SkidEdge_Radial-ContactRestraintState ;
+  rdfs:label "Drive wheel 01 edge to skid drive edge radial contact" ;
+  skos:prefLabel "Sand table drive wheel 01 edge to skid drive edge radial contact" ;
+.
+emech:SandTable_DW01Edge_To_SkidEdge_Radial-ContactRestraintState
+  rdf:type fonm:ContactRestraintState ;
+  fonm:hasDimr emech:SandTable_DW01Edge_ContactRestraint-Dimr ;
+  rdfs:label "Drive wheel 01 edge to skid edge radial contact restraint" ;
+  skos:prefLabel "Sand table DW01 edge to skid edge radial contact restraint" ;
+.
+emech:SandTable_DW01_Center
+  rdf:type fonm:Center ;
+  rdfs:label "Drive wheel 0 1 center" ;
+  skos:prefLabel "Sand table DW01 center" ;
+.
+emech:SandTable_DW01_WheelAxle
+  rdf:type fonm:WheelAxle ;
+  rdfs:label "Drive wheel 0 1 wheel axle" ;
+  skos:prefLabel "Sand table DW01 wheel axle" ;
+.
+emech:SandTable_DW01_WheelEdge
+  rdf:type fonm:WheelEdge ;
+  rdfs:label "Drive wheel 0 1 wheel edge" ;
+  skos:prefLabel "Sand table DW01 wheel edge" ;
+.
+emech:SandTable_DW02
+  rdf:type ssf:Wheel ;
+  fonm:hasRegion emech:SandTable_DW02_Center ;
+  fonm:hasRegion emech:SandTable_DW02_WheelAxle ;
+  fonm:hasRegion emech:SandTable_DW02_WheelEdge ;
+  fonm:hasState emech:SandTable_DW02-PositionState ;
+  fonm:hasState emech:SandTable_DW02-SizeState ;
+  rdfs:label "Drive wheel 2" ;
+  skos:prefLabel "Sand table drive wheel 2" ;
+.
+emech:SandTable_DW02-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1037.5"^^xsd:float ;
+  qudt:float_Y "256"^^xsd:float ;
+  qudt:float_Z "220"^^xsd:float ;
+  rdfs:label "Drive wheel 2 cartesian coordinates" ;
+  skos:prefLabel "Sand table drive wheel 2 cartesian coordinates" ;
+.
+emech:SandTable_DW02-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_DW02-Cartesian3DCoordinates ;
+  rdfs:label "Drive wheel 2 position" ;
+  skos:prefLabel "Sand table drive wheel 2 position" ;
+.
+emech:SandTable_DW02-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "30"^^xsd:float ;
+  ssf:size_Length "40"^^xsd:float ;
+  ssf:size_Width "40"^^xsd:float ;
+  rdfs:label "Drive wheel 2 size" ;
+  skos:prefLabel "Sand table drive wheel 2 size" ;
+.
+emech:SandTable_DW02-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_DW02 ;
+  fonm:hasPVal emech:SandTable_DW02-CartesianPosition ;
+  rdfs:label "Drive wheel 2 position state" ;
+  skos:prefLabel "Sand table drive wheel 2 position state" ;
+.
+emech:SandTable_DW02-SizeState
+  rdf:type fonm:SizeState ;
+  fonm:hasObject emech:SandTable_DW02 ;
+  fonm:hasPVal emech:SandTable_DW02-CartesianSize ;
+  rdfs:label "Drive wheel 2 size state" ;
+  skos:prefLabel "Sand table drive wheel 2 size state" ;
+.
+emech:SandTable_DW02Axle_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutRadius ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongRadius ;
+  rdfs:label "Drive wheel 02 axle fixed restraint dimr" ;
+  skos:prefLabel "Sand table DW02 axle fixed restraint dimr" ;
+.
+emech:SandTable_DW02Axle_M02Axle_FixedConnection-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_M02_Axle_End2 ;
+  fonm:hasSrc emech:SandTable_DW02_WheelAxle ;
+  fonm:hasTo emech:SandTable_DW02Axle_To_M02Axle-FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_DW02Axle_To_M02Axle-FixedRestraintState ;
+  rdfs:label "Drive wheel 2 axle to M02 axle fixed connection" ;
+  skos:prefLabel "Sand table drive wheel 2 axle to M02 axle fixed connection" ;
+.
+emech:SandTable_DW02Axle_To_M02Axle-FixedRestraintState
+  rdf:type fonm:FixedRestraintState ;
+  fonm:hasDimr emech:SandTable_DW02Axle_FixedRestraint-Dimr ;
+  rdfs:label "Drive wheel 02 axle to M02 axle fixed restraint" ;
+  skos:prefLabel "Sand table DW02 axle to M02 axle fixed restraint" ;
+.
+emech:SandTable_DW02Edge_ContactRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AlongRadius ;
+  fonm:hasDirection fonm:Pos ;
+  rdfs:label "Drive wheel 02 edge contact restraint dimr" ;
+  skos:prefLabel "Sand table DW02 edge contact restraint dimr" ;
+.
+emech:SandTable_DW02Edge_SkidDEdge_RadialContact-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Skid_Drive_Edge ;
+  fonm:hasSrc emech:SandTable_DW02_WheelEdge ;
+  fonm:hasTo emech:SandTable_DW02Edge_To_SkidEdge_Radial-ContactRestraintState ;
+  fonm:resultsIn emech:SandTable_DW02Edge_To_SkidEdge_Radial-ContactRestraintState ;
+  rdfs:label "Drive wheel 2 edge to skid drive edge radial contact" ;
+  skos:prefLabel "Sand table drive wheel 2 edge to skid drive edge radial contact" ;
+.
+emech:SandTable_DW02Edge_To_SkidEdge_Radial-ContactRestraintState
+  rdf:type fonm:ContactRestraintState ;
+  fonm:hasDimr emech:SandTable_DW02Edge_ContactRestraint-Dimr ;
+  rdfs:label "Drive wheel 02 edge to skid edge radial contact restraint" ;
+  skos:prefLabel "Sand table DW02 edge to skid edge radial contact restraint" ;
+.
+emech:SandTable_DW02_Center
+  rdf:type fonm:Center ;
+  rdfs:label "Drive wheel 02 center" ;
+  skos:prefLabel "Sand table DW02 center" ;
+.
+emech:SandTable_DW02_WheelAxle
+  rdf:type fonm:WheelAxle ;
+  rdfs:label "Drive wheel 02 wheel axle" ;
+  skos:prefLabel "Sand table DW02 Wheel axle" ;
+.
+emech:SandTable_DW02_WheelEdge
+  rdf:type fonm:WheelEdge ;
+  rdfs:label "Drive wheel 02 wheel edge" ;
+  skos:prefLabel "Sand table DW02 wheel edge" ;
+.
+emech:SandTable_DW03
+  rdf:type ssf:Wheel ;
+  fonm:hasRegion emech:SandTable_DW03_Center ;
+  fonm:hasRegion emech:SandTable_DW03_WheelAxle ;
+  fonm:hasRegion emech:SandTable_DW03_WheelEdge ;
+  fonm:hasState emech:SandTable_DW03-PositionState ;
+  fonm:hasState emech:SandTable_DW03-SizeState ;
+  rdfs:label "Drive wheel 3" ;
+  skos:prefLabel "Sand table drive wheel 3" ;
+.
+emech:SandTable_DW03-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1547.5"^^xsd:float ;
+  qudt:float_Y "256"^^xsd:float ;
+  qudt:float_Z "220"^^xsd:float ;
+  rdfs:label "Drive wheel 3 cartesian coordinates" ;
+  skos:prefLabel "Sand table drive wheel 3 cartesian coordinates" ;
+.
+emech:SandTable_DW03-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_DW03-Cartesian3DCoordinates ;
+  rdfs:label "Drive wheel 3 position" ;
+  skos:prefLabel "Sand table drive wheel 3 position" ;
+.
+emech:SandTable_DW03-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "30"^^xsd:float ;
+  ssf:size_Length "40"^^xsd:float ;
+  ssf:size_Width "40"^^xsd:float ;
+  rdfs:label "Drive wheel 3 size" ;
+  skos:prefLabel "Sand table drive wheel 3 size" ;
+.
+emech:SandTable_DW03-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_DW03 ;
+  fonm:hasPVal emech:SandTable_DW03-CartesianPosition ;
+  rdfs:label "Drive wheel 3 position state" ;
+  skos:prefLabel "Sand table drive wheel 3 position state" ;
+.
+emech:SandTable_DW03-SizeState
+  rdf:type fonm:SizeState ;
+  fonm:hasObject emech:SandTable_DW03 ;
+  fonm:hasPVal emech:SandTable_DW03-CartesianSize ;
+  rdfs:label "Drive wheel 3 size state" ;
+  skos:prefLabel "Sand table drive wheel 3 size state" ;
+.
+emech:SandTable_DW03Axle_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutRadius ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongRadius ;
+  rdfs:label "Drive wheel 03 axle fixed restraint dimr" ;
+  skos:prefLabel "Sand table DW03 axle fixed restraint dimr" ;
+.
+emech:SandTable_DW03Axle_M03Axle_FixedConnection-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_M03_Axle_End2 ;
+  fonm:hasSrc emech:SandTable_DW03_WheelAxle ;
+  fonm:hasTo emech:SandTable_DW03Axle_To_M03Axle-FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_DW03Axle_To_M03Axle-FixedRestraintState ;
+  rdfs:label "Drive wheel 3 axle to M03 axle fixed connection" ;
+  skos:prefLabel "Sand table drive wheel 3 axle to M03 axle fixed connection" ;
+.
+emech:SandTable_DW03Axle_To_M03Axle-FixedRestraintState
+  rdf:type fonm:FixedRestraintState ;
+  fonm:hasDimr emech:SandTable_DW03Axle_FixedRestraint-Dimr ;
+  rdfs:label "Drive wheel 03 axle to M03 axle fixed restraint" ;
+  skos:prefLabel "Sand table DW03 axle to M03 axle fixed restraint" ;
+.
+emech:SandTable_DW03Edge_ContactRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AlongRadius ;
+  fonm:hasDirection fonm:Pos ;
+  rdfs:label "Drive wheel 03 edge contact restraint dimr" ;
+  skos:prefLabel "Sand table DW03 edge contact restraint dimr" ;
+.
+emech:SandTable_DW03Edge_SkidDEdge_RadialContact-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Skid_Drive_Edge ;
+  fonm:hasSrc emech:SandTable_DW03_WheelEdge ;
+  fonm:hasTo emech:SandTable_DW03Edge_To_SkidEdge_Radial-ContactRestraintState ;
+  fonm:resultsIn emech:SandTable_DW03Edge_To_SkidEdge_Radial-ContactRestraintState ;
+  rdfs:label "Drive wheel 3 edge to skid drive edge radial contact" ;
+  skos:prefLabel "Sand table drive wheel 3 edge to skid drive edge radial contact" ;
+.
+emech:SandTable_DW03Edge_To_SkidEdge_Radial-ContactRestraintState
+  rdf:type fonm:ContactRestraintState ;
+  fonm:hasDimr emech:SandTable_DW03Edge_ContactRestraint-Dimr ;
+  rdfs:label "Drive wheel 03 edge to skid edge radial contact restraint" ;
+  skos:prefLabel "Sand table DW03 edge to skid edge radial contact restraint" ;
+.
+emech:SandTable_DW03_Center
+  rdf:type fonm:Center ;
+  rdfs:label "Drive wheel 03 center" ;
+  skos:prefLabel "Sand table DW03 center" ;
+.
+emech:SandTable_DW03_WheelAxle
+  rdf:type fonm:WheelAxle ;
+  rdfs:label "Drive wheel 03 wheel axle" ;
+  skos:prefLabel "Sand table DW03 Wheel axle" ;
+.
+emech:SandTable_DW03_WheelEdge
+  rdf:type fonm:WheelEdge ;
+  rdfs:label "Drive wheel 03 wheel edge" ;
+  skos:prefLabel "Sand table DW03 wheel edge" ;
+.
+emech:SandTable_ElectricMotor_1
+  rdf:type em:ElectricMotor ;
+  fonm:hasState emech:SandTable_M01-PositionState ;
+  fonm:hasState emech:SandTable_M01-SizeState ;
+  ssn:hasSubSystem emech:SandTable_M01_Axle ;
+  ssn:hasSubSystem emech:SandTable_M01_ElectricalPower ;
+  ssn:hasSubSystem emech:SandTable_M01_Housing ;
+  ssf:deviceFunction ssf:WheelFunction ;
+  rdfs:comment "Each region should have its own position in space but for this initial pass we do not need them" ;
+  rdfs:label "Electric motor 1" ;
+  skos:prefLabel "Sand table electric motor 1" ;
+.
+emech:SandTable_ElectricMotor_2
+  rdf:type em:ElectricMotor ;
+  fonm:hasState emech:SandTable_M02-PositionState ;
+  fonm:hasState emech:SandTable_M02-SizeState ;
+  ssn:hasSubSystem emech:SandTable_M02_Axle ;
+  ssn:hasSubSystem emech:SandTable_M02_ElectricalPower ;
+  ssn:hasSubSystem emech:SandTable_M02_Housing ;
+  ssf:deviceFunction ssf:WheelFunction ;
+  rdfs:label "Electric motor 2" ;
+  skos:prefLabel "Sand table electric motor 2" ;
+.
+emech:SandTable_ElectricMotor_3
+  rdf:type em:ElectricMotor ;
+  fonm:hasState emech:SandTable_M03-PositionState ;
+  fonm:hasState emech:SandTable_M03-SizeState ;
+  ssn:hasSubSystem emech:SandTable_M03_Axle ;
+  ssn:hasSubSystem emech:SandTable_M03_ElectricalPower ;
+  ssn:hasSubSystem emech:SandTable_M03_Housing ;
+  ssf:deviceFunction ssf:WheelFunction ;
+  rdfs:label "Electric motor 3" ;
+  skos:prefLabel "Sand table electric motor 3" ;
+.
+emech:SandTable_FW01
+  rdf:type ssf:Wheel ;
+  fonm:hasRegion emech:SandTable_FW01_Center ;
+  fonm:hasRegion emech:SandTable_FW01_WheelAxle ;
+  fonm:hasRegion emech:SandTable_FW01_WheelEdge ;
+  fonm:hasState emech:SandTable_FW01-PositionState ;
+  fonm:hasState emech:SandTable_FW01-SizeState ;
+  rdfs:label "Follower wheel 1" ;
+  skos:prefLabel "Sand table follower wheel 1" ;
+.
+emech:SandTable_FW01-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "447.5"^^xsd:float ;
+  qudt:float_Y "189"^^xsd:float ;
+  qudt:float_Z "220"^^xsd:float ;
+  rdfs:label "Follower wheel 1 cartesian coordinates" ;
+  skos:prefLabel "Sand table follower wheel 1 cartesian coordinates" ;
+.
+emech:SandTable_FW01-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_FW01-Cartesian3DCoordinates ;
+  rdfs:label "Follower wheel 1 position" ;
+  skos:prefLabel "Sand table follower wheel 1 position" ;
+.
+emech:SandTable_FW01-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "30"^^xsd:float ;
+  ssf:size_Length "30"^^xsd:float ;
+  ssf:size_Width "30"^^xsd:float ;
+  rdfs:label "Follower wheel 1 size" ;
+  skos:prefLabel "Sand table follower wheel 1 size" ;
+.
+emech:SandTable_FW01-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_FW01 ;
+  fonm:hasPVal emech:SandTable_FW01-CartesianPosition ;
+  rdfs:label "Follower wheel 1 position state" ;
+  skos:prefLabel "Sand table follower wheel 1 position state" ;
+.
+emech:SandTable_FW01-SizeState
+  rdf:type fonm:SizeState ;
+  fonm:hasObject emech:SandTable_FW01 ;
+  fonm:hasPVal emech:SandTable_FW01-CartesianSize ;
+  rdfs:label "Follower wheel 1 size state" ;
+  skos:prefLabel "Sand table follower wheel 1 size state" ;
+.
+emech:SandTable_FW01Axle_FW01Mount_WEnd_Contact-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_FW01_Mount_WheelEnd ;
+  fonm:hasSrc emech:SandTable_FW01_WheelAxle ;
+  fonm:hasTo emech:SandTable_FW01Axle_To_FW01Mount_WEnd_Fit-ContactRestraintState ;
+  fonm:resultsIn emech:SandTable_FW01Axle_To_FW01Mount_WEnd_Fit-ContactRestraintState ;
+  rdfs:label "Follower wheel 01 axle to FW01 mount axle axial contact" ;
+  skos:prefLabel "Sand table FW01 axle to FW01 mount axle axial contact" ;
+.
+emech:SandTable_FW01Axle_FittedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AlongRadius ;
+  fonm:hasDirection fonm:Pos ;
+  rdfs:label "Follower wheel 01 axle axial restraint dimr" ;
+  skos:prefLabel "Sand table FW01 axle axial restraint dimr" ;
+.
+emech:SandTable_FW01Axle_To_FW01Mount_WEnd_Fit-ContactRestraintState
+  rdf:type fonm:ContactRestraintState ;
+  fonm:hasDimr emech:SandTable_FW01Axle_FittedRestraint-Dimr ;
+  rdfs:label "Follower wheel 01 axle to FW01 mount axle axial restraint" ;
+  skos:prefLabel "Sand table FW01 axle to FW01 mount axle axial restraint" ;
+.
+emech:SandTable_FW01Edge_ContactRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongRadius ;
+  rdfs:label "Follower wheel 01 edge contact restraint dimr" ;
+  skos:prefLabel "Sand table FW01 edge contact restraint dimr" ;
+.
+emech:SandTable_FW01Edge_SkidFEdge_RadialContact-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Skid_Follower_Edge ;
+  fonm:hasSrc emech:SandTable_FW01_WheelEdge ;
+  fonm:hasTo emech:SandTable_FW01Edge_To_SkidEdge_Radial-ContactRestraintState ;
+  fonm:resultsIn emech:SandTable_FW01Edge_To_SkidEdge_Radial-ContactRestraintState ;
+  rdfs:label "Follower wheel 1 edge to skid follow edge radial contact" ;
+  skos:prefLabel "Sand table follower wheel 1 edge to skid follow edge radial contact" ;
+.
+emech:SandTable_FW01Edge_To_SkidEdge_Radial-ContactRestraintState
+  rdf:type fonm:ContactRestraintState ;
+  fonm:hasDimr emech:SandTable_FW01Edge_ContactRestraint-Dimr ;
+  rdfs:label "Follower wheel 01 edge to skid follower edge radial contact restraint" ;
+  skos:prefLabel "Sand table FW01 edge to skid follower edge radial contact restraint" ;
+.
+emech:SandTable_FW01MountMount_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutDepth ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutWidth ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Follower wheel 01 mount mount fixed restraint dimr" ;
+  skos:prefLabel "Sand table FW01 mount mount fixed restraint dimr" ;
+.
+emech:SandTable_FW01Mount_Mount_To_Foundation_Surface-FixedRestraintState
+  rdf:type fonm:FixedRestraintState ;
+  fonm:hasDimr emech:SandTable_FW01MountMount_FixedRestraint-Dimr ;
+  rdfs:label "Follower wheel 01 mount mount to foundation surface fixed restraint" ;
+  skos:prefLabel "Sand table FW01 mount mount to foundation surface fixed restraint" ;
+.
+emech:SandTable_FW01_Center
+  rdf:type fonm:Center ;
+  rdfs:label "Follower wheel 01 center" ;
+  skos:prefLabel "Sand table FW01 center" ;
+.
+emech:SandTable_FW01_Mount
+  rdf:type fonm:Linkage ;
+  fonm:hasRegion emech:SandTable_FW01_Mount_MountEnd ;
+  fonm:hasRegion emech:SandTable_FW01_Mount_WheelEnd ;
+  fonm:hasState emech:SandTable_FW01_Mount-PositionState ;
+  fonm:hasState emech:SandTable_FW01_Mount-SizeState ;
+  rdfs:label "Follower wheel 01 mount" ;
+  skos:prefLabel "Sand table FW01 mount" ;
+.
+emech:SandTable_FW01_Mount-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1547.5"^^xsd:float ;
+  qudt:float_Y "179"^^xsd:float ;
+  qudt:float_Z "184"^^xsd:float ;
+  rdfs:label "Follower wheel 1 mount cartesian coordinates" ;
+  skos:prefLabel "Sand table follower wheel 1 mount cartesian coordinates" ;
+.
+emech:SandTable_FW01_Mount-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_FW01_Mount-Cartesian3DCoordinates ;
+  rdfs:label "Follower wheel 1 mount position" ;
+  skos:prefLabel "Sand table follower wheel 1 mount position" ;
+.
+emech:SandTable_FW01_Mount-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "107"^^xsd:float ;
+  ssf:size_Length "20"^^xsd:float ;
+  ssf:size_Width "30"^^xsd:float ;
+  rdfs:label "Follower wheel 1 mount size" ;
+  skos:prefLabel "Sand table follower wheel 1 mount size" ;
+.
+emech:SandTable_FW01_Mount-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_FW01_Mount ;
+  fonm:hasPVal emech:SandTable_FW01_Mount-CartesianPosition ;
+  rdfs:label "Follower wheel 1 mount position state" ;
+  skos:prefLabel "Sand table follower wheel 1 mount position state" ;
+.
+emech:SandTable_FW01_Mount-SizeState
+  rdf:type fonm:SizeState ;
+  fonm:hasObject emech:SandTable_FW01_Mount ;
+  fonm:hasPVal emech:SandTable_FW01_Mount-CartesianSize ;
+  rdfs:label "Follower wheel 1 mount size state" ;
+  skos:prefLabel "Sand table follower wheel 1 mount size state" ;
+.
+emech:SandTable_FW01_Mount_Foundation_Mount_Connect-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Foundation_MountSurface ;
+  fonm:hasSrc emech:SandTable_FW01_Mount_MountEnd ;
+  fonm:hasTo emech:SandTable_FW01Mount_Mount_To_Foundation_Surface-FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_FW01Mount_Mount_To_Foundation_Surface-FixedRestraintState ;
+  rdfs:label "Follower wheel 01 mount mount to foundation surface connection" ;
+  skos:prefLabel "Sand table FW01 mount mount to foundation surface connection" ;
+.
+emech:SandTable_FW01_Mount_MountEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFLLoc ;
+  rdfs:label "Follower wheel 01 mount mount end" ;
+  skos:prefLabel "Sand table FW01 mount mount end" ;
+.
+emech:SandTable_FW01_Mount_WheelEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFRLoc ;
+  rdfs:label "Follower wheel 01 mount wheel end" ;
+  skos:prefLabel "Sand table FW01 mount wheel end" ;
+.
+emech:SandTable_FW01_WheelAxle
+  rdf:type fonm:WheelAxle ;
+  rdfs:label "Follower wheel 01 wheel axle" ;
+  skos:prefLabel "Sand table FW01 Wheel axle" ;
+.
+emech:SandTable_FW01_WheelEdge
+  rdf:type fonm:WheelEdge ;
+  rdfs:label "Follower wheel 01 wheel edge" ;
+  skos:prefLabel "Sand table FW01 wheel edge" ;
+.
+emech:SandTable_FW02
+  rdf:type ssf:Wheel ;
+  fonm:hasRegion emech:SandTable_FW02_Center ;
+  fonm:hasRegion emech:SandTable_FW02_WheelAxle ;
+  fonm:hasRegion emech:SandTable_FW02_WheelEdge ;
+  fonm:hasState emech:SandTable_FW02-PositionState ;
+  fonm:hasState emech:SandTable_FW02-SizeState ;
+  rdfs:label "Follower wheel 2" ;
+  skos:prefLabel "Sand table follower wheel 2" ;
+.
+emech:SandTable_FW02-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1037.5"^^xsd:float ;
+  qudt:float_Y "189"^^xsd:float ;
+  qudt:float_Z "220"^^xsd:float ;
+  rdfs:label "Follower wheel 2 cartesian coordinates" ;
+  skos:prefLabel "Sand table follower wheel 2 cartesian coordinates" ;
+.
+emech:SandTable_FW02-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_FW02-Cartesian3DCoordinates ;
+  rdfs:label "Follower wheel 2 position" ;
+  skos:prefLabel "Sand table follower wheel 2 position" ;
+.
+emech:SandTable_FW02-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "30"^^xsd:float ;
+  ssf:size_Length "30"^^xsd:float ;
+  ssf:size_Width "30"^^xsd:float ;
+  rdfs:label "Follower wheel 2 size" ;
+  skos:prefLabel "Sand table follower wheel 2 size" ;
+.
+emech:SandTable_FW02-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_FW02 ;
+  fonm:hasPVal emech:SandTable_FW02-CartesianPosition ;
+  rdfs:label "Follower wheel 2 position state" ;
+  skos:prefLabel "Sand table follower wheel 2 position state" ;
+.
+emech:SandTable_FW02-SizeState
+  rdf:type fonm:SizeState ;
+  fonm:hasObject emech:SandTable_FW02 ;
+  fonm:hasPVal emech:SandTable_FW02-CartesianSize ;
+  rdfs:label "Follower wheel 2 size state" ;
+  skos:prefLabel "Sand table follower wheel 2 size state" ;
+.
+emech:SandTable_FW02Axle_FW02Mount_WEnd_Contact-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_FW02_Mount_WheelEnd ;
+  fonm:hasSrc emech:SandTable_FW02_WheelAxle ;
+  fonm:hasTo emech:SandTable_FW02Axle_To_FW02Mount_WEnd_Fit-ContactRestraintState ;
+  fonm:resultsIn emech:SandTable_FW02Axle_To_FW02Mount_WEnd_Fit-ContactRestraintState ;
+  rdfs:label "Follower wheel 02 axle to FW02 mount axle axial contact" ;
+  skos:prefLabel "Sand table FW02 axle to FW02 mount axle axial contact" ;
+.
+emech:SandTable_FW02Axle_FittedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongRadius ;
+  rdfs:label "Follower wheel 02 axle axial restraint dimr" ;
+  skos:prefLabel "Sand table FW02 axle axial restraint dimr" ;
+.
+emech:SandTable_FW02Axle_To_FW02Mount_WEnd_Fit-ContactRestraintState
+  rdf:type fonm:ContactRestraintState ;
+  fonm:hasDimr emech:SandTable_FW02Axle_FittedRestraint-Dimr ;
+  rdfs:label "Follower wheel 02 axle to FW02 mount axle axial restraint" ;
+  skos:prefLabel "Sand table FW02 axle to FW02 mount axle axial restraint" ;
+.
+emech:SandTable_FW02Edge_ContactRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AlongRadius ;
+  fonm:hasDirection fonm:Pos ;
+  rdfs:label "Follower wheel 02 edge contact restraint dimr" ;
+  skos:prefLabel "Sand table FW02 edge contact restraint dimr" ;
+.
+emech:SandTable_FW02Edge_SkidFEdge_RadialContact-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Skid_Follower_Edge ;
+  fonm:hasSrc emech:SandTable_FW02_WheelEdge ;
+  fonm:hasTo emech:SandTable_FW02Edge_To_SkidEdge_Radial-ContactRestraintState ;
+  fonm:resultsIn emech:SandTable_FW02Edge_To_SkidEdge_Radial-ContactRestraintState ;
+  rdfs:label "Follower wheel 2 edge to skid follow edge radial contact" ;
+  skos:prefLabel "Sand table follower wheel 2 edge to skid follow edge radial contact" ;
+.
+emech:SandTable_FW02Edge_To_SkidEdge_Radial-ContactRestraintState
+  rdf:type fonm:ContactRestraintState ;
+  fonm:hasDimr emech:SandTable_FW02Edge_ContactRestraint-Dimr ;
+  rdfs:label "Follower wheel 02 edge to skid follower edge radial contact restraint" ;
+  skos:prefLabel "Sand table FW02 edge to skid follower edge radial contact restraint" ;
+.
+emech:SandTable_FW02MountMount_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutDepth ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutWidth ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Follower wheel 02 mount mount fixed restraint dimr" ;
+  skos:prefLabel "Sand table FW02 mount mount fixed restraint dimr" ;
+.
+emech:SandTable_FW02Mount_Mount_To_Foundation_Surface-FixedRestraintState
+  rdf:type fonm:ContactRestraintState ;
+  fonm:hasDimr emech:SandTable_FW02MountMount_FixedRestraint-Dimr ;
+  rdfs:label "Follower wheel 02 mount mount to foundation surface fixed restraint" ;
+  skos:prefLabel "Sand table FW02 mount mount to foundation surface fixed restraint" ;
+.
+emech:SandTable_FW02_Center
+  rdf:type fonm:Center ;
+  rdfs:label "Follower wheel 02 center" ;
+  skos:prefLabel "Sand table FW02 center" ;
+.
+emech:SandTable_FW02_Mount
+  rdf:type fonm:Linkage ;
+  fonm:hasRegion emech:SandTable_FW02_Mount_MountEnd ;
+  fonm:hasRegion emech:SandTable_FW02_Mount_WheelEnd ;
+  fonm:hasState emech:SandTable_FW02_Mount-PositionState ;
+  fonm:hasState emech:SandTable_FW02_Mount-SizeState ;
+  rdfs:label "Follower wheel 02 mount" ;
+  skos:prefLabel "Sand table FW02 mount" ;
+.
+emech:SandTable_FW02_Mount-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1547.5"^^xsd:float ;
+  qudt:float_Y "179"^^xsd:float ;
+  qudt:float_Z "184"^^xsd:float ;
+  rdfs:label "Follower wheel 2 mount cartesian coordinates" ;
+  skos:prefLabel "Sand table follower wheel 2 mount cartesian coordinates" ;
+.
+emech:SandTable_FW02_Mount-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_FW02_Mount-Cartesian3DCoordinates ;
+  rdfs:label "Follower wheel 2 mount position" ;
+  skos:prefLabel "Sand table follower wheel 2 mount position" ;
+.
+emech:SandTable_FW02_Mount-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "107"^^xsd:float ;
+  ssf:size_Length "20"^^xsd:float ;
+  ssf:size_Width "30"^^xsd:float ;
+  rdfs:label "Follower wheel 2 mount size" ;
+  skos:prefLabel "Sand table follower wheel 2 mount size" ;
+.
+emech:SandTable_FW02_Mount-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_FW02_Mount ;
+  fonm:hasPVal emech:SandTable_FW02_Mount-CartesianPosition ;
+  rdfs:label "Follower wheel 2 mount position state" ;
+  skos:prefLabel "Sand table follower wheel 2 mount position state" ;
+.
+emech:SandTable_FW02_Mount-SizeState
+  rdf:type fonm:SizeState ;
+  fonm:hasObject emech:SandTable_FW02_Mount ;
+  fonm:hasPVal emech:SandTable_FW02_Mount-CartesianSize ;
+  rdfs:label "Follower wheel 2 mount size state" ;
+  skos:prefLabel "Sand table follower wheel 2 mount size state" ;
+.
+emech:SandTable_FW02_Mount_Foundation_Mount_Connect-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Foundation_MountSurface ;
+  fonm:hasSrc emech:SandTable_FW02_Mount_MountEnd ;
+  fonm:hasTo emech:SandTable_FW02Mount_Mount_To_Foundation_Surface-FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_FW02Mount_Mount_To_Foundation_Surface-FixedRestraintState ;
+  rdfs:label "Follower wheel 02 mount mount to foundation surface connection" ;
+  skos:prefLabel "Sand table FW02 mount mount to foundation surface connection" ;
+.
+emech:SandTable_FW02_Mount_MountEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFLLoc ;
+  rdfs:label "Follower wheel 02 mount end" ;
+  skos:prefLabel "Sand table FW02 mount end" ;
+.
+emech:SandTable_FW02_Mount_WheelEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFRLoc ;
+  rdfs:label "Follower wheel 02 wheel end" ;
+  skos:prefLabel "Sand table FW02 wheel end" ;
+.
+emech:SandTable_FW02_WheelAxle
+  rdf:type fonm:WheelAxle ;
+  rdfs:label "Follower wheel 02 wheel axle" ;
+  skos:prefLabel "Sand table FW02 Wheel axle" ;
+.
+emech:SandTable_FW02_WheelEdge
+  rdf:type fonm:WheelEdge ;
+  rdfs:label "Follower wheel 02 wheel edge" ;
+  skos:prefLabel "Sand table FW02 wheel edge" ;
+.
+emech:SandTable_FW03
+  rdf:type ssf:Wheel ;
+  fonm:hasRegion emech:SandTable_FW03_Center ;
+  fonm:hasRegion emech:SandTable_FW03_WheelAxle ;
+  fonm:hasRegion emech:SandTable_FW03_WheelEdge ;
+  fonm:hasState emech:SandTable_FW03-PositionState ;
+  fonm:hasState emech:SandTable_FW03-SizeState ;
+  rdfs:label "Follower wheel 3" ;
+  skos:prefLabel "Sand table follower wheel 3" ;
+.
+emech:SandTable_FW03-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1547.5"^^xsd:float ;
+  qudt:float_Y "189"^^xsd:float ;
+  qudt:float_Z "220"^^xsd:float ;
+  rdfs:label "Follower wheel 3 cartesian coordinates" ;
+  skos:prefLabel "Sand table follower wheel 3 cartesian coordinates" ;
+.
+emech:SandTable_FW03-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_FW03-Cartesian3DCoordinates ;
+  rdfs:label "Follower wheel 3 position" ;
+  skos:prefLabel "Sand table follower wheel 3 position" ;
+.
+emech:SandTable_FW03-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "30"^^xsd:float ;
+  ssf:size_Length "30"^^xsd:float ;
+  ssf:size_Width "30"^^xsd:float ;
+  rdfs:label "Follower wheel 3 size" ;
+  skos:prefLabel "Sand table follower wheel 3 size" ;
+.
+emech:SandTable_FW03-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_FW03 ;
+  fonm:hasPVal emech:SandTable_FW03-CartesianPosition ;
+  rdfs:label "Follower wheel 3 position state" ;
+  skos:prefLabel "Sand table follower wheel 3 position state" ;
+.
+emech:SandTable_FW03-SizeState
+  rdf:type fonm:SizeState ;
+  fonm:hasObject emech:SandTable_FW03 ;
+  fonm:hasPVal emech:SandTable_FW03-CartesianSize ;
+  rdfs:label "Follower wheel 3 size state" ;
+  skos:prefLabel "Sand table follower wheel 3 size state" ;
+.
+emech:SandTable_FW03Axle_FW03MountWheel_Contact-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_FW03_Mount_WheelEnd ;
+  fonm:hasSrc emech:SandTable_FW03_WheelAxle ;
+  fonm:hasTo emech:SandTable_FW03Axle_To_FW03Mount_WEnd_Fit-FittedRestraintState ;
+  fonm:resultsIn emech:SandTable_FW03Axle_To_FW03Mount_WEnd_Fit-FittedRestraintState ;
+  rdfs:label "Follower wheel 03 axle to FW03 mount axle axial contact" ;
+  skos:prefLabel "Sand table FW03 axle to FW03 mount axle axial contact" ;
+.
+emech:SandTable_FW03Axle_FittedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongRadius ;
+  rdfs:label "Follower wheel 03 axle axial restraint dimr" ;
+  skos:prefLabel "Sand table FW03 axle axial restraint dimr" ;
+.
+emech:SandTable_FW03Axle_To_FW03Mount_WEnd_Fit-FittedRestraintState
+  rdf:type fonm:ContactRestraintState ;
+  fonm:hasDimr emech:SandTable_FW03Axle_FittedRestraint-Dimr ;
+  rdfs:label "Follower wheel 03 axle to FW03 mount axle fitted restraint" ;
+  skos:prefLabel "Sand table FW03 axle to FW03 mount axle fitted restraint" ;
+.
+emech:SandTable_FW03Edge_ContactRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AlongRadius ;
+  fonm:hasDirection fonm:Pos ;
+  rdfs:label "Follower wheel 03 edge contact restraint dimr" ;
+  skos:prefLabel "Sand table FW03 edge contact restraint dimr" ;
+.
+emech:SandTable_FW03Edge_SkidFEdge_RadialContact-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Skid_Follower_Edge ;
+  fonm:hasSrc emech:SandTable_FW03_WheelEdge ;
+  fonm:hasTo emech:SandTable_FW03Edge_To_SkidEdge_Radial-ContactRestraintState ;
+  fonm:resultsIn emech:SandTable_FW03Edge_To_SkidEdge_Radial-ContactRestraintState ;
+  rdfs:label "Follower wheel 3 edge to skid follow edge radial contact" ;
+  skos:prefLabel "Sand table follower wheel 3 edge to skid follow edge radial contact" ;
+.
+emech:SandTable_FW03Edge_To_SkidEdge_Radial-ContactRestraintState
+  rdf:type fonm:ContactRestraintState ;
+  fonm:hasDimr emech:SandTable_FW03Edge_ContactRestraint-Dimr ;
+  rdfs:label "Follower wheel 03 edge to skid follower edge radial contact restraint" ;
+  skos:prefLabel "Sand table FW03 edge to skid follower edge radial contact restraint" ;
+.
+emech:SandTable_FW03MountMount_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutDepth ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutWidth ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Follower wheel 03 mount mount fixed restraint dimr" ;
+  skos:prefLabel "Sand table FW03 mount mount fixed restraint dimr" ;
+.
+emech:SandTable_FW03Mount_Mount_To_Foundation_Surface-FixedRestraintState
+  rdf:type fonm:ContactRestraintState ;
+  fonm:hasDimr emech:SandTable_FW03MountMount_FixedRestraint-Dimr ;
+  rdfs:label "Follower wheel 03 mount mount to foundation surface fixed restraint" ;
+  skos:prefLabel "Sand table FW03 mount mount to foundation surface fixed restraint" ;
+.
+emech:SandTable_FW03_Center
+  rdf:type fonm:Center ;
+  rdfs:label "Follower wheel 03 center" ;
+  skos:prefLabel "Sand table FW03 center" ;
+.
+emech:SandTable_FW03_Mount
+  rdf:type fonm:Linkage ;
+  fonm:hasRegion emech:SandTable_FW03_Mount_MountEnd ;
+  fonm:hasRegion emech:SandTable_FW03_Mount_WheelEnd ;
+  fonm:hasState emech:SandTable_FW03_Mount-PositionState ;
+  fonm:hasState emech:SandTable_FW03_Mount-SizeState ;
+  rdfs:label "Follower wheel 03 mount" ;
+  skos:prefLabel "Sand table FW03 mount" ;
+.
+emech:SandTable_FW03_Mount-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1547.5"^^xsd:float ;
+  qudt:float_Y "179"^^xsd:float ;
+  qudt:float_Z "184"^^xsd:float ;
+  rdfs:label "Follower wheel 3 mount cartesian coordinates" ;
+  skos:prefLabel "Sand table follower wheel 3 mount cartesian coordinates" ;
+.
+emech:SandTable_FW03_Mount-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_FW03_Mount-Cartesian3DCoordinates ;
+  rdfs:label "Follower wheel 3 mount position" ;
+  skos:prefLabel "Sand table follower wheel 3 mount position" ;
+.
+emech:SandTable_FW03_Mount-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "107"^^xsd:float ;
+  ssf:size_Length "20"^^xsd:float ;
+  ssf:size_Width "30"^^xsd:float ;
+  rdfs:label "Follower wheel 3 mount size" ;
+  skos:prefLabel "Sand table follower wheel 3 mount size" ;
+.
+emech:SandTable_FW03_Mount-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_FW03_Mount ;
+  fonm:hasPVal emech:SandTable_FW03_Mount-CartesianPosition ;
+  rdfs:label "Follower wheel 3 mount position state" ;
+  skos:prefLabel "Sand table follower wheel 3 mount position state" ;
+.
+emech:SandTable_FW03_Mount-SizeState
+  rdf:type fonm:SizeState ;
+  fonm:hasObject emech:SandTable_FW03_Mount ;
+  fonm:hasPVal emech:SandTable_FW03_Mount-CartesianSize ;
+  rdfs:label "Follower wheel 3 mount size state" ;
+  skos:prefLabel "Sand table follower wheel 3 mount size state" ;
+.
+emech:SandTable_FW03_Mount_Foundation_Mount_Connect-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Foundation_MountSurface ;
+  fonm:hasSrc emech:SandTable_FW03_Mount_MountEnd ;
+  fonm:hasTo emech:SandTable_FW03Mount_Mount_To_Foundation_Surface-FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_FW03Mount_Mount_To_Foundation_Surface-FixedRestraintState ;
+  rdfs:label "Follower wheel 03 mount mount to foundation surface connection" ;
+  skos:prefLabel "Sand table FW03 mount mount to foundation surface connection" ;
+.
+emech:SandTable_FW03_Mount_MountEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFLLoc ;
+  rdfs:label "Follower wheel 03 mount end" ;
+  skos:prefLabel "Sand table FW03 mount end" ;
+.
+emech:SandTable_FW03_Mount_WheelEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFRLoc ;
+  rdfs:label "Follower wheel 03 wheel end" ;
+  skos:prefLabel "Sand table FW03 wheel end" ;
+.
+emech:SandTable_FW03_WheelAxle
+  rdf:type fonm:WheelAxle ;
+  rdfs:label "Follower wheel 03 wheel axle" ;
+  skos:prefLabel "Sand table FW03 Wheel axle" ;
+.
+emech:SandTable_FW03_WheelEdge
+  rdf:type fonm:WheelEdge ;
+  rdfs:label "Follower wheel 03 wheel edge" ;
+  skos:prefLabel "Sand table FW03 wheel edge" ;
+.
+emech:SandTable_Foundation
+  rdf:type em:Foundation ;
+  fonm:hasRegion emech:SandTable_Foundation_MountSurface ;
+  fonm:hasState emech:SandTable_Foundation-PositionState ;
+  fonm:hasState emech:SandTable_Foundation-SizeState ;
+  ssf:deviceFunction ssf:LinkageFunction ;
+  rdfs:label "Foundation" ;
+  skos:prefLabel "Sand table foundation" ;
+.
+emech:SandTable_Foundation-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1000"^^xsd:float ;
+  qudt:float_Y "219"^^xsd:float ;
+  qudt:float_Z "65"^^xsd:float ;
+  rdfs:label "Foundation cartesian coordinates" ;
+  skos:prefLabel "Sand table foundation cartesian coordinates" ;
+.
+emech:SandTable_Foundation-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_Foundation-Cartesian3DCoordinates ;
+  rdfs:label "Foundation position" ;
+  skos:prefLabel "Sand table foundation position" ;
+.
+emech:SandTable_Foundation-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "130"^^xsd:float ;
+  ssf:size_Length "1692"^^xsd:float ;
+  ssf:size_Width "400"^^xsd:float ;
+  rdfs:label "Foundation size" ;
+  skos:prefLabel "Sand table foundation size" ;
+.
+emech:SandTable_Foundation-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_Foundation ;
+  fonm:hasPVal emech:SandTable_Foundation-CartesianPosition ;
+  rdfs:label "Foundation position state" ;
+  skos:prefLabel "Sand table foundation position state" ;
+.
+emech:SandTable_Foundation-SizeState
+  rdf:type fonm:SizeState ;
+  fonm:hasObject emech:SandTable_Foundation ;
+  fonm:hasPVal emech:SandTable_Foundation-CartesianSize ;
+  rdfs:label "Foundation size state" ;
+  skos:prefLabel "Sand table foundation size state" ;
+.
+emech:SandTable_Foundation_MountSurface
+  rdf:type em:MountingSurface ;
+  fonm:hasLocation fonm:BlockTopFLLoc ;
+  fonm:hasObject emech:SandTable_Foundation ;
+  rdfs:label "Foundation mounting surface" ;
+  skos:prefLabel "Sand table foundation mounting surface" ;
+.
+emech:SandTable_GB01_Housing
+  rdf:type ssf:Housing ;
+  fonm:hasRegion emech:SandTable_GB01_Mount_1 ;
+  fonm:hasRegion emech:SandTable_GB01_Mount_2 ;
+  fonm:hasRegion emech:SandTable_GB01_Mount_3 ;
+  fonm:hasRegion emech:SandTable_GB01_Mount_4 ;
+  rdfs:label "Gearbox 01 housing" ;
+  skos:prefLabel "Sand table GB01 housing" ;
+.
+emech:SandTable_GB01_Input_Axle
+  rdf:type ssf:Shaft ;
+  rdfs:label "Gearbox 01 input axle" ;
+  skos:prefLabel "Sand table gearbox 01 input axle" ;
+.
+emech:SandTable_GB01_Mount_1
+  rdf:type em:MountingSurface ;
+  rdfs:label "Gearbox 01 mount 1" ;
+  skos:prefLabel "Sand table GB01 mount 1" ;
+.
+emech:SandTable_GB01_Mount_2
+  rdf:type em:MountingSurface ;
+  rdfs:label "Gearbox 01 mount 2" ;
+  skos:prefLabel "Sand table GB01 mount 2" ;
+.
+emech:SandTable_GB01_Mount_3
+  rdf:type em:MountingSurface ;
+  rdfs:label "Gearbox 01 mount 3" ;
+  skos:prefLabel "Sand table GB01 mount 3" ;
+.
+emech:SandTable_GB01_Mount_4
+  rdf:type em:MountingSurface ;
+  rdfs:label "Gearbox 01 mount 4" ;
+  skos:prefLabel "Sand table GB01 mount 4" ;
+.
+emech:SandTable_GB01_Output_Axle
+  rdf:type ssf:Shaft ;
+  rdfs:label "Gearbox 01 output axle" ;
+  skos:prefLabel "Sand table GB01 output axle" ;
+.
+emech:SandTable_GB02_Housing
+  rdf:type ssf:Housing ;
+  fonm:hasRegion emech:SandTable_GB02_Mount_1 ;
+  fonm:hasRegion emech:SandTable_GB02_Mount_2 ;
+  fonm:hasRegion emech:SandTable_GB02_Mount_3 ;
+  fonm:hasRegion emech:SandTable_GB02_Mount_4 ;
+  rdfs:label "Gearbox 02 housing" ;
+  skos:prefLabel "Sand table GB02 housing" ;
+.
+emech:SandTable_GB02_Input_Axle
+  rdf:type ssf:Shaft ;
+  rdfs:label "Gearbox 02 input axle" ;
+  skos:prefLabel "Sand table GB02 input axle" ;
+.
+emech:SandTable_GB02_Mount_1
+  rdf:type em:MountingSurface ;
+  rdfs:label "Gearbox 02 mount 1" ;
+  skos:prefLabel "Sand table GB02 mount 1" ;
+.
+emech:SandTable_GB02_Mount_2
+  rdf:type em:MountingSurface ;
+  rdfs:label "Gearbox 02 mount 2" ;
+  skos:prefLabel "Sand table GB02 mount 2" ;
+.
+emech:SandTable_GB02_Mount_3
+  rdf:type em:MountingSurface ;
+  rdfs:label "Gearbox 02 mount 3" ;
+  skos:prefLabel "Sand table GB02 mount 3" ;
+.
+emech:SandTable_GB02_Mount_4
+  rdf:type em:MountingSurface ;
+  rdfs:label "Gearbox 02 mount 4" ;
+  skos:prefLabel "Sand table GB02 mount 4" ;
+.
+emech:SandTable_GB02_Output_Axle
+  rdf:type ssf:Shaft ;
+  rdfs:label "Gearbox 02 output axle" ;
+  skos:prefLabel "Sand table GB02 output axle" ;
+.
+emech:SandTable_Gearbox_1
+  rdf:type em:Gearbox ;
+  fonm:hasState emech:SandTable_Gearbox_1-PositionState ;
+  fonm:hasState emech:SandTable_Gearbox_1-SizeState ;
+  ssn:hasSubSystem emech:SandTable_GB01_Housing ;
+  ssn:hasSubSystem emech:SandTable_GB01_Input_Axle ;
+  ssn:hasSubSystem emech:SandTable_GB01_Output_Axle ;
+  ssf:deviceFunction ssf:GearFunction ;
+  rdfs:label "Gearbox 01" ;
+  skos:prefLabel "Sand table gearbox 01" ;
+.
+emech:SandTable_Gearbox_1-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1"^^xsd:float ;
+  qudt:float_Y "2"^^xsd:float ;
+  qudt:float_Z "3"^^xsd:float ;
+  rdfs:label "Gearbox 01 cartesian coordinates" ;
+  skos:prefLabel "Sand table gearbox 01 cartesian coordinates" ;
+.
+emech:SandTable_Gearbox_1-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_Gearbox_1-Cartesian3DCoordinates ;
+  rdfs:label "Gearbox 01 position" ;
+  skos:prefLabel "Sand table gearbox 01 position" ;
+.
+emech:SandTable_Gearbox_1-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "3"^^xsd:float ;
+  ssf:size_Length "1"^^xsd:float ;
+  ssf:size_Width "2"^^xsd:float ;
+  rdfs:label "Gearbox 01 size" ;
+  skos:prefLabel "Sand table gearbox 01 size" ;
+.
+emech:SandTable_Gearbox_1-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_Gearbox_1 ;
+  fonm:hasPVal emech:SandTable_Gearbox_1-CartesianPosition ;
+  rdfs:label "Gearbox 01 position state" ;
+  skos:prefLabel "Sand table gearbox 01 position state" ;
+.
+emech:SandTable_Gearbox_1-SizeState
+  rdf:type fonm:SizeState ;
+  fonm:hasObject emech:SandTable_Gearbox_1 ;
+  fonm:hasPVal emech:SandTable_Gearbox_1-CartesianSize ;
+  rdfs:label "Gearbox 01 size state" ;
+  skos:prefLabel "Sand table gearbox 01 size state" ;
+.
+emech:SandTable_Gearbox_2
+  rdf:type em:Gearbox ;
+  fonm:hasState emech:SandTable_Gearbox_2-PositionState ;
+  fonm:hasState emech:SandTable_Gearbox_2-SizeState ;
+  ssn:hasSubSystem emech:SandTable_GB02_Housing ;
+  ssn:hasSubSystem emech:SandTable_GB02_Input_Axle ;
+  ssn:hasSubSystem emech:SandTable_GB02_Output_Axle ;
+  ssf:deviceFunction ssf:GearFunction ;
+  rdfs:label "Gearbox 02" ;
+  skos:prefLabel "Sand table gearbox 02" ;
+.
+emech:SandTable_Gearbox_2-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1"^^xsd:float ;
+  qudt:float_Y "2"^^xsd:float ;
+  qudt:float_Z "3"^^xsd:float ;
+  rdfs:label "Gearbox 02 cartesian coordinates" ;
+  skos:prefLabel "Sand table gearbox 02 cartesian coordinates" ;
+.
+emech:SandTable_Gearbox_2-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_Gearbox_2-Cartesian3DCoordinates ;
+  rdfs:label "Gearbox 02 position" ;
+  skos:prefLabel "Sand table gearbox 02 position" ;
+.
+emech:SandTable_Gearbox_2-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "3"^^xsd:float ;
+  ssf:size_Length "1"^^xsd:float ;
+  ssf:size_Width "2"^^xsd:float ;
+  rdfs:label "Gearbox 02 size" ;
+  skos:prefLabel "Sand table gearbox 02 size" ;
+.
+emech:SandTable_Gearbox_2-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_Gearbox_2 ;
+  fonm:hasPVal emech:SandTable_Gearbox_2-CartesianPosition ;
+  rdfs:label "Gearbox 02 position state" ;
+  skos:prefLabel "Sand table gearbox 02 position state" ;
+.
+emech:SandTable_Gearbox_2-SizeState
+  rdf:type fonm:SizeState ;
+  fonm:hasObject emech:SandTable_Gearbox_2 ;
+  fonm:hasPVal emech:SandTable_Gearbox_2-CartesianSize ;
+  rdfs:label "Gearbox 02 size state" ;
+  skos:prefLabel "Sand table gearbox 02 size state" ;
+.
+emech:SandTable_M01-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "447.5"^^xsd:float ;
+  qudt:float_Y "256"^^xsd:float ;
+  qudt:float_Z "160"^^xsd:float ;
+  rdfs:label "Electric motor 01 cartesian coordinates" ;
+  skos:prefLabel "Sand table motor 01 cartesian coordinates" ;
+.
+emech:SandTable_M01-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_M01-Cartesian3DCoordinates ;
+  rdfs:label "Electric motor 01 position" ;
+  skos:prefLabel "Sand table motor 01 position" ;
+.
+emech:SandTable_M01-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "60"^^xsd:float ;
+  ssf:size_Length "60"^^xsd:float ;
+  ssf:size_Width "60"^^xsd:float ;
+  rdfs:label "Electric motor 01 size" ;
+  skos:prefLabel "Sand table electric motor 01 size" ;
+.
+emech:SandTable_M01-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_ElectricMotor_1 ;
+  fonm:hasPVal emech:SandTable_M01-CartesianPosition ;
+  rdfs:label "Electric motor 01 position state" ;
+  skos:prefLabel "Sand table M01 position state" ;
+.
+emech:SandTable_M01-SizeState
+  rdf:type fonm:SizeState ;
+  fonm:hasObject emech:SandTable_ElectricMotor_1 ;
+  fonm:hasPVal emech:SandTable_M01-CartesianSize ;
+  rdfs:label "Electric motor 01 size state" ;
+  skos:prefLabel "Sand table electric motor 01 size state" ;
+.
+emech:SandTable_M01Axle_End1_FittedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutRadius ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongRadius ;
+  rdfs:label "Electric motor 01 axle end 1 fitted restraint dimr" ;
+  skos:prefLabel "Sand table M01 axle end 1 fitted restraint dimr" ;
+.
+emech:SandTable_M01Axle_End1_M01Housing_Brg1Hole_FittedConnection-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_M01_Housing_Brg1_Hole ;
+  fonm:hasSrc emech:SandTable_M01_Axle_End1 ;
+  fonm:hasTo emech:SandTable_M01Axle_End1_To_M01Housing_Brg1Hole-FittedRestraintState ;
+  fonm:resultsIn emech:SandTable_M01Axle_End1_To_M01Housing_Brg1Hole-FittedRestraintState ;
+  rdfs:label "Electric motor 01 axle end 1 to motor 01 housing bearing mount 1 fitted connection" ;
+  skos:prefLabel "Sand table motor 01 axle end 1 to motor 01 housing bearing mount 1 fitted connection" ;
+.
+emech:SandTable_M01Axle_End1_To_M01Housing_Brg1Hole-FittedRestraintState
+  rdf:type fonm:FixedRestraintState ;
+  fonm:hasDimr emech:SandTable_M01Axle_End1_FittedRestraint-Dimr ;
+  rdfs:label "Electric motor 01 axle end 1 to M01 housing bearing 1 hole fixed restraint" ;
+  skos:prefLabel "Sand table M01 axle end 1 to M01 housing bearing 1 hole fixed restraint" ;
+.
+emech:SandTable_M01Axle_End2_FittedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutRadius ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongRadius ;
+  rdfs:label "Electric motor 01 axle end 2 fitted restraint dimr" ;
+  skos:prefLabel "Sand table M01 axle end 2 fitted restraint dimr" ;
+.
+emech:SandTable_M01Axle_End2_M01Housing_Brg2Hole_FittedConnection-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_M01_Housing_Brg2_Hole ;
+  fonm:hasSrc emech:SandTable_M01_Axle_End2 ;
+  fonm:hasTo emech:SandTable_M01Axle_End2_To_M01Housing_Brg2Hole-FittedRestraintState ;
+  fonm:resultsIn emech:SandTable_M01Axle_End2_To_M01Housing_Brg2Hole-FittedRestraintState ;
+  rdfs:label "Electric motor 01 axle end 2 to motor 01 housing bearing mount 2 fitted connection" ;
+  skos:prefLabel "Sand table motor 01 axle end 2 to motor 01 housing bearing mount 2 fitted connection" ;
+.
+emech:SandTable_M01Axle_End2_To_M01Housing_Brg2Hole-FittedRestraintState
+  rdf:type fonm:FixedRestraintState ;
+  fonm:hasDimr emech:SandTable_M01Axle_End2_FittedRestraint-Dimr ;
+  rdfs:label "Electric motor 01 axle end 2 to M01 housing bearing 2 hole fixed restraint" ;
+  skos:prefLabel "Sand table M01 axle end 2 to M01 housing bearing 2 hole fixed restraint" ;
+.
+emech:SandTable_M01GB01_Shaft_Coupling
+  rdf:type ssf:Coupling ;
+  fonm:hasState emech:SandTable_M01GB01_Shaft_Coupling-PositionState ;
+  fonm:hasState emech:SandTable_M01GB01_Shaft_Coupling-SizeState ;
+  rdfs:label "Motor 01 gearbox 01 shaft coupling" ;
+  skos:prefLabel "Sand table M01GB01 shaft coupling" ;
+.
+emech:SandTable_M01GB01_Shaft_Coupling-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1"^^xsd:float ;
+  qudt:float_Y "2"^^xsd:float ;
+  qudt:float_Z "3"^^xsd:float ;
+  rdfs:label "Motor/gearbox 01 shaft coupling cartesian coordinates" ;
+  skos:prefLabel "Sand table motor/gearbox 01 shaft coupling cartesian coordinates" ;
+.
+emech:SandTable_M01GB01_Shaft_Coupling-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_M01GB01_Shaft_Coupling-Cartesian3DCoordinates ;
+  rdfs:label "Motor/gearbox 01 shaft coupling position" ;
+  skos:prefLabel "Sand table motor/gearbox 01 shaft coupling position" ;
+.
+emech:SandTable_M01GB01_Shaft_Coupling-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "3"^^xsd:float ;
+  ssf:size_Length "1"^^xsd:float ;
+  ssf:size_Width "2"^^xsd:float ;
+  rdfs:label "Motor-gearbox 01 coupling size" ;
+  skos:prefLabel "Sand table motor/gearbox 01 coupling size" ;
+.
+emech:SandTable_M01GB01_Shaft_Coupling-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_M01GB01_Shaft_Coupling ;
+  fonm:hasPVal emech:SandTable_M01GB01_Shaft_Coupling-CartesianPosition ;
+  rdfs:label "Motor/gearbox 01 shaft coupling position state" ;
+  skos:prefLabel "Sand table motor/gearbox 01 shaft coupling position state" ;
+.
+emech:SandTable_M01GB01_Shaft_Coupling-SizeState
+  rdf:type fonm:SizeState ;
+  fonm:hasObject emech:SandTable_M01GB01_Shaft_Coupling ;
+  fonm:hasPVal emech:SandTable_M01GB01_Shaft_Coupling-CartesianSize ;
+  rdfs:label "Motor/gearbox 01 shaft coupling size state" ;
+  skos:prefLabel "Sand table motor/gearbox 01 shaft coupling size state" ;
+.
+emech:SandTable_M01_Axle
+  rdf:type ssf:Shaft ;
+  fonm:hasRegion emech:SandTable_M01_Axle_End1 ;
+  fonm:hasRegion emech:SandTable_M01_Axle_End2 ;
+  fonm:hasRegion emech:SandTable_M01_Axle_Surface ;
+  fonm:hasRegion emech:SandTable_M01_Brg2_Mount ;
+  rdfs:label "Electric motor 01 axle" ;
+  skos:prefLabel "Sand table M01 axle" ;
+.
+emech:SandTable_M01_Axle_End1
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFLLoc ;
+  rdfs:label "Electric motor 01 axle end 1" ;
+  skos:prefLabel "Sand table M01 axle end 1" ;
+.
+emech:SandTable_M01_Axle_End2
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFRLoc ;
+  rdfs:label "Electric motor 01 axle end 2" ;
+  skos:prefLabel "Sand table M01 axle end 2" ;
+.
+emech:SandTable_M01_Axle_Surface
+  rdf:type fonm:WheelAxle ;
+  rdfs:label "Electric motor 01 axle surface" ;
+  skos:prefLabel "Sand table M01 axle surface" ;
+.
+emech:SandTable_M01_Brg2_Mount
+  rdf:type em:MountingSurface ;
+  fonm:hasLocation fonm:CylinderSurfaceRLoc ;
+  rdfs:label "Electric motor 01 Brg2 Mount" ;
+  skos:prefLabel "Sand table M01 Brg2 Mount" ;
+.
+emech:SandTable_M01_ElectricalPower
+  rdf:type em:ElectricalPower ;
+  rdfs:label "Electric motor 01 electrical power" ;
+  skos:prefLabel "Sand table M01 electrical power" ;
+.
+emech:SandTable_M01_Housing
+  rdf:type ssf:Housing ;
+  fonm:hasRegion emech:SandTable_M01_Housing_Brg1_Hole ;
+  fonm:hasRegion emech:SandTable_M01_Mount_1 ;
+  fonm:hasRegion emech:SandTable_M01_Mount_2 ;
+  fonm:hasRegion emech:SandTable_M01_Mount_3 ;
+  fonm:hasRegion emech:SandTable_M01_Mount_4 ;
+  rdfs:label "Electric motor 01 housing" ;
+  skos:prefLabel "Sand table M01 housing" ;
+.
+emech:SandTable_M01_Housing_Brg1_Hole
+  rdf:type fonm:Hole ;
+  fonm:hasLocation fonm:CylinderSurfaceFLLoc ;
+  rdfs:label "Electric motor 01 housing bearing 1 hole" ;
+  skos:prefLabel "Sand table M01 housing bearing 1 hole" ;
+.
+emech:SandTable_M01_Housing_Brg2_Hole
+  rdf:type fonm:Hole ;
+  fonm:hasLocation fonm:CylinderSurfaceFRLoc ;
+  rdfs:label "Electric motor 01 housing bearing 2 hole" ;
+  skos:prefLabel "Sand table M01 housing bearing 2 hole" ;
+.
+emech:SandTable_M01_Mount1_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutDepth ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutWidth ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Electric motor 01 housing mount 1 fixed restraint dimr" ;
+  skos:prefLabel "Sand table M01 housing mount 1 fixed restraint dimr" ;
+.
+emech:SandTable_M01_Mount1_FoundationMount-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Foundation_MountSurface ;
+  fonm:hasSrc emech:SandTable_M01_Mount_1 ;
+  fonm:hasTo emech:SandTable_M01_Mount1_To_FoundMount_FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_M01_Mount1_To_FoundMount_FixedRestraintState ;
+  rdfs:label "Electric motor 01 housing mount 1 to foundation mount fixed connection" ;
+  skos:prefLabel "Sand table M01 housing mount 1 to foundation mount fixed connection" ;
+.
+emech:SandTable_M01_Mount1_To_FoundMount_FixedRestraintState
+  rdf:type fonm:FixedRestraintState ;
+  fonm:hasDimr emech:SandTable_M01_Mount1_FixedRestraint-Dimr ;
+  rdfs:label "Electric motor 01 housing mount 1 to foundation mount connection" ;
+  skos:prefLabel "Sand table M01 housing mount 1 to foundation mount connection" ;
+.
+emech:SandTable_M01_Mount_1
+  rdf:type em:MountingSurface ;
+  rdfs:label "Electric motor 01 mount 1" ;
+  skos:prefLabel "Sand table M01 mount 1" ;
+.
+emech:SandTable_M01_Mount_2
+  rdf:type em:MountingSurface ;
+  rdfs:label "Electric motor 01 mount 2" ;
+  skos:prefLabel "Sand table M01 mount 2" ;
+.
+emech:SandTable_M01_Mount_3
+  rdf:type em:MountingSurface ;
+  rdfs:label "Electric motor 01 mount 3" ;
+  skos:prefLabel "Sand table M01 mount 3" ;
+.
+emech:SandTable_M01_Mount_4
+  rdf:type em:MountingSurface ;
+  rdfs:label "Electric motor 01 mount 4" ;
+  skos:prefLabel "Sand table M01 mount 4" ;
+.
+emech:SandTable_M02-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1037.5"^^xsd:float ;
+  qudt:float_Y "256"^^xsd:float ;
+  qudt:float_Z "160"^^xsd:float ;
+  rdfs:label "Electric motor 02 cartesian coordinates" ;
+  skos:prefLabel "Sand table motor 02 cartesian coordinates" ;
+.
+emech:SandTable_M02-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_M02-Cartesian3DCoordinates ;
+  rdfs:label "Electric motor 02 position" ;
+  skos:prefLabel "Sand table motor 02 position" ;
+.
+emech:SandTable_M02-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "60"^^xsd:float ;
+  ssf:size_Length "60"^^xsd:float ;
+  ssf:size_Width "60"^^xsd:float ;
+  rdfs:label "Electric motor 02 size" ;
+  skos:prefLabel "Sand table electric motor 02 size" ;
+.
+emech:SandTable_M02-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_ElectricMotor_2 ;
+  fonm:hasPVal emech:SandTable_M02-CartesianPosition ;
+  rdfs:label "Electric motor 02 position state" ;
+  skos:prefLabel "Sand table M02 position state" ;
+.
+emech:SandTable_M02-SizeState
+  rdf:type fonm:SizeState ;
+  fonm:hasObject emech:SandTable_ElectricMotor_2 ;
+  fonm:hasPVal emech:SandTable_M02-CartesianSize ;
+  rdfs:label "Electric motor 02 size state" ;
+  skos:prefLabel "Sand table electric motor 02 size state" ;
+.
+emech:SandTable_M02Axle_End1_M02Housing_Brg1Hole_FittedConnection-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_M02_Housing_Brg1_Hole ;
+  fonm:hasSrc emech:SandTable_M02_Axle_End1 ;
+  fonm:hasTo emech:SandTable_M02Axle_End1_To_M02Housing_Brg1Hole-FittedRestraintState ;
+  fonm:resultsIn emech:SandTable_M02Axle_End1_To_M02Housing_Brg1Hole-FittedRestraintState ;
+  rdfs:label "Electric motor 02 axle to motor 02 housing bearing mount fitted connection" ;
+  skos:prefLabel "Sand table motor 02 axle to motor 02 housing bearing mount fitted connection" ;
+.
+emech:SandTable_M02Axle_End1_To_M02Housing_Brg1Hole-FittedRestraintState
+  rdf:type fonm:FixedRestraintState ;
+  fonm:hasDimr emech:SandTable_M02Axle_FittedRestraint-Dimr ;
+  rdfs:label "Electric motor 02 axle to M02 housing bearing 1 hole fixed restraint" ;
+  skos:prefLabel "Sand table M02 axle to M02 housing bearing 1 hole fixed restraint" ;
+.
+emech:SandTable_M02Axle_End2_FittedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutRadius ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongRadius ;
+  rdfs:label "Electric motor 02 axle end 2 fitted restraint dimr" ;
+  skos:prefLabel "Sand table M02 axle end 2 fitted restraint dimr" ;
+.
+emech:SandTable_M02Axle_End2_M02Housing_Brg2Hole_FittedConnection-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_M02_Housing_Brg2_Hole ;
+  fonm:hasSrc emech:SandTable_M02_Axle_End2 ;
+  fonm:hasTo emech:SandTable_M02Axle_End2_To_M02Housing_Brg2Hole-FittedRestraintState ;
+  fonm:resultsIn emech:SandTable_M02Axle_End2_To_M02Housing_Brg2Hole-FittedRestraintState ;
+  rdfs:label "Electric motor 02 axle end 2 to motor 2 housing bearing mount 2 fitted connection" ;
+  skos:prefLabel "Sand table motor 02 axle end 2 to motor 2 housing bearing mount 2 fitted connection" ;
+.
+emech:SandTable_M02Axle_End2_To_M02Housing_Brg2Hole-FittedRestraintState
+  rdf:type fonm:FixedRestraintState ;
+  fonm:hasDimr emech:SandTable_M02Axle_End2_FittedRestraint-Dimr ;
+  rdfs:label "Electric motor 02 axle end 2 to M02 housing bearing 2 hole fixed restraint" ;
+  skos:prefLabel "Electric motor 02 axle end 2 to M02 housing bearing 2 hole fixed restraint" ;
+.
+emech:SandTable_M02Axle_FittedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutRadius ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongRadius ;
+  rdfs:label "Electric motor 02 axle fitted restraint dimr" ;
+  skos:prefLabel "Sand table M02 axle fitted restraint dimr" ;
+.
+emech:SandTable_M02GB02_Shaft_Coupling
+  rdf:type ssf:Coupling ;
+  fonm:hasState emech:SandTable_M02GB02_Shaft_Coupling-PositionState ;
+  fonm:hasState emech:SandTable_M02GB02_Shaft_Coupling-SizeState ;
+  rdfs:label "Motor-gearbox 02 Shaft Coupling" ;
+  skos:prefLabel "Sand table M02GB02 Shaft Coupling" ;
+.
+emech:SandTable_M02GB02_Shaft_Coupling-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1"^^xsd:float ;
+  qudt:float_Y "2"^^xsd:float ;
+  qudt:float_Z "3"^^xsd:float ;
+  rdfs:label "Motor/gearbox 02 shaft coupling cartesian coordinates" ;
+  skos:prefLabel "Sand table motor/gearbox 02 shaft coupling cartesian coordinates" ;
+.
+emech:SandTable_M02GB02_Shaft_Coupling-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_M02GB02_Shaft_Coupling-Cartesian3DCoordinates ;
+  rdfs:label "Motor/gearbox 02 shaft coupling position" ;
+  skos:prefLabel "Sand table motor/gearbox 02 shaft coupling position" ;
+.
+emech:SandTable_M02GB02_Shaft_Coupling-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "3"^^xsd:float ;
+  ssf:size_Length "1"^^xsd:float ;
+  ssf:size_Width "2"^^xsd:float ;
+  rdfs:label "Motor-gearbox 02 shaft coupling size" ;
+  skos:prefLabel "Sand table motor/gearbox 02 shaft coupling size" ;
+.
+emech:SandTable_M02GB02_Shaft_Coupling-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_M02GB02_Shaft_Coupling ;
+  fonm:hasPVal emech:SandTable_M02GB02_Shaft_Coupling-CartesianPosition ;
+  rdfs:label "Motor/gearbox 02 shaft coupling position state" ;
+  skos:prefLabel "Sand table motor/gearbox 02 shaft coupling position state" ;
+.
+emech:SandTable_M02GB02_Shaft_Coupling-SizeState
+  rdf:type fonm:SizeState ;
+  fonm:hasObject emech:SandTable_M02GB02_Shaft_Coupling ;
+  fonm:hasPVal emech:SandTable_M02GB02_Shaft_Coupling-CartesianSize ;
+  rdfs:label "Motor/gearbox 02 shaft coupling size state" ;
+  skos:prefLabel "Sand table motor/gearbox 02 shaft coupling size state" ;
+.
+emech:SandTable_M02_Axle
+  rdf:type ssf:Shaft ;
+  fonm:hasRegion emech:SandTable_M02_Axle_End1 ;
+  fonm:hasRegion emech:SandTable_M02_Axle_End2 ;
+  fonm:hasRegion emech:SandTable_M02_Axle_Surface ;
+  rdfs:label "Electric motor 02 axle" ;
+  skos:prefLabel "Sand table M02 axle" ;
+.
+emech:SandTable_M02_Axle_End1
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFLLoc ;
+  rdfs:label "Electric motor 02 axle end 1" ;
+  skos:prefLabel "Sand table M02 axle end 1" ;
+.
+emech:SandTable_M02_Axle_End2
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFRLoc ;
+  rdfs:label "Electric motor 02 axle end 2" ;
+  skos:prefLabel "Sand table M02 axle end 2" ;
+.
+emech:SandTable_M02_Axle_Surface
+  rdf:type fonm:WheelAxle ;
+  rdfs:label "Electric motor 02 axle end 2" ;
+  skos:prefLabel "Sand table M02 axle end 2" ;
+.
+emech:SandTable_M02_ElectricalPower
+  rdf:type em:ElectricalPower ;
+  rdfs:label "Electric motor 02 electrical power" ;
+  skos:prefLabel "Sand table M02 electrical power" ;
+.
+emech:SandTable_M02_Housing
+  rdf:type ssf:Housing ;
+  fonm:hasRegion emech:SandTable_M02_Mount_1 ;
+  fonm:hasRegion emech:SandTable_M02_Mount_2 ;
+  fonm:hasRegion emech:SandTable_M02_Mount_3 ;
+  fonm:hasRegion emech:SandTable_M02_Mount_4 ;
+  rdfs:label "Electric motor 02 housing" ;
+  skos:prefLabel "Sand table M02 housing" ;
+.
+emech:SandTable_M02_Housing_Brg1_Hole
+  rdf:type fonm:Hole ;
+  fonm:hasLocation fonm:CylinderSurfaceFLLoc ;
+  rdfs:label "Electric motor 02 housing bearing 1 hole" ;
+  skos:prefLabel "Sand table M02 housing bearing 1 hole" ;
+.
+emech:SandTable_M02_Housing_Brg2_Hole
+  rdf:type fonm:Hole ;
+  fonm:hasLocation fonm:CylinderSurfaceFRLoc ;
+  rdfs:label "Electric motor 02 housing bearing 2 hole" ;
+  skos:prefLabel "Sand table M02 housing bearing 2 hole" ;
+.
+emech:SandTable_M02_Mount1_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutDepth ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutWidth ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Electric motor 02 housing mount 1 fixed restraint dimr" ;
+  skos:prefLabel "Sand table M02 housing mount 1 fixed restraint dimr" ;
+.
+emech:SandTable_M02_Mount1_FoundationMount-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Foundation_MountSurface ;
+  fonm:hasSrc emech:SandTable_M02_Mount_1 ;
+  fonm:hasTo emech:SandTable_M02_Mount1_To_FoundMount_FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_M02_Mount1_To_FoundMount_FixedRestraintState ;
+  rdfs:label "Electric motor 02 housing mount 1 to foundation mount fixed connection" ;
+  skos:prefLabel "Sand table M02 housing mount 1 to foundation mount fixed connection" ;
+.
+emech:SandTable_M02_Mount1_To_FoundMount_FixedRestraintState
+  rdf:type fonm:FixedRestraintState ;
+  fonm:hasDimr emech:SandTable_M02_Mount1_FixedRestraint-Dimr ;
+  rdfs:label "Electric motor 02 housing mount 1 to foundation mount connection" ;
+  skos:prefLabel "Sand table M02 housing mount 1 to foundation mount connection" ;
+.
+emech:SandTable_M02_Mount_1
+  rdf:type em:MountingSurface ;
+  rdfs:label "Electric motor 02 mount 1" ;
+  skos:prefLabel "Sand table M02 mount 1" ;
+.
+emech:SandTable_M02_Mount_2
+  rdf:type em:MountingSurface ;
+  rdfs:label "Electric motor 02 mount 2" ;
+  skos:prefLabel "Sand table M02 mount 2" ;
+.
+emech:SandTable_M02_Mount_3
+  rdf:type em:MountingSurface ;
+  rdfs:label "Electric motor 02 mount 3" ;
+  skos:prefLabel "Sand table M02 mount 3" ;
+.
+emech:SandTable_M02_Mount_4
+  rdf:type em:MountingSurface ;
+  rdfs:label "Electric motor 02 mount 4" ;
+  skos:prefLabel "Sand table M02 mount 4" ;
+.
+emech:SandTable_M03-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1547.5"^^xsd:float ;
+  qudt:float_Y "256"^^xsd:float ;
+  qudt:float_Z "160"^^xsd:float ;
+  rdfs:label "Electric motor 3 cartesian coordinates" ;
+  skos:prefLabel "Sand table motor 3 cartesian coordinates" ;
+.
+emech:SandTable_M03-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_M03-Cartesian3DCoordinates ;
+  rdfs:label "Electric motor 3 position" ;
+  skos:prefLabel "Sand table motor 3 position" ;
+.
+emech:SandTable_M03-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "60"^^xsd:float ;
+  ssf:size_Length "60"^^xsd:float ;
+  ssf:size_Width "60"^^xsd:float ;
+  rdfs:label "Electric motor 3 size" ;
+  skos:prefLabel "Sand table electric motor 3 size" ;
+.
+emech:SandTable_M03-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_ElectricMotor_3 ;
+  fonm:hasPVal emech:SandTable_M03-CartesianPosition ;
+  rdfs:label "Electric motor 03 position state" ;
+  skos:prefLabel "Sand table M03 position state" ;
+.
+emech:SandTable_M03-SizeState
+  rdf:type fonm:SizeState ;
+  fonm:hasObject emech:SandTable_ElectricMotor_3 ;
+  fonm:hasPVal emech:SandTable_M03-CartesianSize ;
+  rdfs:label "Electric motor 3 size state" ;
+  skos:prefLabel "Sand table electric motor 3 size state" ;
+.
+emech:SandTable_M03Axle_End1_M03Housing_Brg1Hole_FittedConnection-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_M03_Housing_Brg1_Hole ;
+  fonm:hasSrc emech:SandTable_M03_Axle_End1 ;
+  fonm:hasTo emech:SandTable_M03Axle_End1_To_M03Housing_Brg1Hole-FittedRestraintState ;
+  fonm:resultsIn emech:SandTable_M03Axle_End1_To_M03Housing_Brg1Hole-FittedRestraintState ;
+  rdfs:label "Electric motor 3 axle to motor 3 housing bearing mount fitted connection" ;
+  skos:prefLabel "Sand table motor 3 axle to motor 3 housing bearing mount fitted connection" ;
+.
+emech:SandTable_M03Axle_End1_To_M03Housing_Brg1Hole-FittedRestraintState
+  rdf:type fonm:FixedRestraintState ;
+  fonm:hasDimr emech:SandTable_M03Axle_FittedRestraint-Dimr ;
+  rdfs:label "Electric motor 03 axle to M03 housing bearing 1 hole fixed restraint" ;
+  skos:prefLabel "Sand table M03 axle to M03 housing bearing 1 hole fixed restraint" ;
+.
+emech:SandTable_M03Axle_End2_FittedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutRadius ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongRadius ;
+  rdfs:label "Electric motor 03 axle end 2 fitted restraint dimr" ;
+  skos:prefLabel "Sand table M03 axle end 2 fitted restraint dimr" ;
+.
+emech:SandTable_M03Axle_End2_M03Housing_Brg2Hole_FittedConnection-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_M03_Housing_Brg2_Hole ;
+  fonm:hasSrc emech:SandTable_M03_Axle_End2 ;
+  fonm:hasTo emech:SandTable_M03Axle_End2_To_M03Housing_Brg2Hole-FittedRestraintState ;
+  fonm:resultsIn emech:SandTable_M03Axle_End2_To_M03Housing_Brg2Hole-FittedRestraintState ;
+  rdfs:label "Electric motor 3 axle end 2 to motor 3 housing bearing mount 2 fitted connection" ;
+  skos:prefLabel "Sand table motor 3 axle end 2 to motor 3 housing bearing mount 2 fitted connection" ;
+.
+emech:SandTable_M03Axle_End2_To_M03Housing_Brg2Hole-FittedRestraintState
+  rdf:type fonm:FixedRestraintState ;
+  fonm:hasDimr emech:SandTable_M03Axle_End2_FittedRestraint-Dimr ;
+  rdfs:label "Electric motor 03 axle end 2 to M03 housing bearing 2 hole fixed restraint" ;
+  skos:prefLabel "Sand table M03 axle end 2 to M03 housing bearing 2 hole fixed restraint" ;
+.
+emech:SandTable_M03Axle_FittedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutRadius ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongRadius ;
+  rdfs:label "Electric motor 03 axle fitted restraint dimr" ;
+  skos:prefLabel "Sand table M03 axle fitted restraint dimr" ;
+.
+emech:SandTable_M03_Axle
+  rdf:type ssf:Shaft ;
+  fonm:hasRegion emech:SandTable_M03_Axle_End1 ;
+  fonm:hasRegion emech:SandTable_M03_Axle_End2 ;
+  fonm:hasRegion emech:SandTable_M03_Axle_Surface ;
+  rdfs:label "Electric motor 03 axle" ;
+  skos:prefLabel "Sand table M03 axle" ;
+.
+emech:SandTable_M03_Axle_End1
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFLLoc ;
+  rdfs:label "Electric motor 03 axle end 1" ;
+  skos:prefLabel "Sand table M03 axle end 1" ;
+.
+emech:SandTable_M03_Axle_End2
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFRLoc ;
+  rdfs:label "Electric motor 03 axle end 2" ;
+  skos:prefLabel "Sand table M03 axle end 2" ;
+.
+emech:SandTable_M03_Axle_Surface
+  rdf:type fonm:WheelAxle ;
+  rdfs:label "Electric motor 03 axle end 2" ;
+  skos:prefLabel "Sand table M03 axle end 2" ;
+.
+emech:SandTable_M03_ElectricalPower
+  rdf:type em:ElectricalPower ;
+  rdfs:label "Electric motor 03 electrical power" ;
+  skos:prefLabel "Sand table M03 electrical power" ;
+.
+emech:SandTable_M03_Housing
+  rdf:type ssf:Housing ;
+  fonm:hasRegion emech:SandTable_M03_Mount_1 ;
+  fonm:hasRegion emech:SandTable_M03_Mount_2 ;
+  fonm:hasRegion emech:SandTable_M03_Mount_3 ;
+  fonm:hasRegion emech:SandTable_M03_Mount_4 ;
+  rdfs:label "Electric motor 03 housing" ;
+  skos:prefLabel "Sand table M03 housing" ;
+.
+emech:SandTable_M03_Housing_Brg1_Hole
+  rdf:type fonm:Hole ;
+  fonm:hasLocation fonm:CylinderSurfaceFLLoc ;
+  rdfs:label "Electric motor 03 housing bearing 1 hole" ;
+  skos:prefLabel "Sand table M03 housing bearing 1 hole" ;
+.
+emech:SandTable_M03_Housing_Brg2_Hole
+  rdf:type fonm:Hole ;
+  fonm:hasLocation fonm:CylinderSurfaceFRLoc ;
+  rdfs:label "Electric motor 03 housing bearing 2 hole" ;
+  skos:prefLabel "Sand table M03 housing bearing 2 hole" ;
+.
+emech:SandTable_M03_Mount1_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutDepth ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutWidth ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Electric motor 03 housing mount 1 fixed restraint dimr" ;
+  skos:prefLabel "Sand table M03 housing mount 1 fixed restraint dimr" ;
+.
+emech:SandTable_M03_Mount1_FoundationMount-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Foundation_MountSurface ;
+  fonm:hasSrc emech:SandTable_M03_Mount_1 ;
+  fonm:hasTo emech:SandTable_M03_Mount1_To_FoundMount_FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_M03_Mount1_To_FoundMount_FixedRestraintState ;
+  rdfs:label "Electric motor 03 housing mount 1 to foundation mount fixed connection" ;
+  skos:prefLabel "Sand table M03 housing mount 1 to foundation mount fixed connection" ;
+.
+emech:SandTable_M03_Mount1_To_FoundMount_FixedRestraintState
+  rdf:type fonm:FixedRestraintState ;
+  fonm:hasDimr emech:SandTable_M03_Mount1_FixedRestraint-Dimr ;
+  rdfs:label "Electric motor 03 housing mount 1 to foundation mount connection" ;
+  skos:prefLabel "Sand table M03 housing mount 1 to foundation mount connection" ;
+.
+emech:SandTable_M03_Mount_1
+  rdf:type em:MountingSurface ;
+  rdfs:label "Electric motor 03 mount 1" ;
+  skos:prefLabel "Sand table M03 mount 1" ;
+.
+emech:SandTable_M03_Mount_2
+  rdf:type em:MountingSurface ;
+  rdfs:label "Electric motor 03 mount 2" ;
+  skos:prefLabel "Sand table M03 Mount 2" ;
+.
+emech:SandTable_M03_Mount_3
+  rdf:type em:MountingSurface ;
+  rdfs:label "Electric motor 03 mount 3" ;
+  skos:prefLabel "Sand table M03 mount 3" ;
+.
+emech:SandTable_M03_Mount_4
+  rdf:type em:MountingSurface ;
+  rdfs:label "Electric motor 3 mount 4" ;
+  skos:prefLabel "Electric motor 03 mount 4" ;
+.
+emech:SandTable_Prox01-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "203"^^xsd:float ;
+  qudt:float_Y "189"^^xsd:float ;
+  qudt:float_Z "175"^^xsd:float ;
+  rdfs:label "Proximity sensor 01 cartesian coordinates" ;
+  skos:prefLabel "Sand table proximity sensor 01 cartesian coordinates" ;
+.
+emech:SandTable_Prox01-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_Prox01-Cartesian3DCoordinates ;
+  rdfs:label "Promity sensor 01 position" ;
+  skos:prefLabel "Sand table proximity sensor 01 position" ;
+.
+emech:SandTable_Prox01-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "89"^^xsd:float ;
+  ssf:size_Length "10"^^xsd:float ;
+  ssf:size_Width "10"^^xsd:float ;
+  rdfs:label "Proximity sensor 01 size" ;
+  skos:prefLabel "Sand table proximity sensor 01 size" ;
+.
+emech:SandTable_Prox01-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_ProximitySensor_1 ;
+  fonm:hasPVal emech:SandTable_Prox01-CartesianPosition ;
+  rdfs:label "Proximity sensor 01 position state" ;
+  skos:prefLabel "Sand table proximity sensor 01 position state" ;
+.
+emech:SandTable_Prox01-SizeState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_ProximitySensor_1 ;
+  fonm:hasPVal emech:SandTable_Prox01-CartesianSize ;
+  rdfs:label "Proximity sensor 01 size state" ;
+  skos:prefLabel "Sand table proximity sensor 01 size state" ;
+.
+emech:SandTable_Prox01_MountEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFLLoc ;
+  rdfs:label "Proximity sensor 01 mount end" ;
+  skos:prefLabel "Sand table proximity sensor 01 mount end" ;
+.
+emech:SandTable_Prox01_MountEnd_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutDepth ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutWidth ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Proximity sensor 01 mount fixed restraint dimr" ;
+  skos:prefLabel "Sand table proximity sensor 01 mount fixed restraint dimr" ;
+.
+emech:SandTable_Prox01_MountEnd_FoundationMount-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Foundation_MountSurface ;
+  fonm:hasSrc emech:SandTable_Prox01_MountEnd ;
+  fonm:hasTo emech:SandTable_Prox01_MountEnd_To_FoundMount_FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_Prox01_MountEnd_To_FoundMount_FixedRestraintState ;
+  rdfs:label "Proximity sensor 01 mount end to foundation mount fixed connection" ;
+  skos:prefLabel "Sand table proximity sensor 01 mount end to foundation mount fixed connection" ;
+.
+emech:SandTable_Prox01_MountEnd_To_FoundMount_FixedRestraintState
+  rdf:type fonm:ContactRestraintState ;
+  fonm:hasDimr emech:SandTable_Prox01_MountEnd_FixedRestraint-Dimr ;
+  rdfs:label "Proximity sensor 01 to foundation mount connection" ;
+  skos:prefLabel "Sand table proximity sensor 01 to foundation mount connection" ;
+.
+emech:SandTable_Prox01_SensorEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFRLoc ;
+  rdfs:label "Proximity sensor 01 sensor end" ;
+  skos:prefLabel "Sand table proximity sensor 01 sensor end" ;
+.
+emech:SandTable_Prox02-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "397.5"^^xsd:float ;
+  qudt:float_Y "189"^^xsd:float ;
+  qudt:float_Z "175"^^xsd:float ;
+  rdfs:label "Proximity sensor 02 cartesian coordinates" ;
+  skos:prefLabel "Sand table proximity sensor 02 cartesian coordinates" ;
+.
+emech:SandTable_Prox02-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_Prox02-Cartesian3DCoordinates ;
+  rdfs:label "Promity sensor 02 position" ;
+  skos:prefLabel "Sand table proximity sensor 02 position" ;
+.
+emech:SandTable_Prox02-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "89"^^xsd:float ;
+  ssf:size_Length "10"^^xsd:float ;
+  ssf:size_Width "10"^^xsd:float ;
+  rdfs:label "Proximity sensor 02 size" ;
+  skos:prefLabel "Sand table proximity sensor 02 size" ;
+.
+emech:SandTable_Prox02-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_ProximitySensor_2 ;
+  fonm:hasPVal emech:SandTable_Prox02-CartesianPosition ;
+  rdfs:label "Proximity sensor 02 position state" ;
+  skos:prefLabel "Sand table proximity sensor 02 position state" ;
+.
+emech:SandTable_Prox02-SizeState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_ProximitySensor_2 ;
+  fonm:hasPVal emech:SandTable_Prox02-CartesianSize ;
+  rdfs:label "Proximity sensor 02 size state" ;
+  skos:prefLabel "Sand table proximity sensor 02 size state" ;
+.
+emech:SandTable_Prox02_MountEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFLLoc ;
+  rdfs:label "Proximity sensor 02 mount end" ;
+  skos:prefLabel "Sand table proximity sensor 02 mount end" ;
+.
+emech:SandTable_Prox02_MountEnd_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutDepth ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutWidth ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Proximity sensor 02 mount fixed restraint dimr" ;
+  skos:prefLabel "Sand table proximity sensor 02 mount fixed restraint dimr" ;
+.
+emech:SandTable_Prox02_MountEnd_FoundationMount-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Foundation_MountSurface ;
+  fonm:hasSrc emech:SandTable_Prox02_MountEnd ;
+  fonm:hasTo emech:SandTable_Prox02_MountEnd_To_FoundMount_FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_Prox02_MountEnd_To_FoundMount_FixedRestraintState ;
+  rdfs:label "Proximity sensor 02 mount end to foundation mount fixed connection" ;
+  skos:prefLabel "Sand table proximity sensor 02 mount end to foundation mount fixed connection" ;
+.
+emech:SandTable_Prox02_MountEnd_To_FoundMount_FixedRestraintState
+  rdf:type fonm:ContactRestraintState ;
+  fonm:hasDimr emech:SandTable_Prox02_MountEnd_FixedRestraint-Dimr ;
+  rdfs:label "Proximity sensor 02 to foundation mount connection" ;
+  skos:prefLabel "Sand table proximity sensor 02 to foundation mount connection" ;
+.
+emech:SandTable_Prox02_SensorEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFRLoc ;
+  rdfs:label "Proximity sensor 02 sensor end" ;
+  skos:prefLabel "Sand table proximity sensor 02 sensor end" ;
+.
+emech:SandTable_Prox03-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "497.5"^^xsd:float ;
+  qudt:float_Y "189"^^xsd:float ;
+  qudt:float_Z "175"^^xsd:float ;
+  rdfs:label "Proximity sensor 03 cartesian coordinates" ;
+  skos:prefLabel "Sand table proximity sensor 03 cartesian coordinates" ;
+.
+emech:SandTable_Prox03-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_Prox03-Cartesian3DCoordinates ;
+  rdfs:label "Proximity sensor 03 position" ;
+  skos:prefLabel "Sand table proximity sensor 03 position" ;
+.
+emech:SandTable_Prox03-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "89"^^xsd:float ;
+  ssf:size_Length "10"^^xsd:float ;
+  ssf:size_Width "10"^^xsd:float ;
+  rdfs:label "Proximity sensor 03 size" ;
+  skos:prefLabel "Sand table proximity sensor 03 size" ;
+.
+emech:SandTable_Prox03-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_ProximitySensor_3 ;
+  fonm:hasPVal emech:SandTable_Prox03-CartesianPosition ;
+  rdfs:label "Proximity sensor 03 position state" ;
+  skos:prefLabel "Sand table proximity sensor 03 position state" ;
+.
+emech:SandTable_Prox03-SizeState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_ProximitySensor_3 ;
+  fonm:hasPVal emech:SandTable_Prox03-CartesianSize ;
+  rdfs:label "Proximity sensor 03 size state" ;
+  skos:prefLabel "Sand table proximity sensor 03 size state" ;
+.
+emech:SandTable_Prox03_MountEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFLLoc ;
+  rdfs:label "Proximity sensor 03 mount end" ;
+  skos:prefLabel "Sand table proximity sensor 03 mount end" ;
+.
+emech:SandTable_Prox03_MountEnd_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutDepth ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutWidth ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Proximity sensor 03 mount fixed restraint dimr" ;
+  skos:prefLabel "Sand table proximity sensor 03 mount fixed restraint dimr" ;
+.
+emech:SandTable_Prox03_MountEnd_FoundationMount-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Foundation_MountSurface ;
+  fonm:hasSrc emech:SandTable_Prox03_MountEnd ;
+  fonm:hasTo emech:SandTable_Prox03_MountEnd_To_FoundMount_FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_Prox03_MountEnd_To_FoundMount_FixedRestraintState ;
+  rdfs:label "Proximity sensor 03 mount end to foundation mount fixed connection" ;
+  skos:prefLabel "Sand table proximity sensor 03 mount end to foundation mount fixed connection" ;
+.
+emech:SandTable_Prox03_MountEnd_To_FoundMount_FixedRestraintState
+  rdf:type fonm:ContactRestraintState ;
+  fonm:hasDimr emech:SandTable_Prox03_MountEnd_FixedRestraint-Dimr ;
+  rdfs:label "Proximity sensor 03 to foundation mount connection" ;
+  skos:prefLabel "Sand table proximity sensor 03 to foundation mount connection" ;
+.
+emech:SandTable_Prox03_SensorEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFRLoc ;
+  rdfs:label "Proximity sensor 03 sensor end" ;
+  skos:prefLabel "Sand table proximity sensor 03 sensor end" ;
+.
+emech:SandTable_Prox04-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "987.5"^^xsd:float ;
+  qudt:float_Y "189"^^xsd:float ;
+  qudt:float_Z "175"^^xsd:float ;
+  rdfs:label "Proximity sensor 04 cartesian coordinates" ;
+  skos:prefLabel "Sand table proximity sensor 04 cartesian coordinates" ;
+.
+emech:SandTable_Prox04-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_Prox04-Cartesian3DCoordinates ;
+  rdfs:label "Proximity sensor 04 position" ;
+  skos:prefLabel "Sand table proximity sensor 04 position" ;
+.
+emech:SandTable_Prox04-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "89"^^xsd:float ;
+  ssf:size_Length "10"^^xsd:float ;
+  ssf:size_Width "10"^^xsd:float ;
+  rdfs:label "Proximity sensor 04 size" ;
+  skos:prefLabel "Sand table proximity sensor 04 size" ;
+.
+emech:SandTable_Prox04-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_ProximitySensor_4 ;
+  fonm:hasPVal emech:SandTable_Prox04-CartesianPosition ;
+  rdfs:label "Proximity sensor 04 position state" ;
+  skos:prefLabel "Sand table proximity sensor 04 position state" ;
+.
+emech:SandTable_Prox04-SizeState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_ProximitySensor_4 ;
+  fonm:hasPVal emech:SandTable_Prox04-CartesianSize ;
+  rdfs:label "Proximity sensor 04 size state" ;
+  skos:prefLabel "Sand table proximity sensor 04 size state" ;
+.
+emech:SandTable_Prox04_MountEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFLLoc ;
+  rdfs:label "Proximity sensor 04 mount end" ;
+  skos:prefLabel "Sand table proximity sensor 04 mount end" ;
+.
+emech:SandTable_Prox04_MountEnd_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutDepth ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutWidth ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Proximity sensor 04 mount fixed restraint dimr" ;
+  skos:prefLabel "Sand table proximity sensor 04 mount fixed restraint dimr" ;
+.
+emech:SandTable_Prox04_MountEnd_FoundationMount-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Foundation_MountSurface ;
+  fonm:hasSrc emech:SandTable_Prox04_MountEnd ;
+  fonm:hasTo emech:SandTable_Prox04_MountEnd_To_FoundMount_FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_Prox04_MountEnd_To_FoundMount_FixedRestraintState ;
+  rdfs:label "Proximity sensor 04 mount end to foundation mount fixed connection" ;
+  skos:prefLabel "Sand table proximity sensor 04 mount end to foundation mount fixed connection" ;
+.
+emech:SandTable_Prox04_MountEnd_To_FoundMount_FixedRestraintState
+  rdf:type fonm:ContactRestraintState ;
+  fonm:hasDimr emech:SandTable_Prox04_MountEnd_FixedRestraint-Dimr ;
+  rdfs:label "Proximity sensor 04 to foundation mount connection" ;
+  skos:prefLabel "Sand table proximity sensor 04 to foundation mount connection" ;
+.
+emech:SandTable_Prox04_SensorEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFRLoc ;
+  rdfs:label "Proximity sensor 04 sensor end" ;
+  skos:prefLabel "Sand table proximity sensor 04 sensor end" ;
+.
+emech:SandTable_Prox05-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1087.5"^^xsd:float ;
+  qudt:float_Y "189"^^xsd:float ;
+  qudt:float_Z "175"^^xsd:float ;
+  rdfs:label "Proximity sensor 05 cartesian coordinates" ;
+  skos:prefLabel "Sand table proximity sensor 05 cartesian coordinates" ;
+.
+emech:SandTable_Prox05-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_Prox05-Cartesian3DCoordinates ;
+  rdfs:label "Proximity sensor 05 position" ;
+  skos:prefLabel "Sand table proximity sensor 05 position" ;
+.
+emech:SandTable_Prox05-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "89"^^xsd:float ;
+  ssf:size_Length "10"^^xsd:float ;
+  ssf:size_Width "10"^^xsd:float ;
+  rdfs:label "Proximity sensor 05 size" ;
+  skos:prefLabel "Sand table proximity sensor 05 size" ;
+.
+emech:SandTable_Prox05-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_ProximitySensor_5 ;
+  fonm:hasPVal emech:SandTable_Prox05-CartesianPosition ;
+  rdfs:label "Proximity sensor 05 position state" ;
+  skos:prefLabel "Sand table proximity sensor 05 position state" ;
+.
+emech:SandTable_Prox05-SizeState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_ProximitySensor_5 ;
+  fonm:hasPVal emech:SandTable_Prox05-CartesianSize ;
+  rdfs:label "Proximity sensor 05 size state" ;
+  skos:prefLabel "Sand table proximity sensor 05 size state" ;
+.
+emech:SandTable_Prox05_MountEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFLLoc ;
+  rdfs:label "Proximity sensor 05 mount end" ;
+  skos:prefLabel "Sand table proximity sensor 05 mount end" ;
+.
+emech:SandTable_Prox05_MountEnd_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutDepth ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutWidth ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Proximity sensor 05 mount fixed restraint dimr" ;
+  skos:prefLabel "Sand table proximity sensor 05 mount fixed restraint dimr" ;
+.
+emech:SandTable_Prox05_MountEnd_FoundationMount-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Foundation_MountSurface ;
+  fonm:hasSrc emech:SandTable_Prox05_MountEnd ;
+  fonm:hasTo emech:SandTable_Prox05_MountEnd_To_FoundMount_FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_Prox05_MountEnd_To_FoundMount_FixedRestraintState ;
+  rdfs:label "Proximity sensor 05 mount end to foundation mount fixed connection" ;
+  skos:prefLabel "Sand table proximity sensor 05 mount end to foundation mount fixed connection" ;
+.
+emech:SandTable_Prox05_MountEnd_To_FoundMount_FixedRestraintState
+  rdf:type fonm:ContactRestraintState ;
+  fonm:hasDimr emech:SandTable_Prox05_MountEnd_FixedRestraint-Dimr ;
+  rdfs:label "Proximity sensor 05 to foundation mount connection" ;
+  skos:prefLabel "Sand table proximity sensor 05 to foundation mount connection" ;
+.
+emech:SandTable_Prox05_SensorEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFRLoc ;
+  rdfs:label "Proximity sensor 05 sensor end" ;
+  skos:prefLabel "Sand table proximity sensor 05 sensor end" ;
+.
+emech:SandTable_Prox06-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1497.5"^^xsd:float ;
+  qudt:float_Y "189"^^xsd:float ;
+  qudt:float_Z "175"^^xsd:float ;
+  rdfs:label "Proximity sensor 06 cartesian coordinates" ;
+  skos:prefLabel "Sand table proximity sensor 06 cartesian coordinates" ;
+.
+emech:SandTable_Prox06-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_Prox06-Cartesian3DCoordinates ;
+  rdfs:label "Proximity sensor 06 position" ;
+  skos:prefLabel "Sand table proximity sensor 06 position" ;
+.
+emech:SandTable_Prox06-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "89"^^xsd:float ;
+  ssf:size_Length "10"^^xsd:float ;
+  ssf:size_Width "10"^^xsd:float ;
+  rdfs:label "Proximity sensor 06 size" ;
+  skos:prefLabel "Sand table proximity sensor 06 size" ;
+.
+emech:SandTable_Prox06-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_ProximitySensor_6 ;
+  fonm:hasPVal emech:SandTable_Prox06-CartesianPosition ;
+  rdfs:label "Proximity sensor 06 position state" ;
+  skos:prefLabel "Sand table proximity sensor 06 position state" ;
+.
+emech:SandTable_Prox06-SizeState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_ProximitySensor_6 ;
+  fonm:hasPVal emech:SandTable_Prox06-CartesianSize ;
+  rdfs:label "Proximity sensor 06 size state" ;
+  skos:prefLabel "Sand table proximity sensor 06 size state" ;
+.
+emech:SandTable_Prox06_MountEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFLLoc ;
+  rdfs:label "Proximity sensor 06 mount end" ;
+  skos:prefLabel "Sand table proximity sensor 06 mount end" ;
+.
+emech:SandTable_Prox06_MountEnd_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutDepth ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutWidth ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Proximity sensor 06 mount fixed restraint dimr" ;
+  skos:prefLabel "Sand table proximity sensor 06 mount fixed restraint dimr" ;
+.
+emech:SandTable_Prox06_MountEnd_FoundationMount-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Foundation_MountSurface ;
+  fonm:hasSrc emech:SandTable_Prox06_MountEnd ;
+  fonm:hasTo emech:SandTable_Prox06_MountEnd_To_FoundMount_FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_Prox06_MountEnd_To_FoundMount_FixedRestraintState ;
+  rdfs:label "Proximity sensor 06 mount end to foundation mount fixed connection" ;
+  skos:prefLabel "Sand table proximity sensor 06 mount end to foundation mount fixed connection" ;
+.
+emech:SandTable_Prox06_MountEnd_To_FoundMount_FixedRestraintState
+  rdf:type fonm:ContactRestraintState ;
+  fonm:hasDimr emech:SandTable_Prox06_MountEnd_FixedRestraint-Dimr ;
+  rdfs:label "Proximity sensor 06 to foundation mount connection" ;
+  skos:prefLabel "Sand table proximity sensor 06 to foundation mount connection" ;
+.
+emech:SandTable_Prox06_SensorEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFRLoc ;
+  rdfs:label "Proximity sensor 06 sensor end" ;
+  skos:prefLabel "Sand table proximity sensor 06 sensor end" ;
+.
+emech:SandTable_Prox07-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1597.5"^^xsd:float ;
+  qudt:float_Y "189"^^xsd:float ;
+  qudt:float_Z "175"^^xsd:float ;
+  rdfs:label "Proximity sensor 07 cartesian coordinates" ;
+  skos:prefLabel "Sand table proximity sensor 07 cartesian coordinates" ;
+.
+emech:SandTable_Prox07-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_Prox07-Cartesian3DCoordinates ;
+  rdfs:label "Proximity sensor 07 position" ;
+  skos:prefLabel "Sand table proximity sensor 07 position" ;
+.
+emech:SandTable_Prox07-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "89"^^xsd:float ;
+  ssf:size_Length "10"^^xsd:float ;
+  ssf:size_Width "10"^^xsd:float ;
+  rdfs:label "Proximity sensor 07 size" ;
+  skos:prefLabel "Sand table proximity sensor 07 size" ;
+.
+emech:SandTable_Prox07-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_ProximitySensor_7 ;
+  fonm:hasPVal emech:SandTable_Prox07-CartesianPosition ;
+  rdfs:label "Proximity sensor 07 position state" ;
+  skos:prefLabel "Sand table proximity sensor 07 position state" ;
+.
+emech:SandTable_Prox07-SizeState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_ProximitySensor_7 ;
+  fonm:hasPVal emech:SandTable_Prox07-CartesianSize ;
+  rdfs:label "Proximity sensor 07 size state" ;
+  skos:prefLabel "Sand table proximity sensor 07 size state" ;
+.
+emech:SandTable_Prox07_MountEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFLLoc ;
+  rdfs:label "Proximity sensor 07 mount end" ;
+  skos:prefLabel "Sand table proximity sensor 07 mount end" ;
+.
+emech:SandTable_Prox07_MountEnd_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutDepth ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutWidth ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Proximity sensor 07 mount fixed restraint dimr" ;
+  skos:prefLabel "Sand table proximity sensor 07 mount fixed restraint dimr" ;
+.
+emech:SandTable_Prox07_MountEnd_FoundationMount-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Foundation_MountSurface ;
+  fonm:hasSrc emech:SandTable_Prox07_MountEnd ;
+  fonm:hasTo emech:SandTable_Prox07_MountEnd_To_FoundMount_FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_Prox07_MountEnd_To_FoundMount_FixedRestraintState ;
+  rdfs:label "Proximity sensor 07 mount end to foundation mount fixed connection" ;
+  skos:prefLabel "Sand table proximity sensor 07 mount end to foundation mount fixed connection" ;
+.
+emech:SandTable_Prox07_MountEnd_To_FoundMount_FixedRestraintState
+  rdf:type fonm:ContactRestraintState ;
+  fonm:hasDimr emech:SandTable_Prox07_MountEnd_FixedRestraint-Dimr ;
+  rdfs:label "Proximity sensor 07 to foundation mount connection" ;
+  skos:prefLabel "Sand table proximity sensor 07 to foundation mount connection" ;
+.
+emech:SandTable_Prox07_SensorEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFRLoc ;
+  rdfs:label "Proximity sensor 07 sensor end" ;
+  skos:prefLabel "Sand table proximity sensor 07 sensor end" ;
+.
+emech:SandTable_Prox08-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1785"^^xsd:float ;
+  qudt:float_Y "189"^^xsd:float ;
+  qudt:float_Z "175"^^xsd:float ;
+  rdfs:label "Proximity sensor 08 cartesian coordinates" ;
+  skos:prefLabel "Sand table proximity sensor 08 cartesian coordinates" ;
+.
+emech:SandTable_Prox08-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_Prox08-Cartesian3DCoordinates ;
+  rdfs:label "Proximity sensor 08 position" ;
+  skos:prefLabel "Sand table proximity sensor 08 position" ;
+.
+emech:SandTable_Prox08-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "89"^^xsd:float ;
+  ssf:size_Length "10"^^xsd:float ;
+  ssf:size_Width "10"^^xsd:float ;
+  rdfs:label "Proximity sensor 08 size" ;
+  skos:prefLabel "Sand table proximity sensor 08 size" ;
+.
+emech:SandTable_Prox08-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_ProximitySensor_8 ;
+  fonm:hasPVal emech:SandTable_Prox08-CartesianPosition ;
+  rdfs:label "Proximity sensor 08 position state" ;
+  skos:prefLabel "Sand table proximity sensor 08 position state" ;
+.
+emech:SandTable_Prox08-SizeState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_ProximitySensor_8 ;
+  fonm:hasPVal emech:SandTable_Prox08-CartesianSize ;
+  rdfs:label "Proximity sensor 08 size state" ;
+  skos:prefLabel "Sand table proximity sensor 08 size state" ;
+.
+emech:SandTable_Prox08_MountEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFLLoc ;
+  rdfs:label "Proximity sensor 08 mount end" ;
+  skos:prefLabel "Sand table proximity sensor 08 mount end" ;
+.
+emech:SandTable_Prox08_MountEnd_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutDepth ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutWidth ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Proximity sensor 08 mount fixed restraint dimr" ;
+  skos:prefLabel "Sand table proximity sensor 08 mount fixed restraint dimr" ;
+.
+emech:SandTable_Prox08_MountEnd_FoundationMount-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Foundation_MountSurface ;
+  fonm:hasSrc emech:SandTable_Prox08_MountEnd ;
+  fonm:hasTo emech:SandTable_Prox08_MountEnd_To_FoundMount_FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_Prox08_MountEnd_To_FoundMount_FixedRestraintState ;
+  rdfs:label "Proximity sensor 8 mount end to foundation mount fixed connection" ;
+  skos:prefLabel "Sand table proximity sensor 8 mount end to foundation mount fixed connection" ;
+.
+emech:SandTable_Prox08_MountEnd_To_FoundMount_FixedRestraintState
+  rdf:type fonm:ContactRestraintState ;
+  fonm:hasDimr emech:SandTable_Prox08_MountEnd_FixedRestraint-Dimr ;
+  rdfs:label "Proximity sensor 08 to foundation mount connection" ;
+  skos:prefLabel "Sand table proximity sensor 08 to foundation mount connection" ;
+.
+emech:SandTable_Prox08_SensorEnd
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFRLoc ;
+  rdfs:label "Proximity sensor 08 sensor end" ;
+  skos:prefLabel "Sand table proximity sensor 08 sensor end" ;
+.
+emech:SandTable_ProximitySensor_1
+  rdf:type ssf:ProximitySensingDevice ;
+  fonm:hasRegion emech:SandTable_Prox01_MountEnd ;
+  fonm:hasRegion emech:SandTable_Prox01_SensorEnd ;
+  fonm:hasState emech:SandTable_Prox01-PositionState ;
+  fonm:hasState emech:SandTable_Prox01-SizeState ;
+  ssn:hasProperty quantity:Distance ;
+  ssn:hasValue emech:SandTable_ProximitySensor_1_Proximity-Value ;
+  rdfs:label "Proximity sensor 01" ;
+  skos:prefLabel "Sand table proximity sensor 01" ;
+.
+emech:SandTable_ProximitySensor_1_Proximity-Value
+  rdf:type ssf:ProximityValue ;
+  qudt:applicableUnit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:numericValue "3"^^dtype:numericUnion ;
+  rdfs:label "Proximity sensor 01 proximity" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue "3.0"^^xsd:float ;
+      owl:onProperty qudt:numericValue ;
+    ] ;
+  skos:prefLabel "Sand table proximity sensor 01 proximity" ;
+.
+emech:SandTable_ProximitySensor_2
+  rdf:type ssf:ProximitySensingDevice ;
+  fonm:hasRegion emech:SandTable_Prox02_MountEnd ;
+  fonm:hasRegion emech:SandTable_Prox02_SensorEnd ;
+  fonm:hasState emech:SandTable_Prox02-PositionState ;
+  fonm:hasState emech:SandTable_Prox02-SizeState ;
+  ssn:hasProperty quantity:Distance ;
+  ssn:hasValue emech:SandTable_ProximitySensor_2_Proximity-Value ;
+  rdfs:label "Proximity sensor 02" ;
+  skos:prefLabel "Sand table proximity sensor 02" ;
+.
+emech:SandTable_ProximitySensor_2_Proximity-Value
+  rdf:type ssf:ProximityValue ;
+  qudt:applicableUnit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:numericValue "3"^^dtype:numericUnion ;
+  rdfs:label "Proximity sensor 02 proximity" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue "3.0"^^xsd:float ;
+      owl:onProperty qudt:numericValue ;
+    ] ;
+  skos:prefLabel "Sand table proximity sensor 02 proximity" ;
+.
+emech:SandTable_ProximitySensor_3
+  rdf:type ssf:ProximitySensingDevice ;
+  fonm:hasRegion emech:SandTable_Prox03_MountEnd ;
+  fonm:hasRegion emech:SandTable_Prox03_SensorEnd ;
+  fonm:hasState emech:SandTable_Prox03-PositionState ;
+  fonm:hasState emech:SandTable_Prox03-SizeState ;
+  ssn:hasProperty quantity:Distance ;
+  ssn:hasValue emech:SandTable_ProximitySensor_3_Proximity-Value ;
+  rdfs:label "Proximity sensor 03" ;
+  skos:prefLabel "Sand table proximity sensor 03" ;
+.
+emech:SandTable_ProximitySensor_3_Proximity-Value
+  rdf:type ssf:ProximityValue ;
+  qudt:applicableUnit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:numericValue "3"^^dtype:numericUnion ;
+  rdfs:label "Proximity sensor 03 proximity" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue "3.0"^^xsd:float ;
+      owl:onProperty qudt:numericValue ;
+    ] ;
+  skos:prefLabel "Sand table proximity sensor 03 proximity" ;
+.
+emech:SandTable_ProximitySensor_4
+  rdf:type ssf:ProximitySensingDevice ;
+  fonm:hasRegion emech:SandTable_Prox04_MountEnd ;
+  fonm:hasRegion emech:SandTable_Prox04_SensorEnd ;
+  fonm:hasState emech:SandTable_Prox04-PositionState ;
+  fonm:hasState emech:SandTable_Prox04-SizeState ;
+  ssn:hasProperty quantity:Distance ;
+  ssn:hasValue emech:SandTable_ProximitySensor_4_Proximity-Value ;
+  rdfs:label "Proximity sensor 04" ;
+  skos:prefLabel "Sand table proximity sensor 04" ;
+.
+emech:SandTable_ProximitySensor_4_Proximity-Value
+  rdf:type ssf:ProximityValue ;
+  qudt:applicableUnit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:numericValue "3"^^dtype:numericUnion ;
+  rdfs:label "Proximity sensor 04 proximity" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue "3.0"^^xsd:float ;
+      owl:onProperty qudt:numericValue ;
+    ] ;
+  skos:prefLabel "Sand table proximity sensor 04 proximity" ;
+.
+emech:SandTable_ProximitySensor_5
+  rdf:type ssf:ProximitySensingDevice ;
+  fonm:hasRegion emech:SandTable_Prox05_MountEnd ;
+  fonm:hasRegion emech:SandTable_Prox05_SensorEnd ;
+  fonm:hasState emech:SandTable_Prox05-PositionState ;
+  fonm:hasState emech:SandTable_Prox05-SizeState ;
+  ssn:hasProperty quantity:Distance ;
+  ssn:hasValue emech:SandTable_ProximitySensor_5_Proximity-Value ;
+  rdfs:label "Proximity sensor 05" ;
+  skos:prefLabel "Sand table proximity sensor 05" ;
+.
+emech:SandTable_ProximitySensor_5_Proximity-Value
+  rdf:type ssf:ProximityValue ;
+  qudt:applicableUnit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:numericValue "3"^^dtype:numericUnion ;
+  rdfs:label "Proximity sensor 05 proximity" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue "3.0"^^xsd:float ;
+      owl:onProperty qudt:numericValue ;
+    ] ;
+  skos:prefLabel "Sand table proximity sensor 05 proximity" ;
+.
+emech:SandTable_ProximitySensor_6
+  rdf:type ssf:ProximitySensingDevice ;
+  fonm:hasRegion emech:SandTable_Prox06_MountEnd ;
+  fonm:hasRegion emech:SandTable_Prox06_SensorEnd ;
+  fonm:hasState emech:SandTable_Prox06-PositionState ;
+  fonm:hasState emech:SandTable_Prox06-SizeState ;
+  ssn:hasProperty quantity:Distance ;
+  ssn:hasValue emech:SandTable_ProximitySensor_6_Proximity-Value ;
+  rdfs:label "Proximity sensor 06" ;
+  skos:prefLabel "Sand table proximity sensor 06" ;
+.
+emech:SandTable_ProximitySensor_6_Proximity-Value
+  rdf:type ssf:ProximityValue ;
+  qudt:applicableUnit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:numericValue "3"^^dtype:numericUnion ;
+  rdfs:label "Proximity sensor 06 proximity" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue "3.0"^^xsd:float ;
+      owl:onProperty qudt:numericValue ;
+    ] ;
+  skos:prefLabel "Sand table proximity sensor 06 proximity" ;
+.
+emech:SandTable_ProximitySensor_7
+  rdf:type ssf:ProximitySensingDevice ;
+  fonm:hasRegion emech:SandTable_Prox07_MountEnd ;
+  fonm:hasRegion emech:SandTable_Prox07_SensorEnd ;
+  fonm:hasState emech:SandTable_Prox07-PositionState ;
+  fonm:hasState emech:SandTable_Prox07-SizeState ;
+  ssn:hasProperty quantity:Distance ;
+  ssn:hasValue emech:SandTable_ProximitySensor_7_Proximity-Value ;
+  rdfs:label "Proximity sensor 07" ;
+  skos:prefLabel "Sand table proximity sensor 07" ;
+.
+emech:SandTable_ProximitySensor_7_Proximity-Value
+  rdf:type ssf:ProximityValue ;
+  qudt:applicableUnit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:numericValue "3"^^dtype:numericUnion ;
+  rdfs:label "Proximity sensor 07 proximity" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue "3.0"^^xsd:float ;
+      owl:onProperty qudt:numericValue ;
+    ] ;
+  skos:prefLabel "Sand table proximity sensor 07 proximity" ;
+.
+emech:SandTable_ProximitySensor_8
+  rdf:type ssf:ProximitySensingDevice ;
+  fonm:hasRegion emech:SandTable_Prox08_MountEnd ;
+  fonm:hasRegion emech:SandTable_Prox08_SensorEnd ;
+  fonm:hasState emech:SandTable_Prox08-PositionState ;
+  fonm:hasState emech:SandTable_Prox08-SizeState ;
+  ssn:hasProperty quantity:Distance ;
+  ssn:hasValue emech:SandTable_ProximitySensor_8_Proximity-Value ;
+  rdfs:label "Proximity sensor 08" ;
+  skos:prefLabel "Sand table proximity sensor 08" ;
+.
+emech:SandTable_ProximitySensor_8_Proximity-Value
+  rdf:type ssf:ProximityValue ;
+  qudt:applicableUnit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:numericValue "3"^^dtype:numericUnion ;
+  rdfs:label "Proximity sensor 08 proximity" ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue "3.0"^^xsd:float ;
+      owl:onProperty qudt:numericValue ;
+    ] ;
+  skos:prefLabel "Sand table proximity sensor 08 proximity" ;
+.
+emech:SandTable_RestrainProcess_Fit_M01GB01
+  rdf:type fonm:RestrainProcess ;
+  rdfs:label "Restrain process Fit M01GB01" ;
+  skos:prefLabel "Restrain process Fit M01GB01" ;
+.
+emech:SandTable_RestrainProcess_Fit_M02GB02
+  rdf:type fonm:RestrainProcess ;
+  rdfs:label "Restrain process Fit M02GB02" ;
+  skos:prefLabel "Restrain process Fit M02GB02" ;
+.
+emech:SandTable_Skid
+  rdf:type ssf:ConveyorBelt ;
+  fonm:hasRegion emech:SandTable_Skid_Drive_Edge ;
+  fonm:hasRegion emech:SandTable_Skid_Follower_Edge ;
+  fonm:hasRegion emech:SandTable_Skid_Mounting_Slot ;
+  fonm:hasRegion emech:SandTable_Skid_Rail_Slot ;
+  fonm:hasState emech:SandTable_Skid-PositionState ;
+  fonm:hasState emech:SandTable_Skid-SizeState ;
+  rdfs:label "Skid" ;
+  skos:prefLabel "Sand table skid" ;
+.
+emech:SandTable_Skid-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1000"^^xsd:float ;
+  qudt:float_Y "218"^^xsd:float ;
+  qudt:float_Z "220"^^xsd:float ;
+  rdfs:label "Skid cartesian coordinates" ;
+  skos:prefLabel "Sand table skid cartesian coordinates" ;
+.
+emech:SandTable_Skid-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_Skid-Cartesian3DCoordinates ;
+  rdfs:label "Skid position" ;
+  skos:prefLabel "Sand table skid position" ;
+.
+emech:SandTable_Skid-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "30"^^xsd:float ;
+  ssf:size_Length "750"^^xsd:float ;
+  ssf:size_Width "30"^^xsd:float ;
+  rdfs:label "Skid size" ;
+  skos:prefLabel "Sand table skid size" ;
+.
+emech:SandTable_Skid-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_Skid ;
+  fonm:hasPVal emech:SandTable_Skid-CartesianPosition ;
+  rdfs:label "Skid position state" ;
+  skos:prefLabel "Sand table skid position state" ;
+.
+emech:SandTable_Skid-SizeState
+  rdf:type fonm:SizeState ;
+  fonm:hasObject emech:SandTable_Skid ;
+  fonm:hasPVal emech:SandTable_Skid-CartesianSize ;
+  rdfs:label "Skid size state" ;
+  skos:prefLabel "Sand table skid size state" ;
+.
+emech:SandTable_SkidRailFoundation_LowerMount_To_Foundation_MountSurface-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Foundation_MountSurface ;
+  fonm:hasSrc emech:SandTable_Skid_Table_Foundation_LowerMountSurface ;
+  fonm:hasTo emech:SandTable_SkidRailFoundation_LowerMount_To_Foundation_MountSurface_FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_SkidRailFoundation_LowerMount_To_Foundation_MountSurface_FixedRestraintState ;
+  rdfs:label "Skid rail to foundation surface fixed connection" ;
+  skos:prefLabel "Sand table skid rail to foundation surface fixed connection" ;
+.
+emech:SandTable_SkidRailFoundation_LowerMount_To_Foundation_MountSurface_FixedRestraintState
+  rdf:type fonm:FixedRestraintState ;
+  fonm:hasDimr emech:SandTable_SkidRailFoundation_LowerSurface_FixedRestraint-Dimr ;
+  rdfs:label "Skid rail foundation lower mount fixed connection" ;
+  skos:prefLabel "Sand table skid rail foundation lower mount fixed connection" ;
+.
+emech:SandTable_SkidRailFoundation_LowerSurface_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutDepth ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutWidth ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Skid rail foundation mount fixed restraint dimr" ;
+  skos:prefLabel "Sand table skid rail foundation mount fixed restraint dimr" ;
+.
+emech:SandTable_SkidRailMount_SkidRailFoundation-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Skid_Rail_Foundation_Upper_Mount_Surface ;
+  fonm:hasSrc emech:SandTable_Skid_Rail_Mounting_Surface ;
+  fonm:hasTo emech:SandTable_SkidRail_Mount_To_SkidRailFoundation_UpperMount_FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_SkidRail_Mount_To_SkidRailFoundation_UpperMount_FixedRestraintState ;
+  rdfs:label "Skid rail to skid rail foundation surface fixed connection" ;
+  skos:prefLabel "Sand table skid rail to skid rail foundation surface fixed connection" ;
+.
+emech:SandTable_SkidRailSlot_SkidRailAlignSlot_FittedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutDepth ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutWidth ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Skid slot fitted restraint dimr" ;
+  skos:prefLabel "Sand table skid slot fitted restraint dimr" ;
+.
+emech:SandTable_SkidRail_Mount_SkidRailFoundation_Mount_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutDepth ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutWidth ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Skid rail mount fixed restraint dimr" ;
+  skos:prefLabel "Sand table skid rail mount fixed restraint dimr" ;
+.
+emech:SandTable_SkidRail_Mount_To_SkidRailFoundation_UpperMount_FixedRestraintState
+  rdf:type fonm:FixedRestraintState ;
+  fonm:hasDimr emech:SandTable_SkidRail_Mount_SkidRailFoundation_Mount_FixedRestraint-Dimr ;
+  rdfs:label "Sand table skid rail mount 1 to foundation surface fixed connection" ;
+  skos:prefLabel "Sand table skid rail mount 1 to foundation surface fixed connection" ;
+.
+emech:SandTable_SkidSlot_SkidRailAlignmentSlot-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Skid_Rail_Alignment_Slot ;
+  fonm:hasSrc emech:SandTable_Skid_Rail_Slot ;
+  fonm:hasTo emech:SandTable_Skid_RailSlot_To_Rail_AlignmentSlot_FittedRestraintState ;
+  fonm:resultsIn emech:SandTable_Skid_RailSlot_To_Rail_AlignmentSlot_FittedRestraintState ;
+  rdfs:label "Sand table skid slot to rail slot fitted connection" ;
+  skos:prefLabel "Sand table skid slot to rail slot fitted connection" ;
+.
+emech:SandTable_Skid_Drive_Edge
+  rdf:type fonm:Surface ;
+  rdfs:label "Sand table skid drive edge" ;
+  skos:prefLabel "Sand table skid drive edge" ;
+.
+emech:SandTable_Skid_Follower_Edge
+  rdf:type fonm:Surface ;
+  rdfs:label "Sand table skid follower edge" ;
+  skos:prefLabel "Sand table skid follower edge" ;
+.
+emech:SandTable_Skid_Mounting_Slot
+  rdf:type fonm:Slot ;
+  rdfs:label "Skid mounting slot" ;
+  skos:prefLabel "Sand table skid mounting slot" ;
+.
+emech:SandTable_Skid_Rail
+  rdf:type ssf:MechanicalDevice ;
+  fonm:hasRegion emech:SandTable_Skid_Rail_Alignment_Slot ;
+  fonm:hasRegion emech:SandTable_Skid_Rail_Mounting_Surface ;
+  fonm:hasState emech:SandTable_Skid_Rail-PositionState ;
+  fonm:hasState emech:SandTable_Skid_Rail-SizeState ;
+  rdfs:label "Skid rail" ;
+  skos:prefLabel "Sand table skid rail" ;
+.
+emech:SandTable_Skid_Rail-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1000"^^xsd:float ;
+  qudt:float_Y "219"^^xsd:float ;
+  qudt:float_Z "175"^^xsd:float ;
+  rdfs:comment "This is the CG position of the skid rail" ;
+  rdfs:label "Skid rail cartesian coordinates" ;
+  skos:prefLabel "Sand table skid rail cartesian coordinates" ;
+.
+emech:SandTable_Skid_Rail-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_Skid_Rail-Cartesian3DCoordinates ;
+  rdfs:label "Skid rail position" ;
+  skos:prefLabel "Sand table skid rail position" ;
+.
+emech:SandTable_Skid_Rail-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "30"^^xsd:float ;
+  ssf:size_Length "1810"^^xsd:float ;
+  ssf:size_Width "30"^^xsd:float ;
+  rdfs:label "Skid rail size" ;
+  skos:prefLabel "Sand table skid rail size" ;
+.
+emech:SandTable_Skid_Rail-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_Skid_Rail ;
+  fonm:hasPVal emech:SandTable_Skid_Rail-CartesianPosition ;
+  rdfs:label "Skid rail position state" ;
+  skos:prefLabel "Sand table skid rail position state" ;
+.
+emech:SandTable_Skid_Rail-SizeState
+  rdf:type fonm:SizeState ;
+  fonm:hasObject emech:SandTable_Skid_Rail ;
+  fonm:hasPVal emech:SandTable_Skid_Rail-CartesianSize ;
+  rdfs:label "Skid rail size state" ;
+  skos:prefLabel "Sand table skid rail size state" ;
+.
+emech:SandTable_Skid_RailSlot_To_Rail_AlignmentSlot_FittedRestraintState
+  rdf:type fonm:ContactRestraintState ;
+  fonm:hasDimr emech:SandTable_SkidRailSlot_SkidRailAlignSlot_FittedRestraint-Dimr ;
+  rdfs:label "Skid slot to skid rail fitted connection" ;
+  skos:prefLabel "Sand table skid slot to skid rail fitted connection" ;
+.
+emech:SandTable_Skid_Rail_Alignment_Slot
+  rdf:type fonm:Slot ;
+  rdfs:label "Skid rail alignment slot" ;
+  skos:prefLabel "Sand table skid rail alignment slot" ;
+.
+emech:SandTable_Skid_Rail_Foundation
+  rdf:type ssf:MechanicalDevice ;
+  fonm:hasRegion emech:SandTable_Skid_Rail_Foundation_Lower_Mount_Surface ;
+  fonm:hasRegion emech:SandTable_Skid_Rail_Foundation_Upper_Mount_Surface ;
+  fonm:hasState emech:SandTable_Skid_Rail_Foundation-PositionState ;
+  fonm:hasState emech:SandTable_Skid_Rail_Foundation-SizeState ;
+  rdfs:label "Skid rail foundation" ;
+  skos:prefLabel "Sand table skid rail foundation" ;
+.
+emech:SandTable_Skid_Rail_Foundation-Cartesian3DCoordinates
+  rdf:type qudt:Coordinates-3D-SinglePrecision ;
+  qudt:float_X "1000"^^xsd:float ;
+  qudt:float_Y "219"^^xsd:float ;
+  qudt:float_Z "145"^^xsd:float ;
+  rdfs:comment "This is the CG position of the skid rail foundation" ;
+  rdfs:label "Skid rail foundation cartesian coordinates" ;
+  skos:prefLabel "Sand table skid rail foundation cartesian coordinates" ;
+.
+emech:SandTable_Skid_Rail_Foundation-CartesianPosition
+  rdf:type ssf:CartesianPosition ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:hasCartesianCoordinates emech:SandTable_Skid_Rail_Foundation-Cartesian3DCoordinates ;
+  rdfs:label "Skid rail foundation position" ;
+  skos:prefLabel "Sand table skid rail foundation position" ;
+.
+emech:SandTable_Skid_Rail_Foundation-CartesianSize
+  rdf:type ssf:CartesianSize ;
+  qudt:unit <http://qudt.org/vocab/unit#MilliM> ;
+  ssf:size_HeightDepth "30"^^xsd:float ;
+  ssf:size_Length "2000"^^xsd:float ;
+  ssf:size_Width "30"^^xsd:float ;
+  rdfs:label "Skid rail foundation size" ;
+  skos:prefLabel "Sand table skid rail foundation size" ;
+.
+emech:SandTable_Skid_Rail_Foundation-PositionState
+  rdf:type fonm:PositionState ;
+  fonm:hasObject emech:SandTable_Skid_Rail_Foundation ;
+  fonm:hasPVal emech:SandTable_Skid_Rail_Foundation-CartesianPosition ;
+  rdfs:label "Skid rail foundation position state" ;
+  skos:prefLabel "Sand table skid rail foundation position state" ;
+.
+emech:SandTable_Skid_Rail_Foundation-SizeState
+  rdf:type fonm:SizeState ;
+  fonm:hasObject emech:SandTable_Skid_Rail_Foundation ;
+  fonm:hasPVal emech:SandTable_Skid_Rail_Foundation-CartesianSize ;
+  rdfs:label "Skid rail foundation size state" ;
+  skos:prefLabel "Sand table skid rail foundation size state" ;
+.
+emech:SandTable_Skid_Rail_Foundation_Lower_Mount_Surface
+  rdf:type em:MountingSurface ;
+  rdfs:label "Skid rail foundation lower mounting surface" ;
+  skos:prefLabel "Sand table skid rail foundation lower mounting surface" ;
+.
+emech:SandTable_Skid_Rail_Foundation_Upper_Mount_Surface
+  rdf:type em:MountingSurface ;
+  rdfs:label "Skid rail foundation upper mounting surface" ;
+  skos:prefLabel "Sand table skid rail foundation mounting surface" ;
+.
+emech:SandTable_Skid_Rail_Mount_To_Foundation_Mount-Restrain
+  rdf:type fonm:RestrainProcess ;
+  fonm:hasDst emech:SandTable_Foundation_MountSurface ;
+  fonm:hasSrc emech:SandTable_Skid_Rail_Foundation_Lower_Mount_Surface ;
+  fonm:hasTo emech:SandTable_Skid_Rail_Mount_To_Foundation_Mount_FixedRestraintState ;
+  fonm:resultsIn emech:SandTable_Skid_Rail_Mount_To_Foundation_Mount_FixedRestraintState ;
+  rdfs:label "Skid rail mount to foundation mount fixed connection" ;
+  skos:prefLabel "Sand table skid rail mount to foundation mount fixed connection" ;
+.
+emech:SandTable_Skid_Rail_Mount_To_Foundation_Mount_FixedRestraint-Dimr
+  rdf:type fonm:DimDir ;
+  fonm:hasDimension fonm:AboutDepth ;
+  fonm:hasDimension fonm:AboutLength ;
+  fonm:hasDimension fonm:AboutWidth ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Skid rail mount to foundation mount fixed restraint dimr" ;
+  skos:prefLabel "Sand table skid rail mount to foundation mount fixed restraint dimr" ;
+.
+emech:SandTable_Skid_Rail_Mount_To_Foundation_Mount_FixedRestraintState
+  rdf:type fonm:FixedRestraintState ;
+  fonm:hasDimr emech:SandTable_Skid_Rail_Mount_To_Foundation_Mount_FixedRestraint-Dimr ;
+  rdfs:label "Skid rail mount to foundation mount connection" ;
+  skos:prefLabel "Sand table skid rail mount to foundation mount connection" ;
+.
+emech:SandTable_Skid_Rail_Mounting_Surface
+  rdf:type em:MountingSurface ;
+  rdfs:label "Skid rail mounting surface" ;
+  skos:prefLabel "Sand table skid rail mounting surface" ;
+.
+emech:SandTable_Skid_Rail_Slot
+  rdf:type fonm:Slot ;
+  rdfs:label "Skid rail slot" ;
+  skos:prefLabel "Sand table skid rail slot" ;
+.

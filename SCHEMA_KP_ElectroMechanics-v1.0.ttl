@@ -1,0 +1,137 @@
+# baseURI: http://siemens.com/schemas/kps/electromech
+# imports: http://fonm.org/1.0/schema/function
+# imports: http://fonm.org/1.0/schema/physobj
+# imports: http://siemens.com/schemas/kps/domain
+# imports: http://siemens.com/schemas/ssf
+# prefix: em
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix em: <http://siemens.com/schemas/kps/electromech#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix fonm: <http://fonm.org/schema/fonm#> .
+@prefix kpd: <http://siemens.com/schemas/kps/domain#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantity: <http://qudt.org/vocab/quantity#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix ssf: <http://siemens.com/schemas/ssf#> .
+@prefix ssn: <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://siemens.com/schemas/kps/electromech>
+  rdf:type owl:Ontology ;
+  dc:contributor "Jack Hodges" ;
+  dc:creator "Jack Hodges" ;
+  dc:description "Siemens ElectroMechanics Ontology" ;
+  dc:subject "Siemens ElectroMechanical Models" ;
+  dc:title "The Siemens ElectroMechanical Ontology" ;
+  owl:imports <http://fonm.org/1.0/schema/function> ;
+  owl:imports <http://fonm.org/1.0/schema/physobj> ;
+  owl:imports <http://siemens.com/schemas/kps/domain> ;
+  owl:imports <http://siemens.com/schemas/ssf> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+em:AngularVelocityState
+  rdf:type owl:Class ;
+  rdfs:label "Angular velocity state" ;
+  rdfs:subClassOf ssf:SpeedState ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:AngularVelocity ;
+      owl:onProperty fonm:hasProp ;
+    ] ;
+  skos:prefLabel "Angular velocity state" ;
+.
+em:Conveyor
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Conveyor" ;
+  rdfs:subClassOf ssf:MechanicalDevice ;
+  skos:prefLabel "Conveyor" ;
+.
+em:ElectricMotor
+  rdf:type owl:Class ;
+  rdfs:label "Electric motor" ;
+  rdfs:subClassOf ssf:RotationalMotionDevice ;
+  skos:prefLabel "Electric motor" ;
+.
+em:ElectricalPower
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Electrical power" ;
+  rdfs:subClassOf ssf:ElectricalDevice ;
+  skos:prefLabel "Electrical power" ;
+.
+em:Foundation
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Foundation" ;
+  rdfs:subClassOf ssf:MechanicalDevice ;
+  skos:prefLabel "Foundation" ;
+.
+em:Gearbox
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Gearbox" ;
+  rdfs:subClassOf ssf:MechanicalDevice ;
+  skos:prefLabel "Gearbox" ;
+.
+em:LinearVelocityState
+  rdf:type owl:Class ;
+  rdfs:label "Linear velocity state" ;
+  rdfs:subClassOf ssf:SpeedState ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue quantity:LinearVelocity ;
+      owl:onProperty fonm:hasProp ;
+    ] ;
+  skos:prefLabel "Linear velocity state" ;
+.
+em:MP_AxleBearing
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "MP Axle bearing" ;
+  rdfs:subClassOf fonm:MachinePrimitive ;
+  skos:prefLabel "MP Axle bearing" ;
+.
+em:MountingSurface
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Mounting surface" ;
+  rdfs:subClassOf fonm:Surface ;
+  skos:prefLabel "Mounting surface" ;
+.
+em:ShaftFunction
+  rdf:type owl:Class ;
+  rdfs:comment "Shaft rotation can be produced by any torque force and is transmitted along its length (about its center) to the shaft surface." ;
+  rdfs:label "Shaft rotational function" ;
+  rdfs:subClassOf ssf:SpinFunction ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:enabledBy ;
+      owl:someValuesFrom fonm:TorqueState ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:terminatedBy ;
+      owl:someValuesFrom fonm:TorqueState ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:terminatedBy ;
+      owl:someValuesFrom em:AngularVelocityState ;
+    ] ;
+  skos:prefLabel "Shaft rotational function" ;
+.
+ssf:FunctionalDevice
+  rdfs:subClassOf fonm:Phys-Obj ;
+.

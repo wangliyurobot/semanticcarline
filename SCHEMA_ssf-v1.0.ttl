@@ -1,0 +1,2372 @@
+# baseURI: http://siemens.com/schemas/ssf
+# imports: http://fonm.org/1.0/schema/fonm
+# imports: http://fonm.org/1.0/schema/function
+# imports: http://fonm.org/1.0/schema/physobj
+# imports: http://purl.oclc.org/NET/ssnx/ssn
+# imports: http://qudt.org/1.2/collection/quantities
+# imports: http://qudt.org/1.2/collection/units
+# imports: http://qudt.org/1.2/transforms
+# imports: http://qudt.org/1.2/vocab/datatype
+# imports: http://qudt.org/1.2/vocab/unicode
+# imports: http://siemens.com/schemas/proglang
+# imports: http://www.w3.org/2006/time
+# imports: http://www.w3.org/ns/org
+# prefix: ssf
+
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ext: <http://purl.obolibrary.org/obo/uberon/ext.owl#> .
+@prefix fonm: <http://fonm.org/1.0/schema/fonm#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ssf: <http://siemens.com/schemas/ssf#> .
+@prefix ssn: <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix symp: <http://purl.obolibrary.org/obo/symp.owl#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xhtm: <http://www.w3.org/1999/xhtml> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://fonm.org/schema/fonm#Concept>
+  rdf:type owl:Class ;
+  rdfs:label "Concept" ;
+  rdfs:subClassOf <http://www.loa-cnr.it/ontologies/DUL.owl#Entity> ;
+  skos:prefLabel "Concept" ;
+.
+<http://fonm.org/schema/fonm#degreesOfFreedom>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "degrees of freedom" ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "degrees of freedom" ;
+.
+<http://fonm.org/schema/fonm#joints>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "joints" ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "joints" ;
+.
+ssn:Input
+  rdfs:subClassOf owl:Thing ;
+.
+ssn:Output
+  rdfs:subClassOf owl:Thing ;
+.
+ssn:Property
+  rdfs:subClassOf qudt:QuantityKind ;
+.
+ssn:hasSubSystem
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain ssf:WearableSensingDevice ;
+  rdfs:subPropertyOf ssn:hasSubSystem ;
+.
+<http://purl.org/sig/fma/Anatomical_entity>
+  rdf:type owl:Class ;
+  rdfs:label "Anatomical entity" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "Anatomical entity" ;
+.
+<http://purl.org/sig/fma/Attribute_entity>
+  rdf:type owl:Class ;
+  rdfs:label "Attribute entity" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "Attribute entity" ;
+.
+<http://purl.org/sig/fma/Deprecated_term>
+  rdf:type owl:Class ;
+  rdfs:label "Deprecated term" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "Deprecated term" ;
+.
+<http://purl.org/sig/fma/Dimensional_entity>
+  rdf:type owl:Class ;
+  rdfs:label "Dimensional entity" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "Dimensional entity" ;
+.
+<http://purl.org/sig/fma/Spatial_association_value>
+  rdf:type owl:Class ;
+  rdfs:label "Spatial association value" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "Spatial association value" ;
+.
+qudt:Figure
+  rdfs:subClassOf owl:Thing ;
+.
+qudt:Query
+  rdfs:subClassOf owl:Thing ;
+.
+<http://qudt.org/unicode/ChemistrySymbol>
+  rdfs:subClassOf rdfs:Resource ;
+.
+<http://qudt.org/unicode/GeometrySymbol>
+  rdfs:subClassOf rdfs:Resource ;
+.
+<http://qudt.org/unicode/GreekLetter>
+  rdfs:subClassOf rdfs:Resource ;
+.
+<http://siemens.com/schemas/ssf>
+  rdf:type owl:Ontology ;
+  dc:contributor "Jack Hodges" ;
+  dc:creator "Jack Hodges" ;
+  dc:description "Siemens Semantic Sensor Framework" ;
+  dc:subject "SSF" ;
+  dc:title "The Siemens Semantic Sensor Framework Ontology" ;
+  owl:imports <http://fonm.org/1.0/schema/fonm> ;
+  owl:imports <http://fonm.org/1.0/schema/function> ;
+  owl:imports <http://fonm.org/1.0/schema/physobj> ;
+  owl:imports <http://purl.oclc.org/NET/ssnx/ssn> ;
+  owl:imports <http://qudt.org/1.2/collection/quantities> ;
+  owl:imports <http://qudt.org/1.2/collection/units> ;
+  owl:imports <http://qudt.org/1.2/transforms> ;
+  owl:imports <http://qudt.org/1.2/vocab/datatype> ;
+  owl:imports <http://qudt.org/1.2/vocab/unicode> ;
+  owl:imports <http://siemens.com/schemas/proglang> ;
+  owl:imports <http://www.w3.org/2006/time> ;
+  owl:imports <http://www.w3.org/ns/org> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+ssf:AForceValue
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "AForce value" ;
+  rdfs:subClassOf ssf:QuantityValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue <http://qudt.org/vocab/quantity#Force> ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+  skos:prefLabel "AForce value" ;
+.
+ssf:AccelerationSensingDevice
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Acceleration sensing device" ;
+  rdfs:subClassOf ssf:SensingDevice ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue <http://qudt.org/vocab/quantity#Acceleration> ;
+      owl:onProperty ssn:observes ;
+    ] ;
+  skos:prefLabel "Acceleration sensing device" ;
+.
+ssf:Adapter
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Adapter" ;
+  rdfs:subClassOf ssf:Connector ;
+  skos:prefLabel "Adapter" ;
+.
+ssf:ArticulatingDevice
+  rdf:type owl:Class ;
+  rdfs:label "Articulating device" ;
+  rdfs:subClassOf ssf:MixedDOFMotionDevice ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty ssf:deviceFunction ;
+      owl:someValuesFrom ssf:MoveFunction ;
+    ] ;
+  skos:prefLabel "Articulating device" ;
+.
+ssf:BeltTranslationalMotionDevice
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Belt translational motion device" ;
+  rdfs:subClassOf ssf:TranslationalMotionMechanicalDevice ;
+  skos:prefLabel "Belt translational motion device" ;
+.
+ssf:BinaryType
+  rdf:type owl:Class ;
+  rdfs:label "Binary Type" ;
+  rdfs:subClassOf <http://fonm.org/schema/fonm#EnumeratedValue> ;
+  skos:prefLabel "Binary Type" ;
+.
+ssf:BladeFunction
+  rdf:type owl:Class ;
+  rdfs:label "Blade function" ;
+  rdfs:subClassOf ssf:InclinedPlaneFunction ;
+  skos:prefLabel "Blade function" ;
+.
+ssf:CartesianContainment
+  rdf:type owl:Class ;
+  rdfs:comment "This will be for containment in one or more of the cartesian axes." ;
+  rdfs:label "Cartesian containment" ;
+  rdfs:subClassOf ssf:ContainmentFunction ;
+  skos:prefLabel "Cartesian containment" ;
+.
+ssf:CartesianSize
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Cartesian size value" ;
+  rdfs:subClassOf ssf:SizeValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:size_HeightDepth ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:size_Length ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:size_Width ;
+    ] ;
+  skos:prefLabel "Cartesian size value" ;
+.
+ssf:CartesianSizes
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Cartesian sizes" ;
+  rdfs:subClassOf qudt:Three-Tuple ;
+  rdfs:subClassOf ssf:Sizes ;
+  skos:prefLabel "Cartesian sizes" ;
+.
+ssf:ColdState
+  rdf:type owl:Class ;
+  rdfs:comment "Cold is a relative term for a particular material. As a discrete value on a discrete range, it would be MID_LEFT (of NOMINAL)." ;
+  rdfs:label "Cold state" ;
+  rdfs:subClassOf ssf:TemperatureState ;
+  skos:prefLabel "Cold state" ;
+.
+ssf:Company
+  rdf:type owl:Class ;
+  rdfs:label "Company" ;
+  rdfs:subClassOf <http://www.loa-cnr.it/ontologies/DUL.owl#Organization> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:companyName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:mediaSite ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:companySite ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:hasProduct ;
+    ] ;
+  skos:prefLabel "Company" ;
+.
+ssf:ConnectFunction
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Connect function" ;
+  rdfs:subClassOf <http://fonm.org/schema/fonm#MechFunction> ;
+  skos:prefLabel "Connect function" ;
+.
+ssf:Connector
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Connector" ;
+  rdfs:subClassOf ssf:MechanicalDevice ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:ConnectFunction ;
+      owl:onProperty ssf:deviceFunction ;
+    ] ;
+  skos:prefLabel "Connector" ;
+.
+ssf:Container
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Container" ;
+  rdfs:subClassOf ssf:MechanicalDevice ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:ContainmentFunction ;
+      owl:onProperty ssf:deviceFunction ;
+    ] ;
+  skos:prefLabel "Container" ;
+.
+ssf:ContainmentFunction
+  rdf:type owl:Class ;
+  rdfs:label "Containment function" ;
+  rdfs:subClassOf <http://fonm.org/schema/fonm#MechFunction> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:RestraintGoal ;
+      owl:onProperty ssf:servesPurpose ;
+    ] ;
+  skos:prefLabel "Containment function" ;
+.
+ssf:ConveyorBelt
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Conveyor belt" ;
+  rdfs:subClassOf ssf:BeltTranslationalMotionDevice ;
+  skos:prefLabel "Conveyor belt" ;
+.
+ssf:CoolGoal
+  rdf:type owl:Class ;
+  rdfs:label "Cool goal" ;
+  rdfs:subClassOf ssf:TemperatureGoal ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty <http://fonm.org/schema/fonm#desiredState> ;
+      owl:someValuesFrom ssf:ColdState ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty <http://fonm.org/schema/fonm#desiredState> ;
+      owl:someValuesFrom ssf:CoolState ;
+    ] ;
+  skos:prefLabel "Cool goal" ;
+.
+ssf:CoolState
+  rdf:type owl:Class ;
+  rdfs:comment "Cool is a relative term for a particular material. As a discrete value on a discrete range, it would be NEAR_LEFT (of NOMINAL)." ;
+  rdfs:label "Cool state" ;
+  rdfs:subClassOf ssf:TemperatureState ;
+  skos:prefLabel "Cool state" ;
+.
+ssf:Coupling
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Coupling" ;
+  rdfs:subClassOf ssf:Connector ;
+  skos:prefLabel "Coupling" ;
+.
+ssf:DOFRotationFunction
+  rdf:type owl:Class ;
+  rdfs:comment "Represents rotational motion in one degree of freedom (DOF) but both directions. Otherwise it would be spin." ;
+  rdfs:label "DOF Rotation function" ;
+  rdfs:subClassOf ssf:RotationalMotionFunction ;
+  skos:prefLabel "DOF Rotation function" ;
+.
+ssf:Data
+  rdf:type owl:Class ;
+  rdfs:label "Data" ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:dataType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:propertyType ;
+    ] ;
+  skos:prefLabel "Data" ;
+.
+ssf:Detected
+  rdf:type ssf:DetectionType ;
+  qudt:literal "1" ;
+  rdfs:label "Detected" ;
+  skos:prefLabel "Detected" ;
+.
+ssf:DetectionType
+  rdf:type owl:Class ;
+  rdfs:label "Detection type" ;
+  rdfs:subClassOf ssf:BinaryType ;
+  owl:oneOf (
+      ssf:NotDetected
+      ssf:Detected
+    ) ;
+  skos:prefLabel "Detection type" ;
+.
+ssf:DryGoal
+  rdf:type owl:Class ;
+  rdfs:label "Dry goal" ;
+  rdfs:subClassOf ssf:MoistureGoal ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:DryState ;
+      owl:onProperty <http://fonm.org/schema/fonm#desiredState> ;
+    ] ;
+  skos:prefLabel "Dry goal" ;
+.
+ssf:DryState
+  rdf:type owl:Class ;
+  rdfs:label "Dry state" ;
+  rdfs:subClassOf ssf:MoistureState ;
+  skos:prefLabel "Dry state" ;
+.
+ssf:DryingFunction
+  rdf:type owl:Class ;
+  rdfs:label "Drying function" ;
+  rdfs:subClassOf ssf:ElectricalFunction ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:DryGoal ;
+      owl:onProperty ssf:servesPurpose ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:DryState ;
+      owl:onProperty <http://fonm.org/schema/fonm#terminatedBy> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:WetState ;
+      owl:onProperty <http://fonm.org/schema/fonm#initiatedBy> ;
+    ] ;
+  skos:prefLabel "Drying function" ;
+.
+ssf:ElectricalDevice
+  rdf:type owl:Class ;
+  rdfs:label "Electrical device" ;
+  rdfs:subClassOf ssf:FunctionalDevice ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty ssf:deviceFunction ;
+      owl:someValuesFrom ssf:ElectricalFunction ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty ssf:deviceFunction ;
+      owl:someValuesFrom ssf:ElectroMechanicalFunction ;
+    ] ;
+  skos:prefLabel "Electrical device" ;
+.
+ssf:ElectricalFunction
+  rdf:type owl:Class ;
+  rdfs:label "Electrical function" ;
+  rdfs:subClassOf ssf:Function ;
+  skos:prefLabel "Electrical function" ;
+.
+ssf:ElectricalPositionSensingDevice
+  rdf:type owl:Class ;
+  rdfs:label "Electrical position sensing device" ;
+  rdfs:subClassOf ssf:ElectricalSensingDevice ;
+  skos:prefLabel "Electrical position sensing device" ;
+.
+ssf:ElectricalSensingDevice
+  rdf:type owl:Class ;
+  rdfs:label "Electrical sensing device" ;
+  rdfs:subClassOf ssf:SensingDevice ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:ElectricityAndMagnetismQuantityKind ;
+      owl:onProperty ssn:observes ;
+    ] ;
+  skos:prefLabel "Electrical sensing device" ;
+.
+ssf:ElectroMechanicalDevice
+  rdf:type owl:Class ;
+  rdfs:label "Electro mechanical device" ;
+  rdfs:subClassOf ssf:FunctionalDevice ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty ssf:deviceFunction ;
+      owl:someValuesFrom ssf:ElectroMechanicalFunction ;
+    ] ;
+  skos:prefLabel "Electro mechanical device" ;
+.
+ssf:ElectroMechanicalFunction
+  rdf:type owl:Class ;
+  rdfs:label "Electro mechanical function" ;
+  rdfs:subClassOf ssf:Function ;
+  skos:prefLabel "Electro mechanical function" ;
+.
+ssf:FanHeater
+  rdf:type owl:Class ;
+  rdfs:label "Fan heater" ;
+  rdfs:subClassOf ssf:RotationalMotionDevice ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty ssf:deviceFunction ;
+      owl:someValuesFrom ssf:HeatingFunction ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty ssf:deviceFunction ;
+      owl:someValuesFrom ssf:PropellerFunction ;
+    ] ;
+  skos:prefLabel "Fan heater" ;
+.
+ssf:FluidMechanicalDevice
+  rdf:type owl:Class ;
+  rdfs:label "Fluid mechanical device" ;
+  rdfs:subClassOf ssf:FunctionalDevice ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:FluidMechanicalFunction ;
+      owl:onProperty ssf:deviceFunction ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:fluidType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:mechanicalAdvantage ;
+    ] ;
+  skos:prefLabel "Fluid mechanical device" ;
+.
+ssf:FluidMechanicalFunction
+  rdf:type owl:Class ;
+  rdfs:label "Fluid mechanical function" ;
+  rdfs:subClassOf ssf:Function ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom <http://fonm.org/schema/fonm#PositionState> ;
+      owl:onProperty <http://fonm.org/schema/fonm#initiatedBy> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom <http://fonm.org/schema/fonm#PositionState> ;
+      owl:onProperty <http://fonm.org/schema/fonm#terminatedBy> ;
+    ] ;
+  skos:prefLabel "Fluid mechanical function" ;
+.
+ssf:FourPositionSwitch
+  rdf:type owl:Class ;
+  rdfs:label "Four position switch" ;
+  rdfs:subClassOf ssf:MultiplePositionSwitch ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:FourPositionType ;
+      owl:onProperty ssn:observes ;
+    ] ;
+  skos:prefLabel "Four position switch" ;
+.
+ssf:FourPositionType
+  rdf:type owl:Class ;
+  rdfs:label "Four position type" ;
+  rdfs:subClassOf ssf:PositionType ;
+  owl:oneOf (
+      ssf:Off
+      ssf:Low
+      ssf:Medium
+      ssf:High
+    ) ;
+  skos:prefLabel "Four position type" ;
+.
+ssf:FrozenState
+  rdf:type owl:Class ;
+  rdfs:comment "Cold is a relative term for a particular material. As a discrete value on a discrete range, it would be FAR_LEFT (of NOMINAL)." ;
+  rdfs:label "Frozen state" ;
+  rdfs:subClassOf ssf:TemperatureState ;
+  skos:prefLabel "Frozen state" ;
+.
+ssf:Function
+  rdf:type owl:Class ;
+  rdfs:comment "A function as a black box (including its enablement preconditions, initial and final states, and purpuse) but also pointing to the functionality that implements it." ;
+  rdfs:label "Function" ;
+  rdfs:subClassOf <http://fonm.org/schema/fonm#Function> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:disabledBy ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:enabledBy ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:implements ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:servesPurpose ;
+    ] ;
+  skos:prefLabel "Function" ;
+.
+ssf:FunctionalDevice
+  rdf:type owl:Class ;
+  rdfs:label "Functional device" ;
+  rdfs:subClassOf <http://fonm.org/schema/fonm#Device> ;
+  rdfs:subClassOf ssn:Device ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:deviceFunction ;
+    ] ;
+  skos:prefLabel "Functional device" ;
+.
+ssf:GearFunction
+  rdf:type owl:Class ;
+  rdfs:label "Gear function" ;
+  rdfs:subClassOf ssf:RotationalFunction ;
+  skos:prefLabel "Gear function" ;
+.
+ssf:Goal
+  rdf:type owl:Class ;
+  rdfs:label "Goal" ;
+  rdfs:subClassOf <http://fonm.org/schema/fonm#Goal> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:instrumental ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty <http://fonm.org/schema/fonm#desiredState> ;
+      owl:someValuesFrom <http://fonm.org/schema/fonm#State> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty <http://fonm.org/schema/fonm#desiredState> ;
+      owl:someValuesFrom ssf:State ;
+    ] ;
+  skos:prefLabel "Goal" ;
+.
+ssf:HeatGoal
+  rdf:type owl:Class ;
+  rdfs:label "Heat goal" ;
+  rdfs:subClassOf ssf:TemperatureGoal ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty <http://fonm.org/schema/fonm#desiredState> ;
+      owl:someValuesFrom ssf:HotState ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty <http://fonm.org/schema/fonm#desiredState> ;
+      owl:someValuesFrom ssf:WarmState ;
+    ] ;
+  skos:prefLabel "Heat goal" ;
+.
+ssf:HeatingFunction
+  rdf:type owl:Class ;
+  rdfs:label "Heating function" ;
+  rdfs:subClassOf ssf:ElectricalFunction ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:CoolState ;
+      owl:onProperty <http://fonm.org/schema/fonm#initiatedBy> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:HeatGoal ;
+      owl:onProperty ssf:servesPurpose ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:WarmState ;
+      owl:onProperty <http://fonm.org/schema/fonm#terminatedBy> ;
+    ] ;
+  skos:prefLabel "Heating function" ;
+.
+ssf:High
+  rdf:type ssf:FourPositionType ;
+  rdf:type ssf:TwoPositionType ;
+  qudt:literal "3" ;
+  rdfs:label "High" ;
+  skos:prefLabel "High" ;
+.
+ssf:HotState
+  rdf:type owl:Class ;
+  rdfs:comment "Hot is a relative term for a particular material. As a discrete value on a discrete range, it would be MID_RIGHT (of NOMINAL)." ;
+  rdfs:label "Hot state" ;
+  rdfs:subClassOf ssf:TemperatureState ;
+  skos:prefLabel "Hot state" ;
+.
+ssf:Housing
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Housing" ;
+  rdfs:subClassOf ssf:Container ;
+  skos:prefLabel "Housing" ;
+.
+ssf:Image
+  rdf:type owl:Class ;
+  dc:description "A picture of some kind." ;
+  rdfs:label "Image" ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:int ;
+      owl:onProperty ssf:graphic ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ssf:caption ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ssf:height ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:int ;
+      owl:onProperty ssf:width ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:imageLocation ;
+    ] ;
+.
+ssf:ImagingDevice
+  rdf:type owl:Class ;
+  rdfs:label "Imaging device" ;
+  rdfs:subClassOf ssf:FunctionalDevice ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:mode ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:sensorType ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:spectrum ;
+    ] ;
+  skos:prefLabel "Imaging device" ;
+.
+ssf:InclinedPlaneFunction
+  rdf:type owl:Class ;
+  rdfs:label "Inclined plane function" ;
+  rdfs:subClassOf ssf:LinearFunction ;
+  skos:prefLabel "Inclined plane function" ;
+.
+ssf:Input
+  rdf:type owl:Class ;
+  rdfs:label "Input" ;
+  rdfs:subClassOf ssn:Input ;
+  rdfs:subClassOf ssf:Data ;
+  rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+  skos:prefLabel "Input" ;
+.
+ssf:LinearFunction
+  rdf:type owl:Class ;
+  rdfs:label "Linear function" ;
+  rdfs:subClassOf ssf:MechanicalAdvantageFunction ;
+  skos:prefLabel "Linear function" ;
+.
+ssf:LinearMotionDevice
+  rdf:type owl:Class ;
+  rdfs:label "Linear motion device" ;
+  rdfs:subClassOf ssf:MechanicalMotionDevice ;
+  skos:prefLabel "Linear motion device" ;
+.
+ssf:LinearMotionFunction
+  rdf:type owl:Class ;
+  rdfs:label "Linear motion function" ;
+  rdfs:subClassOf ssf:MotionFunction ;
+  skos:prefLabel "Linear motion function" ;
+.
+ssf:LinkageFunction
+  rdf:type owl:Class ;
+  rdfs:label "Linkage function" ;
+  rdfs:subClassOf <http://fonm.org/schema/fonm#MechFunction> ;
+  skos:prefLabel "Linkage function" ;
+.
+ssf:Low
+  rdf:type ssf:FourPositionType ;
+  rdf:type ssf:TwoPositionType ;
+  qudt:literal "1" ;
+  rdfs:label "Low" ;
+  skos:prefLabel "Low" ;
+.
+ssf:MechanicalAdvantageFunction
+  rdf:type owl:Class ;
+  rdfs:label "Mechanical advantage function" ;
+  rdfs:subClassOf <http://fonm.org/schema/fonm#MechFunction> ;
+  skos:prefLabel "Mechanical advantage function" ;
+.
+ssf:MechanicalDevice
+  rdf:type owl:Class ;
+  rdfs:label "Mechanical device" ;
+  rdfs:subClassOf ssf:FunctionalDevice ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty ssf:deviceFunction ;
+      owl:someValuesFrom ssf:LinkageFunction ;
+    ] ;
+  skos:prefLabel "Mechanical device" ;
+.
+ssf:MechanicalMotionDevice
+  rdf:type owl:Class ;
+  rdfs:label "Mechanical motion device" ;
+  rdfs:subClassOf ssf:ElectroMechanicalDevice ;
+  skos:prefLabel "Mechanical motion device" ;
+.
+ssf:Medium
+  rdf:type ssf:FourPositionType ;
+  rdf:type ssf:TwoPositionType ;
+  qudt:literal "2" ;
+  rdfs:label "Medium" ;
+  skos:prefLabel "Medium" ;
+.
+ssf:MixedDOFMotionDevice
+  rdf:type owl:Class ;
+  rdfs:label "Mixed DOFMotion device" ;
+  rdfs:subClassOf ssf:MechanicalMotionDevice ;
+  skos:prefLabel "Mixed DOFMotion device" ;
+.
+ssf:MoistureGoal
+  rdf:type owl:Class ;
+  rdfs:label "Moisture goal" ;
+  rdfs:subClassOf ssf:PropertyGoal ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:MoistureState ;
+      owl:onProperty <http://fonm.org/schema/fonm#desiredState> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue <http://qudt.org/vocab/quantity#MassRatioOfWaterToDryMatter> ;
+      owl:onProperty <http://fonm.org/schema/fonm#hasProp> ;
+    ] ;
+  skos:prefLabel "Moisture goal" ;
+.
+ssf:MoistureSensingDevice
+  rdf:type owl:Class ;
+  rdfs:label "Moisture sensing device" ;
+  rdfs:subClassOf ssf:SensingDevice ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue <http://qudt.org/vocab/quantity#MassRatioOfWaterToDryMatter> ;
+      owl:onProperty ssn:observes ;
+    ] ;
+  skos:prefLabel "Moisture sensing device" ;
+.
+ssf:MoistureState
+  rdf:type owl:Class ;
+  rdfs:comment "Here we are really looking for moisture content, but a ratio of the amount of water to the amount of dry matter is really just that." ;
+  rdfs:label "Moisture state" ;
+  rdfs:subClassOf ssf:State ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue <http://qudt.org/vocab/quantity#MassRatioOfWaterToDryMatter> ;
+      owl:onProperty <http://fonm.org/schema/fonm#hasProp> ;
+    ] ;
+  skos:prefLabel "Moisture state" ;
+.
+ssf:MoltenState
+  rdf:type owl:Class ;
+  rdfs:comment "Molten is a relative term for a particular material. As a discrete value on a discrete range, it would be FAR_RIGHT (of NOMINAL)." ;
+  rdfs:label "Molten state" ;
+  rdfs:subClassOf ssf:TemperatureState ;
+  skos:prefLabel "Molten state" ;
+.
+ssf:MotionFunction
+  rdf:type owl:Class ;
+  rdfs:label "Motion function" ;
+  rdfs:subClassOf <http://fonm.org/schema/fonm#MechFunction> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty <http://fonm.org/schema/fonm#initiatedBy> ;
+      owl:someValuesFrom <http://fonm.org/schema/fonm#PositionState> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty <http://fonm.org/schema/fonm#terminatedBy> ;
+      owl:someValuesFrom <http://fonm.org/schema/fonm#PositionState> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty ssf:servesPurpose ;
+      owl:someValuesFrom ssf:PositionGoal ;
+    ] ;
+  skos:prefLabel "Motion function" ;
+.
+ssf:MoveFunction
+  rdf:type owl:Class ;
+  rdfs:comment "Move changes location, position, orientation of the device." ;
+  rdfs:label "Move function" ;
+  rdfs:subClassOf <http://fonm.org/schema/fonm#MechFunction> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom <http://fonm.org/schema/fonm#PositionState> ;
+      owl:onProperty <http://fonm.org/schema/fonm#initiatedBy> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom <http://fonm.org/schema/fonm#PositionState> ;
+      owl:onProperty <http://fonm.org/schema/fonm#terminatedBy> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:PositionGoal ;
+      owl:onProperty ssf:servesPurpose ;
+    ] ;
+  skos:prefLabel "Move function" ;
+.
+ssf:MultiplePositionSwitch
+  rdf:type owl:Class ;
+  rdfs:label "Multiple position switch" ;
+  rdfs:subClassOf ssf:SwitchSensingDevice ;
+  skos:prefLabel "Multiple position switch" ;
+.
+ssf:Negative
+  rdf:type ssf:ThreePositionType ;
+  qudt:literal "-1" ;
+  rdfs:label "Negative" ;
+  skos:prefLabel "Negative" ;
+.
+ssf:Neutral
+  rdf:type ssf:ThreePositionType ;
+  qudt:literal "0" ;
+  rdfs:label "Neutral" ;
+  skos:prefLabel "Neutral" ;
+.
+ssf:NotDetected
+  rdf:type ssf:DetectionType ;
+  qudt:literal "0" ;
+  rdfs:label "NotDetected" ;
+  skos:prefLabel "NotDetected" ;
+.
+ssf:Off
+  rdf:type ssf:FourPositionType ;
+  rdf:type ssf:TwoPositionType ;
+  qudt:literal "-1" ;
+  qudt:literal "0" ;
+  rdfs:label "Off" ;
+  skos:prefLabel "Off" ;
+.
+ssf:On
+  rdf:type ssf:TwoPositionType ;
+  qudt:literal "1" ;
+  rdfs:label "On" ;
+  skos:prefLabel "On" ;
+.
+ssf:OscillateFunction
+  rdf:type owl:Class ;
+  rdfs:comment "Oscillation represents a single rotational degree of freedom." ;
+  rdfs:label "Oscillate function" ;
+  rdfs:subClassOf ssf:DOFRotationFunction ;
+  skos:prefLabel "Oscillate function" ;
+.
+ssf:OscillatingFan
+  rdf:type owl:Class ;
+  rdfs:label "Oscillating fan" ;
+  rdfs:subClassOf ssf:MixedDOFMotionDevice ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty ssf:deviceFunction ;
+      owl:someValuesFrom ssf:OscillateFunction ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty ssf:deviceFunction ;
+      owl:someValuesFrom ssf:PropellerFunction ;
+    ] ;
+  skos:prefLabel "Oscillating fan" ;
+.
+ssf:Output
+  rdf:type owl:Class ;
+  rdfs:label "Output" ;
+  rdfs:subClassOf ssn:Output ;
+  rdfs:subClassOf ssf:Data ;
+  rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+  skos:prefLabel "Output" ;
+.
+ssf:PolarContainment
+  rdf:type owl:Class ;
+  rdfs:comment "This is for containment in a polar axis, generally radial. Examples are nuts and bolts, screws, and container lids." ;
+  rdfs:label "Polar function" ;
+  rdfs:subClassOf ssf:ContainmentFunction ;
+  skos:prefLabel "Polar function" ;
+.
+ssf:PositionGoal
+  rdf:type owl:Class ;
+  rdfs:label "Position goal" ;
+  rdfs:subClassOf ssf:PropertyGoal ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom <http://fonm.org/schema/fonm#PositionState> ;
+      owl:onProperty <http://fonm.org/schema/fonm#desiredState> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue <http://fonm.org/schema/fonm#Position> ;
+      owl:onProperty <http://fonm.org/schema/fonm#hasProp> ;
+    ] ;
+  skos:prefLabel "Position goal" ;
+.
+ssf:PositionSensingDevice
+  rdf:type owl:Class ;
+  rdfs:label "Position sensing device" ;
+  rdfs:subClassOf ssf:SensingDevice ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:KinematicsQuantityKind ;
+      owl:onProperty ssn:observes ;
+    ] ;
+  skos:prefLabel "Position sensing device" ;
+.
+ssf:PositionType
+  rdf:type owl:Class ;
+  rdfs:label "Position Type" ;
+  rdfs:subClassOf <http://fonm.org/schema/fonm#EnumeratedValue> ;
+  skos:prefLabel "Position Type" ;
+.
+ssf:Positive
+  rdf:type ssf:ThreePositionType ;
+  qudt:literal "1" ;
+  rdfs:label "Positive" ;
+  skos:prefLabel "Positive" ;
+.
+ssf:Problem
+  rdf:type owl:Class ;
+  rdfs:comment "A problem is a state that disables a function, where a state describes a quantity (quantity kind, value) associated with a device." ;
+  rdfs:label "Problem" ;
+  rdfs:subClassOf <http://fonm.org/schema/fonm#State> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty <http://fonm.org/schema/fonm#violates> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:disables ;
+    ] ;
+  owl:disjointWith ssf:Solution ;
+  skos:prefLabel "Problem" ;
+.
+ssf:Procedure
+  rdf:type owl:Class ;
+  rdfs:comment "A Procedure is an equivalent to a Plan in that it is a sequence of steps which, when successfully executed, achieve a Goal." ;
+  rdfs:label "Procedure" ;
+  rdfs:subClassOf <http://fonm.org/schema/fonm#Concept> ;
+  rdfs:subClassOf <http://fonm.org/schema/fonm#Plan> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:procedureAchieves ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:procedureStep ;
+    ] ;
+  skos:prefLabel "Procedure" ;
+.
+ssf:ProcedureStep
+  rdf:type owl:Class ;
+  rdfs:comment "A procedure Step is a subplan which embodies a portion of a procedure and, the execution of which, helps to achieve a task by achieving a task requirement. A Step can logically define a cell. For example, you could say that a requirement is to get a work piece to position POS2. By reasoning you might be able to determine that the only device able to reach where the work piece presently is and where it needs to be is robot ROB1. Thus the work piece and robot ROB1, for the purposes of this Step, comprise a cell." ;
+  rdfs:label "Procedure step" ;
+  rdfs:subClassOf <http://fonm.org/schema/fonm#Concept> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:stepOrder ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:stepAchieves ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:taskRequirement ;
+    ] ;
+  skos:prefLabel "Procedure step" ;
+.
+ssf:PropellerFunction
+  rdf:type owl:Class ;
+  rdfs:label "Propeller function" ;
+  rdfs:subClassOf ssf:SpinFunction ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty <http://fonm.org/schema/fonm#initiatedBy> ;
+      owl:someValuesFrom <http://fonm.org/schema/fonm#AForceState> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty <http://fonm.org/schema/fonm#initiatedBy> ;
+      owl:someValuesFrom ssf:TemperatureState ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty <http://fonm.org/schema/fonm#terminatedBy> ;
+      owl:someValuesFrom <http://fonm.org/schema/fonm#AForceState> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty <http://fonm.org/schema/fonm#terminatedBy> ;
+      owl:someValuesFrom ssf:TemperatureState ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty ssf:servesPurpose ;
+      owl:someValuesFrom ssf:CoolGoal ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty ssf:servesPurpose ;
+      owl:someValuesFrom ssf:DryGoal ;
+    ] ;
+  skos:prefLabel "Propeller function" ;
+.
+ssf:PropertyGoal
+  rdf:type owl:Class ;
+  rdfs:label "Property goal" ;
+  rdfs:subClassOf ssf:Goal ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty <http://fonm.org/schema/fonm#hasProp> ;
+    ] ;
+  skos:prefLabel "Property goal" ;
+.
+ssf:ProximitySensingDevice
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Proximity sensing device" ;
+  rdfs:subClassOf ssf:SensingDevice ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue <http://qudt.org/vocab/quantity#Distance> ;
+      owl:onProperty ssn:observes ;
+    ] ;
+  skos:prefLabel "Proximity sensing device" ;
+.
+ssf:PulleyBelt
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Pulley belt" ;
+  rdfs:subClassOf ssf:BeltTranslationalMotionDevice ;
+  skos:prefLabel "Pulley belt" ;
+.
+ssf:PulleyFunction
+  rdf:type owl:Class ;
+  rdfs:comment "A pulley is one where motion and force are applied at the rim. They can be reacted at the rim or at the axle but generally at the rim using a belt." ;
+  rdfs:label "Pulley function" ;
+  rdfs:subClassOf ssf:WheelFunction ;
+  skos:prefLabel "Pulley function" ;
+.
+ssf:Quantity
+  rdf:type owl:Class ;
+  rdfs:label "Quantity" ;
+  rdfs:subClassOf qudt:Quantity ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:QuantityValue ;
+      owl:onProperty qudt:quantityValue ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty <http://fonm.org/schema/fonm#hasObject> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty qudt:quantityValue ;
+    ] ;
+  skos:prefLabel "Quantity" ;
+.
+ssf:QuantityValue
+  rdf:type owl:Class ;
+  rdfs:label "Quantity value" ;
+  rdfs:subClassOf ssn:ObservationValue ;
+  rdfs:subClassOf qudt:QuantityValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:numericValue ;
+    ] ;
+  skos:prefLabel "Quantity value" ;
+.
+ssf:QuantityValueRange
+  rdf:type owl:Class ;
+  rdfs:comment "The context here is that minInclusive cannot be paired with minExclusive, and maxInclusive cannot be paired with maxExclusive" ;
+  rdfs:label "Quantity value range" ;
+  rdfs:subClassOf ssf:QuantityValue ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty qudt:maxExclusive ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty qudt:maxInclusive ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty qudt:minExclusive ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty qudt:minInclusive ;
+    ] ;
+  skos:prefLabel "Quantity value range" ;
+.
+ssf:Requirement
+  rdf:type owl:Class ;
+  rdfs:comment "A requirement is a type of Goal." ;
+  rdfs:label "Requirement" ;
+  rdfs:subClassOf ssf:Goal ;
+  skos:prefLabel "Requirement" ;
+.
+ssf:RestrainedGoal
+  rdf:type owl:Class ;
+  rdfs:label "Restrained goal" ;
+  rdfs:subClassOf ssf:RestraintGoal ;
+  skos:prefLabel "Restrained goal" ;
+.
+ssf:RestraintGoal
+  rdf:type owl:Class ;
+  rdfs:label "Restraint goal" ;
+  rdfs:subClassOf ssf:PropertyGoal ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom <http://fonm.org/schema/fonm#RestraintState> ;
+      owl:onProperty <http://fonm.org/schema/fonm#desiredState> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue <http://fonm.org/schema/fonm#Restraint> ;
+      owl:onProperty <http://fonm.org/schema/fonm#hasProp> ;
+    ] ;
+  skos:prefLabel "Restraint goal" ;
+.
+ssf:RotationalFunction
+  rdf:type owl:Class ;
+  rdfs:label "Rotational function" ;
+  rdfs:subClassOf ssf:MechanicalAdvantageFunction ;
+  skos:prefLabel "Rotational function" ;
+.
+ssf:RotationalMotionDevice
+  rdf:type owl:Class ;
+  rdfs:label "Rotational motion device" ;
+  rdfs:subClassOf ssf:MechanicalMotionDevice ;
+  skos:prefLabel "Rotational motion device" ;
+.
+ssf:RotationalMotionFunction
+  rdf:type owl:Class ;
+  rdfs:label "Rotational motion function" ;
+  rdfs:subClassOf ssf:MotionFunction ;
+  skos:prefLabel "Rotational motion function" ;
+.
+ssf:RotationalMotionMechanicalDevice
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Rotational motion mechanical device" ;
+  rdfs:subClassOf ssf:MechanicalDevice ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty ssf:deviceFunction ;
+      owl:someValuesFrom ssf:WheelFunction ;
+    ] ;
+  skos:prefLabel "Rotational motion mechanical device" ;
+.
+ssf:SSFDatatype
+  rdf:type owl:Class ;
+  rdfs:comment "This is really just a wrapper to a datatype." ;
+  rdfs:label "SSF Datatype" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "SSF Datatype" ;
+.
+ssf:SSFFloat
+  rdf:type owl:Class ;
+  rdfs:label "SSF Float" ;
+  rdfs:subClassOf ssf:SSFDatatype ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:floatValue ;
+    ] ;
+  skos:prefLabel "SSF Float" ;
+.
+ssf:SSFTime
+  rdf:type owl:Class ;
+  rdfs:label "SSFTime" ;
+  rdfs:subClassOf ssf:SSFDatatype ;
+  rdfs:subClassOf <http://www.w3.org/2006/time#Instant> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:timeValue ;
+    ] ;
+  skos:prefLabel "SSFTime" ;
+.
+ssf:ScrewFunction
+  rdf:type owl:Class ;
+  rdfs:label "Screw function" ;
+  rdfs:subClassOf ssf:InclinedPlaneFunction ;
+  rdfs:subClassOf ssf:RotationalFunction ;
+  skos:prefLabel "Screw function" ;
+.
+ssf:SensingDevice
+  rdf:type owl:Class ;
+  rdfs:label "Sensing device" ;
+  rdfs:subClassOf ssn:SensingDevice ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:deviceName ;
+    ] ;
+  skos:prefLabel "Sensing device" ;
+.
+ssf:Shaft
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Shaft" ;
+  rdfs:subClassOf ssf:RotationalMotionMechanicalDevice ;
+  skos:prefLabel "Shaft" ;
+.
+ssf:SizeGoal
+  rdf:type owl:Class ;
+  rdfs:label "Size goal" ;
+  rdfs:subClassOf ssf:PropertyGoal ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom <http://fonm.org/schema/fonm#SizeState> ;
+      owl:onProperty <http://fonm.org/schema/fonm#desiredState> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue <http://fonm.org/schema/fonm#Size> ;
+      owl:onProperty <http://fonm.org/schema/fonm#hasProp> ;
+    ] ;
+  skos:prefLabel "Size goal" ;
+.
+ssf:SizeMember
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  vaem:description "A Size Member Type is a data type that defines the properties of a size in a coordinate system." ;
+  rdfs:label "Size member" ;
+  rdfs:subClassOf qudt:TupleMember ;
+  skos:prefLabel "Size member" ;
+.
+ssf:SizeValue
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Size value" ;
+  rdfs:subClassOf ssf:QuantityValue ;
+  skos:prefLabel "Size value" ;
+.
+ssf:Sizes
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Sizes" ;
+  rdfs:subClassOf qudt:Tuple ;
+  skos:prefLabel "Sizes" ;
+.
+ssf:SoakGoal
+  rdf:type owl:Class ;
+  rdfs:label "Soak goal" ;
+  rdfs:subClassOf ssf:MoistureGoal ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:WetState ;
+      owl:onProperty <http://fonm.org/schema/fonm#desiredState> ;
+    ] ;
+  skos:prefLabel "Soak goal" ;
+.
+ssf:Solution
+  rdf:type owl:Class ;
+  rdfs:comment "A solution is a state that terminates a function and achieves a goal." ;
+  rdfs:label "Solution" ;
+  rdfs:subClassOf <http://fonm.org/schema/fonm#State> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty <http://fonm.org/schema/fonm#achieves> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty <http://fonm.org/schema/fonm#terminates> ;
+    ] ;
+  owl:disjointWith ssf:Problem ;
+  skos:prefLabel "Solution" ;
+.
+ssf:SpeedGoal
+  rdf:type owl:Class ;
+  rdfs:label "Speed goal" ;
+  rdfs:subClassOf ssf:PropertyGoal ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:SpeedState ;
+      owl:onProperty <http://fonm.org/schema/fonm#desiredState> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue <http://qudt.org/vocab/quantity#Velocity> ;
+      owl:onProperty <http://fonm.org/schema/fonm#hasProp> ;
+    ] ;
+  skos:prefLabel "Speed goal" ;
+.
+ssf:SpeedState
+  rdf:type owl:Class ;
+  rdfs:label "Speed state" ;
+  rdfs:subClassOf ssf:State ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue <http://qudt.org/vocab/quantity#Velocity> ;
+      owl:onProperty qudt:quantityKind ;
+    ] ;
+  skos:prefLabel "Speed state" ;
+.
+ssf:SpinFunction
+  rdf:type owl:Class ;
+  rdfs:comment "Implements a wheel but represents a device that produces motion rather than force transmission. The motion is transmitted from the axle to the rim." ;
+  rdfs:label "Spin function" ;
+  rdfs:subClassOf ssf:RotationalMotionFunction ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty <http://fonm.org/schema/fonm#initiatedBy> ;
+      owl:someValuesFrom ssf:SpeedState ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty <http://fonm.org/schema/fonm#terminatedBy> ;
+      owl:someValuesFrom ssf:SpeedState ;
+    ] ;
+  skos:prefLabel "Spin function" ;
+.
+ssf:SpringFunction
+  rdf:type owl:Class ;
+  rdfs:label "Spring function" ;
+  rdfs:subClassOf <http://fonm.org/schema/fonm#MechFunction> ;
+  skos:prefLabel "Spring function" ;
+.
+ssf:State
+  rdf:type owl:Class ;
+  rdfs:label "State" ;
+  rdfs:subClassOf <http://fonm.org/schema/fonm#State> ;
+  skos:prefLabel "State" ;
+.
+ssf:StreamInput
+  rdf:type owl:Class ;
+  rdfs:label "Stream based input" ;
+  rdfs:subClassOf ssf:TimeBasedInput ;
+  skos:prefLabel "Stream based input" ;
+.
+ssf:StreamNumericInput
+  rdf:type owl:Class ;
+  rdfs:label "Stream numeric input" ;
+  rdfs:subClassOf ssf:StreamInput ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:NumericType ;
+      owl:onProperty ssf:dataType ;
+    ] ;
+  skos:prefLabel "Stream numeric input" ;
+.
+ssf:StreamNumericOutput
+  rdf:type owl:Class ;
+  rdfs:label "Stream numeric output" ;
+  rdfs:subClassOf ssf:StreamOutput ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:NumericType ;
+      owl:onProperty ssf:dataType ;
+    ] ;
+  skos:prefLabel "Stream numeric output" ;
+.
+ssf:StreamOutput
+  rdf:type owl:Class ;
+  rdfs:label "Stream output" ;
+  rdfs:subClassOf ssf:TimeBasedOutput ;
+  skos:prefLabel "Stream output" ;
+.
+ssf:StreamPositionBasedInput
+  rdf:type owl:Class ;
+  rdfs:label "Stream position based input" ;
+  rdfs:subClassOf ssf:StreamInput ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:PositionType ;
+      owl:onProperty ssf:dataType ;
+    ] ;
+  skos:prefLabel "Stream position based input" ;
+.
+ssf:StreamPositionBasedOutput
+  rdf:type owl:Class ;
+  rdfs:label "Stream position based output" ;
+  rdfs:subClassOf ssf:StreamOutput ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:PositionType ;
+      owl:onProperty ssf:dataType ;
+    ] ;
+  skos:prefLabel "Stream position based output" ;
+.
+ssf:SwitchSensingDevice
+  rdf:type owl:Class ;
+  rdfs:label "Switch sensing device" ;
+  rdfs:subClassOf ssf:ElectricalPositionSensingDevice ;
+  skos:prefLabel "Switch sensing device" ;
+.
+ssf:Task
+  rdf:type owl:Class ;
+  rdfs:label "Task" ;
+  rdfs:subClassOf <http://fonm.org/schema/fonm#Goal> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:hasProcedure ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:taskRequirement ;
+    ] ;
+  skos:prefLabel "Task" ;
+.
+ssf:TemperatureGoal
+  rdf:type owl:Class ;
+  rdfs:label "Temperature goal" ;
+  rdfs:subClassOf ssf:PropertyGoal ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:TemperatureState ;
+      owl:onProperty <http://fonm.org/schema/fonm#desiredState> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue <http://qudt.org/vocab/quantity#ThermodynamicTemperature> ;
+      owl:onProperty <http://fonm.org/schema/fonm#hasProp> ;
+    ] ;
+  skos:prefLabel "Temperature goal" ;
+.
+ssf:TemperatureSensingDevice
+  rdf:type owl:Class ;
+  rdfs:label "Temperature sensing device" ;
+  rdfs:subClassOf ssf:SensingDevice ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue <http://qudt.org/vocab/quantity#ThermodynamicTemperature> ;
+      owl:onProperty ssn:observes ;
+    ] ;
+  skos:prefLabel "Temperature sensing device" ;
+.
+ssf:TemperatureState
+  rdf:type owl:Class ;
+  rdfs:label "Temperature state" ;
+  rdfs:subClassOf ssf:State ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue <http://qudt.org/vocab/quantity#ThermodynamicTemperature> ;
+      owl:onProperty <http://fonm.org/schema/fonm#hasProp> ;
+    ] ;
+  skos:prefLabel "Temperature state" ;
+.
+ssf:ThreePositionSwitch
+  rdf:type owl:Class ;
+  rdfs:label "Three position switch" ;
+  rdfs:subClassOf ssf:MultiplePositionSwitch ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:ThreePositionType ;
+      owl:onProperty ssn:observes ;
+    ] ;
+  skos:prefLabel "Three position switch" ;
+.
+ssf:ThreePositionType
+  rdf:type owl:Class ;
+  rdfs:label "Three position type" ;
+  rdfs:subClassOf ssf:PositionType ;
+  owl:oneOf (
+      ssf:Negative
+      ssf:Neutral
+      ssf:Positive
+    ) ;
+  skos:prefLabel "Three position type" ;
+.
+ssf:TimeBasedInput
+  rdf:type owl:Class ;
+  rdfs:comment "ssf:hasTime may be redundant with qudt:TimeStringType (in TimeSeriesArray)" ;
+  rdfs:label "Time based input" ;
+  rdfs:subClassOf ssf:Input ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:hasTime ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:url ;
+    ] ;
+  skos:prefLabel "Time based input" ;
+.
+ssf:TimeBasedOutput
+  rdf:type owl:Class ;
+  rdfs:label "Time based output" ;
+  rdfs:subClassOf ssf:Output ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:hasTime ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:url ;
+    ] ;
+  skos:prefLabel "Time based output" ;
+.
+ssf:TimeSeriesInput
+  rdf:type owl:Class ;
+  rdfs:label "Time series input" ;
+  rdfs:subClassOf ssf:TimeBasedInput ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:TimeSeriesArray ;
+      owl:onProperty ssf:dataType ;
+    ] ;
+  skos:prefLabel "Time series input" ;
+.
+ssf:TimeSeriesNumericInput
+  rdf:type owl:Class ;
+  rdfs:label "Time series numeric input" ;
+  rdfs:subClassOf ssf:TimeSeriesInput ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:NumericType ;
+      owl:onProperty ssf:dataType ;
+    ] ;
+  skos:prefLabel "Time series numeric input" ;
+.
+ssf:TimeSeriesNumericOutput
+  rdf:type owl:Class ;
+  rdfs:label "Time series numeric output" ;
+  rdfs:subClassOf ssf:TimeSeriesOutput ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:NumericType ;
+      owl:onProperty ssf:dataType ;
+    ] ;
+  skos:prefLabel "Time series numeric output" ;
+.
+ssf:TimeSeriesOutput
+  rdf:type owl:Class ;
+  rdfs:label "Time series output" ;
+  rdfs:subClassOf ssf:TimeBasedOutput ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom qudt:TimeSeriesArray ;
+      owl:onProperty ssf:dataType ;
+    ] ;
+  skos:prefLabel "Time series output" ;
+.
+ssf:TimeSeriesPositionBasedInput
+  rdf:type owl:Class ;
+  rdfs:label "Time series position based input" ;
+  rdfs:subClassOf ssf:TimeSeriesInput ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:PositionType ;
+      owl:onProperty ssf:dataType ;
+    ] ;
+  skos:prefLabel "Time series position based input" ;
+.
+ssf:TimeSeriesPositionBasedOutput
+  rdf:type owl:Class ;
+  rdfs:label "Time series position based output" ;
+  rdfs:subClassOf ssf:TimeSeriesOutput ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:PositionType ;
+      owl:onProperty ssf:dataType ;
+    ] ;
+  skos:prefLabel "Time series position based output" ;
+.
+ssf:Transducer
+  rdf:type owl:Class ;
+  rdfs:label "Transducer" ;
+  rdfs:subClassOf ssf:FunctionalDevice ;
+  skos:prefLabel "Transducer" ;
+.
+ssf:TranslationalMotionMechanicalDevice
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Translational motion mechanical device" ;
+  rdfs:subClassOf ssf:MechanicalDevice ;
+  skos:prefLabel "Translational motion mechanical device" ;
+.
+ssf:TwoPositionHeaterSwitch
+  rdf:type owl:Class ;
+  rdfs:label "Two position heater switch" ;
+  rdfs:subClassOf ssf:TwoPositionSwitch ;
+  skos:prefLabel "Two position heater switch" ;
+.
+ssf:TwoPositionSwitch
+  rdf:type owl:Class ;
+  rdfs:label "Two position switch" ;
+  rdfs:subClassOf ssf:SwitchSensingDevice ;
+  skos:prefLabel "Two position switch" ;
+.
+ssf:TwoPositionType
+  rdf:type owl:Class ;
+  rdfs:label "Position type" ;
+  rdfs:subClassOf ssf:PositionType ;
+  owl:oneOf (
+      ssf:Off
+      ssf:On
+    ) ;
+  skos:prefLabel "Position type" ;
+.
+ssf:UnrestrainedGoal
+  rdf:type owl:Class ;
+  rdfs:label "Unrestrained goal" ;
+  rdfs:subClassOf ssf:RestraintGoal ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom <http://fonm.org/schema/fonm#FreeRestraintState> ;
+      owl:onProperty <http://fonm.org/schema/fonm#desiredState> ;
+    ] ;
+  skos:prefLabel "Unrestrained goal" ;
+.
+ssf:VoltageFunction
+  rdf:type owl:Class ;
+  rdfs:label "Voltage function" ;
+  rdfs:subClassOf ssf:ElectricalFunction ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:VoltageState ;
+      owl:onProperty <http://fonm.org/schema/fonm#initiatedBy> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:VoltageState ;
+      owl:onProperty <http://fonm.org/schema/fonm#terminatedBy> ;
+    ] ;
+  skos:prefLabel "Voltage function" ;
+.
+ssf:VoltageGoal
+  rdf:type owl:Class ;
+  rdfs:label "Voltage goal" ;
+  rdfs:subClassOf ssf:PropertyGoal ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:VoltageState ;
+      owl:onProperty <http://fonm.org/schema/fonm#desiredState> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue <http://qudt.org/vocab/quantity#Voltage> ;
+      owl:onProperty <http://fonm.org/schema/fonm#hasProp> ;
+    ] ;
+  skos:prefLabel "Voltage goal" ;
+.
+ssf:VoltagePositionFunction
+  rdf:type owl:Class ;
+  rdfs:label "Voltage position function" ;
+  rdfs:subClassOf ssf:ElectroMechanicalFunction ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom <http://fonm.org/schema/fonm#PositionState> ;
+      owl:onProperty <http://fonm.org/schema/fonm#terminatedBy> ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:VoltageGoal ;
+      owl:onProperty ssf:servesPurpose ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom ssf:VoltageState ;
+      owl:onProperty <http://fonm.org/schema/fonm#initiatedBy> ;
+    ] ;
+  skos:prefLabel "Voltage position function" ;
+.
+ssf:VoltageSensingDevice
+  rdf:type owl:Class ;
+  rdfs:label "Voltage sensing device" ;
+  rdfs:subClassOf ssf:ElectricalSensingDevice ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue <http://qudt.org/vocab/quantity#Voltage> ;
+      owl:onProperty ssn:observes ;
+    ] ;
+  skos:prefLabel "Voltage sensing device" ;
+.
+ssf:VoltageState
+  rdf:type owl:Class ;
+  rdfs:label "Voltage state" ;
+  rdfs:subClassOf ssf:State ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue <http://qudt.org/vocab/quantity#Voltage> ;
+      owl:onProperty <http://fonm.org/schema/fonm#hasProp> ;
+    ] ;
+.
+ssf:WarmState
+  rdf:type owl:Class ;
+  rdfs:comment "Warm is a relative term for a particular material. As a discrete value on a discrete range, it would be NEAR_RIGHT (of NOMINAL)." ;
+  rdfs:label "Warm state" ;
+  rdfs:subClassOf ssf:TemperatureState ;
+  skos:prefLabel "Warm state" ;
+.
+ssf:WearableSensingDevice
+  rdf:type owl:Class ;
+  rdfs:label "Wearable Sensing Device" ;
+  rdfs:subClassOf ssn:SensingDevice ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:deviceId ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:deviceName ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:additionalFeatures ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:companySite ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:deviceManufacturer ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:measurementImageLocation ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:wearableImageLocation ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:deviceCompany ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:deviceSite ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:mediaSite ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:sensorMeasurement ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty org:organization ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty org:siteAddress ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:deviceApplication ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:deviceDomain ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:deviceTargetBodyPart ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssf:sensorId ;
+    ] ;
+  skos:prefLabel "Wearable Sensing Device" ;
+.
+ssf:WetState
+  rdf:type owl:Class ;
+  rdfs:label "Wet state" ;
+  rdfs:subClassOf ssf:MoistureState ;
+  skos:prefLabel "Wet state" ;
+.
+ssf:Wheel
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Wheel" ;
+  rdfs:subClassOf ssf:RotationalMotionMechanicalDevice ;
+  skos:prefLabel "Wheel" ;
+.
+ssf:WheelFunction
+  rdf:type owl:Class ;
+  rdfs:label "Wheel function" ;
+  rdfs:subClassOf ssf:RotationalFunction ;
+  skos:prefLabel "Wheel function" ;
+.
+ssf:additionalFeatures
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "additional features" ;
+  rdfs:range xsd:string ;
+.
+ssf:caption
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "caption" ;
+  rdfs:range xsd:string ;
+.
+ssf:companyName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "company name" ;
+  rdfs:range xsd:string ;
+.
+ssf:companySite
+  rdf:type owl:DatatypeProperty ;
+  dc:description "The property 'ssf:companySite' is intended for general use as the name implies.  The range of the property is set as an XSD URI." ;
+  rdfs:label "company site" ;
+  rdfs:range xsd:anyURI ;
+  rdfs:subPropertyOf ssf:url ;
+.
+ssf:dataSource
+  rdf:type owl:DatatypeProperty ;
+  dc:description "The property 'ssf:dataSource' is intended to point to the source for streaming data.  The range of the property is set as an XSD URI." ;
+  rdfs:domain ssf:StreamInput ;
+  rdfs:label "data source" ;
+  rdfs:range xsd:anyURI ;
+  rdfs:subPropertyOf ssf:url ;
+.
+ssf:dataTarget
+  rdf:type owl:DatatypeProperty ;
+  dc:description "The property 'ssf:dataTarget' is intended to point to the target for streaming data.  The range of the property is set as an XSD URI." ;
+  rdfs:domain ssf:StreamInput ;
+  rdfs:label "data target" ;
+  rdfs:range xsd:anyURI ;
+  rdfs:subPropertyOf ssf:url ;
+.
+ssf:dataType
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          ssf:StreamInput
+          ssf:StreamOutput
+        ) ;
+    ] ;
+  rdfs:range qudt:Datatype ;
+.
+ssf:deviceApplication
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "device application" ;
+  rdfs:range xsd:string ;
+.
+ssf:deviceCompany
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "device company" ;
+  rdfs:range ssf:Company ;
+.
+ssf:deviceDomain
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "device domain" ;
+  rdfs:range xsd:string ;
+.
+ssf:deviceFunction
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain ssf:FunctionalDevice ;
+  rdfs:range ssf:Function ;
+.
+ssf:deviceId
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "device id" ;
+  rdfs:subPropertyOf vaem:hasIdentifier ;
+  skos:prefLabel "device id" ;
+.
+ssf:deviceManufacturer
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "device manufacturer" ;
+  rdfs:range ssf:Manufacturer ;
+.
+ssf:deviceName
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "device name" ;
+  rdfs:range xsd:string ;
+.
+ssf:deviceSite
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "device site" ;
+  rdfs:range xsd:anyURI ;
+  rdfs:subPropertyOf ssf:url ;
+.
+ssf:deviceTarget
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain ssf:WearableSensingDevice ;
+.
+ssf:disabledBy
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          ssf:Function
+          <http://fonm.org/schema/fonm#Process>
+        ) ;
+    ] ;
+  rdfs:label "disabledBy" ;
+  rdfs:range <http://fonm.org/schema/fonm#State> ;
+  skos:prefLabel "disabled by state" ;
+.
+ssf:disables
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain <http://fonm.org/schema/fonm#State> ;
+  rdfs:label "disables" ;
+  rdfs:range ssf:Function ;
+  skos:prefLabel "disables" ;
+.
+ssf:enabledBy
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain ssf:Function ;
+  rdfs:label "enabledBy" ;
+  rdfs:range <http://fonm.org/schema/fonm#State> ;
+  skos:prefLabel "enabled by state" ;
+.
+ssf:enables
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain <http://fonm.org/schema/fonm#State> ;
+  rdfs:label "enables" ;
+  rdfs:range ssf:Function ;
+  skos:prefLabel "enables" ;
+.
+ssf:floatValue
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain ssf:SSFTime ;
+  rdfs:label "float value" ;
+  rdfs:range xsd:float ;
+.
+ssf:fluidType
+  rdf:type owl:FunctionalProperty ;
+  rdfs:label "fluid type" ;
+  skos:prefLabel "fluid type" ;
+.
+ssf:graphic
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "graphic" ;
+.
+ssf:hasFloatingPointValue
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          ssf:TimeSeriesNumericInput
+          ssf:TimeSeriesNumericOutput
+        ) ;
+    ] ;
+  rdfs:label "has real value" ;
+  rdfs:range ssf:SSFFloat ;
+.
+ssf:hasPositionValue
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          ssf:TimeSeriesPositionBasedOutput
+          ssf:TimeSeriesPositionBasedOutput
+        ) ;
+    ] ;
+  rdfs:label "has position value" ;
+  rdfs:range ssf:ThreePositionType ;
+.
+ssf:hasProcedure
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain ssf:Task ;
+  rdfs:label "has procedure" ;
+  rdfs:range ssf:Procedure ;
+  skos:prefLabel "has procedure" ;
+.
+ssf:hasProduct
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain ssf:Company ;
+  rdfs:range ssf:WearableSensingDevice ;
+.
+ssf:hasTime
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain ssf:TimeBasedInput ;
+  rdfs:range ssf:SSFTime ;
+.
+ssf:height
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "height" ;
+  rdfs:range xsd:nonNegativeInteger ;
+.
+ssf:imageLocation
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "image location" ;
+  rdfs:range xsd:string ;
+.
+ssf:implements
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "The relationship between an ssf:Function and the algorithm (prog:Function) that implements it" ;
+  rdfs:domain ssf:Function ;
+  rdfs:label "implements" ;
+  rdfs:range <http://siemens.com/schemas/proglang#Function> ;
+  rdfs:subPropertyOf ssn:implements ;
+  skos:prefLabel "implements" ;
+.
+ssf:instrumental
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain ssf:Goal ;
+  rdfs:range <http://spinrdf.org/spin#Functions> ;
+.
+ssf:involves
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "involves" ;
+  skos:prefLabel "involves" ;
+.
+ssf:involvesBodyPart
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain ssf:WearableSensingDevice ;
+  rdfs:label "device target body part" ;
+  rdfs:range <http://siemens.com/vocab/biomed-fma#BodyPart> ;
+.
+ssf:measurementImageLocation
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "measurement image location" ;
+  rdfs:subPropertyOf ssf:imageLocation ;
+  skos:prefLabel "measurement image location" ;
+.
+ssf:mechanicalAdvantage
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "mechanical advantage" ;
+  skos:prefLabel "mechanical advantage" ;
+.
+ssf:mediaSite
+  rdf:type owl:DatatypeProperty ;
+  dc:description "The property 'ssf:mediaSite' is intended for general use as the name implies.  The range of the property is set as an XSD URI." ;
+  rdfs:label "media site" ;
+  rdfs:range xsd:anyURI ;
+  rdfs:subPropertyOf ssf:url ;
+.
+ssf:mode
+  rdf:type owl:FunctionalProperty ;
+  rdfs:label "mode" ;
+  skos:prefLabel "mode" ;
+.
+ssf:motivates
+  rdf:type owl:FunctionalProperty ;
+  rdfs:comment "A problem motivates a goal, where a problem is one or more quantities (kind plus unit plus value)" ;
+  rdfs:domain qudt:Quantity ;
+  rdfs:label "motivates" ;
+  rdfs:range <http://fonm.org/schema/fonm#Goal> ;
+  skos:prefLabel "motivates" ;
+.
+ssf:nextProcedureStep
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain ssf:ProcedureStep ;
+  rdfs:label "next procedure step" ;
+  rdfs:range ssf:ProcedureStep ;
+  skos:prefLabel "next procedure step" ;
+.
+ssf:numericValue
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "numeric value" ;
+  rdfs:range <http://www.linkedmodel.org/schema/dtype#numericUnion> ;
+  skos:prefLabel "numeric value" ;
+.
+ssf:prevProcedureStep
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain ssf:ProcedureStep ;
+  rdfs:label "prev procedure step" ;
+  rdfs:range ssf:ProcedureStep ;
+  skos:prefLabel "prev procedure step" ;
+.
+ssf:procedureAchieves
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain ssf:Procedure ;
+  rdfs:label "procedure achieves" ;
+  rdfs:range ssf:Task ;
+  skos:prefLabel "procedure achieves" ;
+.
+ssf:procedureStep
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain ssf:Procedure ;
+  rdfs:label "procedure step" ;
+  rdfs:range ssf:ProcedureStep ;
+  skos:prefLabel "procedure step" ;
+.
+ssf:propertyType
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          ssf:StreamInput
+          ssf:StreamOutput
+        ) ;
+    ] ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          qudt:QuantityKind
+          qudt:Quantity
+        ) ;
+    ] ;
+.
+ssf:sensor
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain ssf:WearableSensingDevice ;
+  rdfs:label "sensor" ;
+  skos:prefLabel "sensor" ;
+.
+ssf:sensorDomain
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain ssf:WearableSensingDevice ;
+  rdfs:range xsd:string ;
+.
+ssf:sensorId
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "sensor id" ;
+  rdfs:subPropertyOf vaem:hasIdentifier ;
+  skos:prefLabel "sensor id" ;
+.
+ssf:sensorMeasurement
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "sensor measurement" ;
+.
+ssf:sensorType
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "sensor type" ;
+.
+ssf:servesPurpose
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Every function serves a purpose or intent, expressed as a goal." ;
+  rdfs:domain ssf:Function ;
+  rdfs:label "servesPurpose" ;
+  rdfs:range <http://fonm.org/schema/fonm#Goal> ;
+.
+ssf:size_HeightDepth
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "size height or depth" ;
+  rdfs:range xsd:decimal ;
+  skos:prefLabel "size height or depth" ;
+.
+ssf:size_Length
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "size length" ;
+  rdfs:range xsd:decimal ;
+  skos:prefLabel "size length" ;
+.
+ssf:size_Width
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "size width" ;
+  rdfs:range xsd:decimal ;
+  skos:prefLabel "size width" ;
+.
+ssf:spectrum
+  rdf:type owl:FunctionalProperty ;
+  rdfs:label "spectrum" ;
+  skos:prefLabel "spectrum" ;
+.
+ssf:stepAchieves
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain ssf:ProcedureStep ;
+  rdfs:label "step achieves" ;
+  rdfs:range ssf:Requirement ;
+  skos:prefLabel "step achieves" ;
+.
+ssf:stepOrder
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain ssf:ProcedureStep ;
+  rdfs:label "step order" ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "step order" ;
+.
+ssf:taskRequirement
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain ssf:Task ;
+  rdfs:label "task requirements" ;
+  rdfs:range ssf:Requirement ;
+  skos:prefLabel "task requirements" ;
+.
+ssf:timeValue
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain ssf:SSFTime ;
+  rdfs:label "time value" ;
+  rdfs:range xsd:dateTime ;
+.
+ssf:url
+  rdf:type owl:DatatypeProperty ;
+  dc:description "The property 'ssf:url' is intended for general use as the name implies.  The range of the property is set as an XSD URI." ;
+  rdfs:label "url" ;
+  rdfs:range xsd:anyURI ;
+.
+ssf:wearableImageLocation
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "wearable image location" ;
+  rdfs:subPropertyOf ssf:imageLocation ;
+  skos:prefLabel "wearable image location" ;
+.
+ssf:width
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "width" ;
+  rdfs:range xsd:string ;
+.
+vaem:CatalogEntry
+  rdfs:subClassOf owl:Thing ;
+.
+vaem:LicenseModel
+  rdfs:subClassOf owl:Thing ;
+.
+<http://www.loa-cnr.it/ontologies/DUL.owl#Entity>
+  rdf:type owl:Class ;
+  rdfs:label "Entity" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "Entity" ;
+.
+<http://www.loa-cnr.it/ontologies/DUL.owl#Organization>
+  rdf:type owl:Class ;
+  rdfs:label "Organization" ;
+  rdfs:subClassOf org:Organization ;
+  skos:prefLabel "Organization" ;
+.
+org:Membership
+  rdfs:subClassOf owl:Thing ;
+.
+org:Organization
+  rdfs:subClassOf owl:Thing ;
+.
+org:Post
+  rdfs:subClassOf owl:Thing ;
+.
+org:Site
+  rdfs:subClassOf owl:Thing ;
+.
+<http://www.w3.org/ns/prov#Activity>
+  rdfs:subClassOf owl:Thing ;
+.
+<http://www.w3.org/ns/prov#Agent>
+  rdfs:subClassOf owl:Thing ;
+.
+<http://www.w3.org/ns/prov#Entity>
+  rdfs:subClassOf owl:Thing ;
+.
+<http://www.w3.org/ns/prov#Influence>
+  rdfs:subClassOf owl:Thing ;
+.
+<http://www.w3.org/ns/prov#InstantaneousEvent>
+  rdfs:subClassOf owl:Thing ;
+.
+<http://www.w3.org/ns/prov#Location>
+  rdfs:subClassOf owl:Thing ;
+.
+<http://www.w3.org/ns/prov#Role>
+  rdfs:subClassOf owl:Thing ;
+.

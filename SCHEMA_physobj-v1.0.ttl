@@ -1,0 +1,2990 @@
+# baseURI: http://fonm.org/1.0/schema/physobj
+# imports: http://fonm.org/1.0/schema/fonm
+# imports: http://qudt.org/1.2/schema/qudt
+# imports: http://qudt.org/1.2/vocab/datatype
+# imports: http://www.linkedmodel.org/1.0/schema/dtype
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix datatype: <http://fonm.org/vocab/datatype#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix fonm: <http://fonm.org/schema/fonm#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://fonm.org/1.0/schema/physobj>
+  rdf:type owl:Ontology ;
+  dc:contributor "Jack Hodges" ;
+  dc:creator "Jack Hodges" ;
+  dc:description "The FONM 'Physobj' ontology extends VAEM 'DTYPE' with further classes and properties for the specification of data types." ;
+  dc:subject "Physobjs" ;
+  dc:title "The FONM Physobj Ontology" ;
+  vaem:hasCatalogEntry voag:FONM-SchemaCatalogEntry ;
+  vaem:hasGraphRole vaem:SchemaGraph ;
+  vaem:hasLicenseType voag:CC-SHAREALIKE_3PT0-US ;
+  vaem:intent "This ontology is to be used by other ontologies that need to reference type definitions." ;
+  vaem:namespace "http://fonm.org/schema/physobj#" ;
+  vaem:namespacePrefix "type" ;
+  vaem:specificity "1"^^xsd:int ;
+  vaem:url "http://fonm.org/1.0/schema/physobj"^^xsd:anyURI ;
+  rdfs:label "physobj" ;
+  owl:imports <http://fonm.org/1.0/schema/fonm> ;
+  owl:imports <http://qudt.org/1.2/schema/qudt> ;
+  owl:imports <http://qudt.org/1.2/vocab/datatype> ;
+  owl:imports <http://www.linkedmodel.org/1.0/schema/dtype> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "$Id: $" ;
+.
+fonm:AD-FL
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasPosition fonm:FarLeft ;
+  rdfs:label "ALONG-DEPTH FAR-LEFT" ;
+  skos:prefLabel "ALONG-DEPTH FAR-LEFT" ;
+.
+fonm:AD-FR
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasPosition fonm:FarRight ;
+  rdfs:label "ALONG-DEPTH FAR-RIGHT" ;
+  skos:prefLabel "ALONG-DEPTH FAR-RIGHT" ;
+.
+fonm:AD-MID
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasPosition fonm:Middle ;
+  rdfs:label "ALONG-DEPTH MIDDLE" ;
+  skos:prefLabel "ALONG-DEPTH MIDDLE" ;
+.
+fonm:AForce
+  rdf:type qudt:QuantityKind ;
+  rdf:type owl:Class ;
+  rdfs:label "Applied Force" ;
+  rdfs:subClassOf fonm:QuantKind ;
+  skos:definition "Applied force is external to an object, and is associated with motion and transformations." ;
+  skos:prefLabel "Applied Force" ;
+.
+fonm:AForceState
+  rdf:type owl:Class ;
+  rdfs:label "AForce state" ;
+  rdfs:subClassOf fonm:State ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:AForce ;
+      owl:onProperty fonm:hasProp ;
+    ] ;
+.
+fonm:AL-1S3MID
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasPosition fonm:Left ;
+  rdfs:label "ALONG-LENGTH 1/3 MIDDLE" ;
+  skos:prefLabel "ALONG-LENGTH 1/3 MIDDLE" ;
+.
+fonm:AL-FL
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasPosition fonm:FarLeft ;
+  rdfs:label "ALONG-LENGTH FAR-LEFT" ;
+  skos:prefLabel "ALONG-LENGTH FAR-LEFT" ;
+.
+fonm:AL-FR
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasPosition fonm:FarRight ;
+  rdfs:label "ALONG-LENGTH FAR-RIGHT" ;
+  skos:prefLabel "ALONG-LENGTH FAR-RIGHT" ;
+.
+fonm:AL-MID
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasPosition fonm:Middle ;
+  rdfs:label "ALONG-LENGTH MIDDLE" ;
+  skos:prefLabel "ALONG-LENGTH MIDDLE" ;
+.
+fonm:AR-FL
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension fonm:AlongRadius ;
+  fonm:hasPosition fonm:FarLeft ;
+  rdfs:label "ALONG-RADIUS FAR-LEFT" ;
+  skos:prefLabel "ALONG-RADIUS FAR-LEFT" ;
+.
+fonm:AR-FR
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension fonm:AlongRadius ;
+  fonm:hasPosition fonm:FarRight ;
+  rdfs:label "ALONG-RADIUS FAR-RIGHT" ;
+  skos:prefLabel "ALONG-RADIUS FAR-RIGHT" ;
+.
+fonm:AR-MID
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension fonm:AlongRadius ;
+  fonm:hasPosition fonm:Middle ;
+  rdfs:label "ALONG-RADIUS MIDDLE" ;
+  skos:prefLabel "ALONG-RADIUS MIDDLE" ;
+.
+fonm:AW-FL
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension fonm:AlongWidth ;
+  fonm:hasPosition fonm:FarLeft ;
+  rdfs:label "ALONG-WIDTH FAR-LEFT" ;
+  skos:prefLabel "ALONG-WIDTH FAR-LEFT" ;
+.
+fonm:AW-FR
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension fonm:AlongWidth ;
+  fonm:hasPosition fonm:FarRight ;
+  rdfs:label "ALONG-WIDTH FAR-RIGHT" ;
+  skos:prefLabel "ALONG-WIDTH FAR-RIGHT" ;
+.
+fonm:AW-MID
+  rdf:type fonm:Dimv ;
+  fonm:hasDimension fonm:AlongWidth ;
+  fonm:hasPosition fonm:Middle ;
+  rdfs:label "ALONG-WIDTH MIDDLE" ;
+  skos:prefLabel "ALONG-WIDTH MIDDLE" ;
+.
+fonm:AbovePlace
+  rdf:type owl:Class ;
+  rdfs:label "Above place" ;
+  rdfs:subClassOf fonm:Place ;
+  owl:disjointWith fonm:BelowPlace ;
+  skos:prefLabel "Above place" ;
+.
+fonm:Axle
+  rdf:type owl:Class ;
+  rdfs:label "Axle" ;
+  rdfs:subClassOf fonm:Surface ;
+  skos:prefLabel "Axle" ;
+.
+fonm:Beam
+  rdf:type owl:Class ;
+  dc:description "A beam has length significantly greater than any other dimensional size." ;
+  rdfs:label "Beam" ;
+  rdfs:subClassOf fonm:Block ;
+  skos:prefLabel "Beam" ;
+.
+fonm:BearingObject
+  rdf:type owl:Class ;
+  rdfs:label "Bearing object" ;
+  rdfs:subClassOf fonm:ObjectPrimitive ;
+  rdfs:subClassOf fonm:Sphere ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasRegion ;
+      owl:someValuesFrom fonm:Surface ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasRegion ;
+      owl:someValuesFrom fonm:WheelCenter ;
+    ] ;
+  skos:prefLabel "Bearing object" ;
+.
+fonm:BelowPlace
+  rdf:type owl:Class ;
+  rdfs:label "Below place" ;
+  rdfs:subClassOf fonm:Place ;
+  owl:disjointWith fonm:AbovePlace ;
+  skos:prefLabel "Below place" ;
+.
+fonm:BesidePlace
+  rdf:type owl:Class ;
+  rdfs:label "Beside place" ;
+  rdfs:subClassOf fonm:Place ;
+  skos:prefLabel "Beside place" ;
+.
+fonm:Blade
+  rdf:type owl:Class ;
+  dc:description "A blade is a wedge where the length is much longer than the width." ;
+  rdfs:label "Blade" ;
+  rdfs:subClassOf fonm:Wedge ;
+  skos:prefLabel "Blade" ;
+.
+fonm:BladeObject
+  rdf:type owl:Class ;
+  rdfs:label "Blade object" ;
+  rdfs:subClassOf fonm:Blade ;
+  rdfs:subClassOf fonm:ObjectPrimitive ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasRegion ;
+      owl:someValuesFrom fonm:Face ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasRegion ;
+      owl:someValuesFrom fonm:Point ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasRegion ;
+      owl:someValuesFrom fonm:WedgeEdge ;
+    ] ;
+  skos:prefLabel "Blade object" ;
+.
+fonm:Block
+  rdf:type owl:Class ;
+  dc:description "A block has no size in any dimension that is signficantly greater than any other dimension." ;
+  rdfs:label "Block" ;
+  rdfs:subClassOf fonm:MultipleDimension ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "24"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockBKBEdge ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockBKTEdge ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockBackAWFR ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockBottomADFR ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockCG ;
+      owl:onProperty fonm:hasLocation ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockE1BBKCorner ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockE1BEdge ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockE1BFCorner ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockE1BKEdge ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockE1FEdge ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockE1TBKCorner ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockE1TEdge ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockE1TFCorner ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockE2BBKCorner ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockE2BEdge ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockE2BFCorner ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockE2BKEdge ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockE2FEdge ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockE2TBKCorner ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockE2TEdge ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockE2TFCorner ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockEndALFL ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockEndALFR ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockFBEdge ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockFTEdge ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockFrontAWFL ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:BlockTopADFL ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:QuadrilateralShape ;
+      owl:onProperty fonm:hasState ;
+    ] ;
+  skos:prefLabel "Block" ;
+.
+fonm:BlockBALFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AL-FL ;
+  fonm:hasRef fonm:BlockBottomADFR ;
+  rdfs:label "Block Bottom Along-Length Far-Left Edge" ;
+  skos:prefLabel "Block Bottom Along-Length Far-Left Edge" ;
+.
+fonm:BlockBALFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AL-FR ;
+  fonm:hasRef fonm:BlockBottomADFR ;
+  rdfs:label "Block Bottom Along-Length Far-Right Edge" ;
+  skos:prefLabel "Block Bottom Along-Length Far-Right Edge" ;
+.
+fonm:BlockBAWFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AL-FL ;
+  fonm:hasRef fonm:BlockBottomADFR ;
+  rdfs:label "Block Bottom Along-Length Far-Left Edge" ;
+  skos:prefLabel "Block Bottom Along-Length Far-Left Edge" ;
+.
+fonm:BlockBAWFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AL-FR ;
+  fonm:hasRef fonm:BlockBottomADFR ;
+  rdfs:label "Block Bottom Along-Length Far-Right Edge" ;
+  skos:prefLabel "Block Bottom Along-Length Far-Right Edge" ;
+.
+fonm:BlockBKADFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AD-FL ;
+  fonm:hasRef fonm:BlockBackAWFR ;
+  rdfs:label "Block Back Along-Depth Far-Left Edge" ;
+  skos:prefLabel "Block Back Along-Depth Far-Left Edge" ;
+.
+fonm:BlockBKADFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AD-FR ;
+  fonm:hasRef fonm:BlockBackAWFR ;
+  rdfs:label "Block Back Along-Depth Far-Right Edge" ;
+  skos:prefLabel "Block Back Along-Depth Far-Right Edge" ;
+.
+fonm:BlockBKALFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AL-FL ;
+  fonm:hasRef fonm:BlockBackAWFR ;
+  rdfs:label "Block Back Along-Length Far-Left Edge" ;
+  skos:prefLabel "Block Back Along-Length Far-Left Edge" ;
+.
+fonm:BlockBKALFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AL-FR ;
+  fonm:hasRef fonm:BlockBackAWFR ;
+  rdfs:label "Block Back Along-Length Far-Right Edge" ;
+  skos:prefLabel "Block Back Along-Length Far-Right Edge" ;
+.
+fonm:BlockBKBEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockBALFREdgeLoc ;
+  fonm:hasLocation fonm:BlockBKADFREdgeLoc ;
+  rdfs:label "Block Back Bottom Edge" ;
+  skos:prefLabel "Block Back Bottom Edge" ;
+.
+fonm:BlockBKTEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockBKADFREdgeLoc ;
+  fonm:hasLocation fonm:BlockTALFREdgeLoc ;
+  rdfs:label "Block Back Top Edge" ;
+  skos:prefLabel "Block Back Top Edge" ;
+.
+fonm:BlockBackAWFR
+  rdf:type fonm:Face ;
+  fonm:hasLocation fonm:BlockBackFRLoc ;
+  rdfs:label "Block Back Along-Width Far-Right" ;
+  skos:prefLabel "Block Back Along-Width Far-Right" ;
+.
+fonm:BlockBackFRLoc
+  rdf:type fonm:BlockFaceLocation ;
+  fonm:hasDimv fonm:AW-FR ;
+  rdfs:label "Block Back FR Location" ;
+  skos:prefLabel "Block Back FR Location" ;
+.
+fonm:BlockBottomADFR
+  rdf:type fonm:Face ;
+  fonm:hasLocation fonm:BlockBottomFRLoc ;
+  rdfs:label "Block Bottom Along-Depth Far-Right" ;
+  skos:prefLabel "Block Bottom Along-Depth Far-Right" ;
+.
+fonm:BlockBottomFRLoc
+  rdf:type fonm:BlockFaceLocation ;
+  fonm:hasDimv fonm:AD-FR ;
+  rdfs:label "Block Bottom FR Location" ;
+  skos:prefLabel "Block Bottom FR Location" ;
+.
+fonm:BlockCG
+  rdf:type fonm:BlockLocations ;
+  fonm:hasDimv fonm:AD-MID ;
+  fonm:hasDimv fonm:AL-MID ;
+  fonm:hasDimv fonm:AW-MID ;
+  rdfs:label "Block CG" ;
+  skos:prefLabel "Block CG" ;
+.
+fonm:BlockCornerLocation
+  rdf:type owl:Class ;
+  rdfs:label "Block corner location" ;
+  rdfs:subClassOf fonm:BlockLocations ;
+  skos:prefLabel "Block corner location" ;
+.
+fonm:BlockE1ADFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AD-FL ;
+  fonm:hasRef fonm:BlockEndALFL ;
+  rdfs:label "Block End1 Along-Depth Far-Left Edge" ;
+  skos:prefLabel "Block End1 Along-Depth Far-Left Edge" ;
+.
+fonm:BlockE1ADFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AD-FR ;
+  fonm:hasRef fonm:BlockEndALFL ;
+  rdfs:label "Block End1 Along-Depth Far-Right Edge" ;
+  skos:prefLabel "Block End1 Along-Depth Far-Right Edge" ;
+.
+fonm:BlockE1AWFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AW-FL ;
+  fonm:hasRef fonm:BlockEndALFL ;
+  rdfs:label "Block End1 Along-Width Far-Left Edge" ;
+  skos:prefLabel "Block End1 Along-Width Far-Left Edge" ;
+.
+fonm:BlockE1AWFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AW-FR ;
+  fonm:hasRef fonm:BlockEndALFL ;
+  rdfs:label "Block End1 Along-Width Far-Right Edge" ;
+  skos:prefLabel "Block End1 Along-Width Far-Right Edge" ;
+.
+fonm:BlockE1BBKCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Block End1 Bottom Back Corner" ;
+  skos:prefLabel "Block End1 Bottom Back Corner" ;
+.
+fonm:BlockE1BEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockBALFREdgeLoc ;
+  fonm:hasLocation fonm:BlockE1AWFREdgeLoc ;
+  rdfs:label "Block End1 Bottom Edge" ;
+  skos:prefLabel "Block End1 Bottom Edge" ;
+.
+fonm:BlockE1BFCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Block End1 Bottom Front Corner" ;
+  skos:prefLabel "Block End1 Bottom Front Corner" ;
+.
+fonm:BlockE1BKEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockE1AWFREdgeLoc ;
+  fonm:hasLocation fonm:BlockFALFREdgeLoc ;
+  rdfs:label "Block End1 Back Edge" ;
+  skos:prefLabel "Block End1 Back Edge" ;
+.
+fonm:BlockE1FEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockE1AWFLEdgeLoc ;
+  fonm:hasLocation fonm:BlockFALFREdgeLoc ;
+  rdfs:label "Block End1 Front Edge" ;
+  skos:prefLabel "Block End1 Front Edge" ;
+.
+fonm:BlockE1TBKCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Block End1 Top Back Corner" ;
+  skos:prefLabel "Block End1 Top Back Corner" ;
+.
+fonm:BlockE1TEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockE1AWFREdgeLoc ;
+  fonm:hasLocation fonm:BlockTALFREdgeLoc ;
+  rdfs:label "Block End1 Top Edge" ;
+  skos:prefLabel "Block End1 Top Edge" ;
+.
+fonm:BlockE1TFCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Block End1 Top Front Corner" ;
+  skos:prefLabel "Block End1 Top Front Corner" ;
+.
+fonm:BlockE2ADFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AD-FL ;
+  fonm:hasRef fonm:BlockEndALFR ;
+  rdfs:label "Block End2 Along-Depth Far-Left Edge" ;
+  skos:prefLabel "Block End2 Along-Depth Far-Left Edge" ;
+.
+fonm:BlockE2ADFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AD-FR ;
+  fonm:hasRef fonm:BlockEndALFR ;
+  rdfs:label "Block End2 Along-Depth Far-Right Edge" ;
+  skos:prefLabel "Block End2 Along-Depth Far-Right Edge" ;
+.
+fonm:BlockE2AWFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AW-FL ;
+  fonm:hasRef fonm:BlockEndALFR ;
+  rdfs:label "Block End2 Along-Width Far-Left Edge" ;
+  skos:prefLabel "Block End2 Along-Width Far-Left Edge" ;
+.
+fonm:BlockE2AWFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AW-FR ;
+  fonm:hasRef fonm:BlockEndALFR ;
+  rdfs:label "Block End2 Along-Width Far-Right Edge" ;
+  skos:prefLabel "Block End2 Along-Width Far-Right Edge" ;
+.
+fonm:BlockE2BBKCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Block End2 Bottom Back Corner" ;
+  skos:prefLabel "Block End2 Bottom Back Corner" ;
+.
+fonm:BlockE2BEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockBALFREdgeLoc ;
+  fonm:hasLocation fonm:BlockE2AWFREdgeLoc ;
+  rdfs:label "Block End2 Bottom Edge" ;
+  skos:prefLabel "Block End2 Bottom Edge" ;
+.
+fonm:BlockE2BFCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Block End2 Bottom Back Corner" ;
+  skos:prefLabel "Block End2 Bottom Back Corner" ;
+.
+fonm:BlockE2BKEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockE2AWFREdgeLoc ;
+  fonm:hasLocation fonm:BlockFALFREdgeLoc ;
+  rdfs:label "Block End2 Back Edge" ;
+  skos:prefLabel "Block End2 Back Edge" ;
+.
+fonm:BlockE2FEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockE2AWFREdgeLoc ;
+  fonm:hasLocation fonm:BlockFALFREdgeLoc ;
+  rdfs:label "Block End2 Top Edge" ;
+  skos:prefLabel "Block End2 Top Edge" ;
+.
+fonm:BlockE2TBKCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Block End2 Top Back Corner" ;
+  skos:prefLabel "Block End2 Top Back Corner" ;
+.
+fonm:BlockE2TEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockE2AWFREdgeLoc ;
+  fonm:hasLocation fonm:BlockTALFREdgeLoc ;
+  rdfs:label "Block End2 Top Edge" ;
+  skos:prefLabel "Block End2 Top Edge" ;
+.
+fonm:BlockE2TFCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Block End2 Top Back Corner" ;
+  skos:prefLabel "Block End2 Top Back Corner" ;
+.
+fonm:BlockEdge
+  rdf:type owl:Class ;
+  rdfs:label "Block edge" ;
+  rdfs:subClassOf fonm:Edge ;
+  skos:prefLabel "Block edge" ;
+.
+fonm:BlockEdgeLocation
+  rdf:type owl:Class ;
+  rdfs:label "Block edge location" ;
+  rdfs:subClassOf fonm:BlockLocations ;
+  skos:prefLabel "Block edge location" ;
+.
+fonm:BlockEndALFL
+  rdf:type fonm:FaceEnd ;
+  fonm:hasLocation fonm:BlockEndFLLoc ;
+  rdfs:label "Block End Along-Length Far-Left" ;
+  skos:prefLabel "Block End Along-Length Far-Left" ;
+.
+fonm:BlockEndALFR
+  rdf:type fonm:FaceEnd ;
+  fonm:hasLocation fonm:BlockEndFRLoc ;
+  rdfs:label "Block End Along-Length Far-Right" ;
+  skos:prefLabel "Block End Along-Length Far-Right" ;
+.
+fonm:BlockEndFLLoc
+  rdf:type fonm:BlockEndLocation ;
+  fonm:hasDimv fonm:AL-FL ;
+  rdfs:label "Block end FL Location" ;
+  skos:prefLabel "Block end FL Location" ;
+.
+fonm:BlockEndFRLoc
+  rdf:type fonm:BlockEndLocation ;
+  fonm:hasDimv fonm:AL-FR ;
+  rdfs:label "Block end FR Location" ;
+  skos:prefLabel "Block end FR Location" ;
+.
+fonm:BlockEndLocation
+  rdf:type owl:Class ;
+  rdfs:label "Block end location" ;
+  rdfs:subClassOf fonm:BlockLocations ;
+  skos:prefLabel "Block end location" ;
+.
+fonm:BlockFADFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AD-FL ;
+  fonm:hasRef fonm:BlockFrontAWFL ;
+  rdfs:label "Block Front Along-Depth Far-Left Edge" ;
+  skos:prefLabel "Block Front Along-Depth Far-Left Edge" ;
+.
+fonm:BlockFADFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AD-FR ;
+  fonm:hasRef fonm:BlockFrontAWFL ;
+  rdfs:label "Block Front Along-Depth Far-Right Edge" ;
+  skos:prefLabel "Block Front Along-Depth Far-Right Edge" ;
+.
+fonm:BlockFALFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AL-FL ;
+  fonm:hasRef fonm:BlockFrontAWFL ;
+  rdfs:label "Block Front Along-Length Far-Left Edge" ;
+  skos:prefLabel "Block Front Along-Length Far-Left Edge" ;
+.
+fonm:BlockFALFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AL-FR ;
+  fonm:hasRef fonm:BlockFrontAWFL ;
+  rdfs:label "Block Front Along-Length Far-Right Edge" ;
+  skos:prefLabel "Block Front Along-Length Far-Right Edge" ;
+.
+fonm:BlockFBEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockBALFREdgeLoc ;
+  fonm:hasLocation fonm:BlockFADFREdgeLoc ;
+  rdfs:label "Block Front Bottom Edge" ;
+  skos:prefLabel "Block Front Bottom Edge" ;
+.
+fonm:BlockFTEdge
+  rdf:type fonm:BlockEdge ;
+  fonm:hasLocation fonm:BlockFADFREdgeLoc ;
+  fonm:hasLocation fonm:BlockTALFREdgeLoc ;
+  rdfs:label "Block Front Top Edge" ;
+  skos:prefLabel "Block Front Top Edge" ;
+.
+fonm:BlockFaceLocation
+  rdf:type owl:Class ;
+  rdfs:label "Block face location" ;
+  rdfs:subClassOf fonm:BlockLocations ;
+  skos:prefLabel "Block face location" ;
+.
+fonm:BlockFrontAWFL
+  rdf:type fonm:Face ;
+  fonm:hasLocation fonm:BlockFrontFLLoc ;
+  rdfs:label "Block Front Along-Width Far-Left" ;
+  skos:prefLabel "Block Front Along-Width Far-Left" ;
+.
+fonm:BlockFrontFLLoc
+  rdf:type fonm:BlockFaceLocation ;
+  fonm:hasDimv fonm:AW-FL ;
+  rdfs:label "Block Front FL Location" ;
+  skos:prefLabel "Block Front FL Location" ;
+.
+fonm:BlockLocations
+  rdf:type owl:Class ;
+  rdfs:label "Block locations" ;
+  rdfs:subClassOf fonm:Location ;
+  skos:prefLabel "Block locations" ;
+.
+fonm:BlockTALFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AL-FL ;
+  fonm:hasRef fonm:BlockTopADFL ;
+  rdfs:label "Block Top Along-Length Far-Left Edge" ;
+  skos:prefLabel "Block Top Along-Length Far-Left Edge" ;
+.
+fonm:BlockTALFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AL-FR ;
+  fonm:hasRef fonm:BlockTopADFL ;
+  rdfs:label "Block Top Along-Length Far-Right Edge" ;
+  skos:prefLabel "Block Top Along-Length Far-Right Edge" ;
+.
+fonm:BlockTAWFLEdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AW-FL ;
+  fonm:hasRef fonm:BlockTopADFL ;
+  rdfs:label "Block Top Along-Width Far-Left Edge" ;
+  skos:prefLabel "Block Top Along-Width Far-Left Edge" ;
+.
+fonm:BlockTAWFREdgeLoc
+  rdf:type fonm:BlockEdgeLocation ;
+  fonm:hasDimv fonm:AW-FR ;
+  fonm:hasRef fonm:BlockTopADFL ;
+  rdfs:label "Block Top Along-Width Far-Right Edge" ;
+  skos:prefLabel "Block Top Along-Width Far-Right Edge" ;
+.
+fonm:BlockTopADFL
+  rdf:type fonm:Face ;
+  fonm:hasLocation fonm:BlockTopFLLoc ;
+  rdfs:label "Block Top Along-Depth Far-Left" ;
+  skos:prefLabel "Block Top Along-Depth Far-Left" ;
+.
+fonm:BlockTopFLLoc
+  rdf:type fonm:BlockFaceLocation ;
+  fonm:hasDimv fonm:AD-FL ;
+  rdfs:label "Block Top FL Location" ;
+  skos:prefLabel "Block Top FL Location" ;
+.
+fonm:Boundary
+  rdf:type fonm:Region ;
+  rdf:type owl:Class ;
+  rdfs:label "Boundary" ;
+  rdfs:subClassOf fonm:SurfaceIntersection ;
+  skos:prefLabel "Boundary" ;
+.
+fonm:Bump
+  rdf:type fonm:Region ;
+  rdf:type owl:Class ;
+  fonm:hasShape "convex" ;
+  fonm:hasSize "<<nom" ;
+  rdfs:label "Bump" ;
+  rdfs:subClassOf fonm:Protuberance ;
+  skos:prefLabel "Bump" ;
+.
+fonm:Center
+  rdf:type owl:Class ;
+  rdfs:label "Center" ;
+  rdfs:subClassOf fonm:Region ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasLocation ;
+    ] ;
+  skos:prefLabel "Center" ;
+.
+fonm:CircularPlate
+  rdf:type owl:Class ;
+  dc:description "A circular plate is a plate whose shape in the length/width dimensions is circular." ;
+  rdfs:label "Circular plate" ;
+  rdfs:subClassOf fonm:Cylinder ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:CircularPlateThickness ;
+      owl:onProperty fonm:hasSize ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:CircularPlateWidth ;
+      owl:onProperty fonm:hasSize ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "6"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasSize ;
+    ] ;
+  skos:definition "A circular plate is a thin cylinder (along its length, which is now its thickness)." ;
+  skos:prefLabel "Circular plate" ;
+.
+fonm:CircularPlateThickness
+  rdf:type fonm:Size ;
+  fonm:hasDimension fonm:AlongLength ;
+  rdfs:label "Circular Plate Thickness" ;
+  skos:prefLabel "Circular Plate Thickness" ;
+.
+fonm:CircularPlateThickness1
+  rdf:type owl:Class ;
+  rdfs:label "Cylinder Thickness" ;
+  rdfs:subClassOf fonm:PlateSize ;
+  skos:prefLabel "Cylinder Thickness" ;
+.
+fonm:CircularPlateWidth
+  rdf:type fonm:Size ;
+  fonm:greaterThan fonm:CircularPlateThickness ;
+  fonm:hasDimension fonm:AlongRadius ;
+  rdfs:label "Circular Plate Width" ;
+  skos:prefLabel "Circular Plate Width" ;
+.
+fonm:CircularShape
+  rdf:type fonm:ShapeState ;
+  fonm:hasPVal fonm:Circular ;
+  fonm:hasProp fonm:Shape ;
+  rdfs:label "Circular shape" ;
+  skos:prefLabel "Circular shape" ;
+.
+fonm:CoaxialOrient
+  rdf:type owl:Class ;
+  rdfs:comment "Objects share a rotational axis at the center." ;
+  rdfs:label "Coaxial orient" ;
+  rdfs:subClassOf fonm:Orient ;
+  owl:disjointWith fonm:ParallelOrient ;
+  skos:prefLabel "Coaxial orient" ;
+.
+fonm:CoincidentOrient
+  rdf:type owl:Class ;
+  rdfs:comment "Objects share all cartesian axis at a point." ;
+  rdfs:label "Coincident orient" ;
+  rdfs:subClassOf fonm:Orient ;
+  skos:prefLabel "Coincident orient" ;
+.
+fonm:ColinearOrient
+  rdf:type owl:Class ;
+  rdfs:comment "Colinear means that the objects share a cartesian axis." ;
+  rdfs:label "Colinear orient" ;
+  rdfs:subClassOf fonm:Orient ;
+.
+fonm:Column
+  rdf:type owl:Class ;
+  dc:description "A column has a length much longer than its size in the other dimensions." ;
+  rdfs:label "Column" ;
+  rdfs:subClassOf fonm:Cylinder ;
+  skos:definition "A circular column is a cylinder whose length is somewhat larger than its radius." ;
+  skos:prefLabel "Column" ;
+.
+fonm:Compression
+  rdf:type fonm:Phys-Obj ;
+  rdf:type owl:Class ;
+  rdfs:label "Single dimension compression" ;
+  rdfs:subClassOf fonm:SingleDimension ;
+  skos:prefLabel "Single dimension compression" ;
+.
+fonm:Cone
+  rdf:type owl:Class ;
+  dc:description "A cone has a circular shape in one dimension and a triangular shape in the other dimensions, or it has a circular shape in one dimension and a much larger radius at one end than the other end." ;
+  rdfs:label "Cone" ;
+  rdfs:subClassOf fonm:Cylinder ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:ConeCG ;
+      owl:onProperty fonm:hasLocation ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:ConePoint ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:ConePointSize ;
+      owl:onProperty fonm:hasSize ;
+    ] ;
+  skos:definition "A cone is a cylinder whose radius at one end is much smaller than the other (down to zero radius)." ;
+  skos:prefLabel "Cone" ;
+.
+fonm:ConeCG
+  rdf:type fonm:ConeLocations ;
+  fonm:hasDimv fonm:AL-1S3MID ;
+  fonm:hasDimv fonm:AR-MID ;
+  rdfs:label "Cone CG" ;
+  skos:prefLabel "Cone CG" ;
+.
+fonm:ConeLocations
+  rdf:type owl:Class ;
+  rdfs:label "Cone locations" ;
+  rdfs:subClassOf fonm:Location ;
+  skos:prefLabel "Cone locations" ;
+.
+fonm:ConePoint
+  rdf:type fonm:Point ;
+  fonm:hasLocation fonm:ConePointLocation ;
+  rdfs:label "Cone point" ;
+  skos:prefLabel "Cone point" ;
+.
+fonm:ConePointLocation
+  rdf:type fonm:ConeLocations ;
+  fonm:hasDimv fonm:AL-FR ;
+  fonm:hasDimv fonm:AR-MID ;
+  rdfs:label "Cone point location" ;
+  skos:prefLabel "Cone point location" ;
+.
+fonm:ConePointSize
+  rdf:type fonm:Size ;
+  fonm:hasDimension fonm:AlongRadius ;
+  fonm:hasQuantValue fonm:MuchLessThanNominal ;
+  rdfs:label "Cone point" ;
+  skos:prefLabel "Cone point" ;
+.
+fonm:ConeSize
+  rdf:type owl:Class ;
+  rdfs:label "Cone size" ;
+  rdfs:subClassOf fonm:SizeState ;
+  skos:prefLabel "Cone size" ;
+.
+fonm:ContactRestraintState
+  rdf:type owl:Class ;
+  rdfs:comment "Restraint in at least one dimension but one direction for that dimension." ;
+  rdfs:label "Contact restraint state" ;
+  rdfs:subClassOf fonm:RestraintState ;
+  skos:prefLabel "Contact restraint state" ;
+.
+fonm:ContainerObject
+  rdf:type owl:Class ;
+  rdfs:label "Container object" ;
+  rdfs:subClassOf fonm:Block ;
+  rdfs:subClassOf fonm:ObjectPrimitive ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasRegion ;
+      owl:someValuesFrom fonm:ContainmentBoundary ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasRegion ;
+      owl:someValuesFrom fonm:Indentation ;
+    ] ;
+  skos:prefLabel "Container object" ;
+.
+fonm:ContainmentBoundary
+  rdf:type owl:Class ;
+  rdfs:label "Containment boundary" ;
+  rdfs:subClassOf fonm:Edge ;
+  skos:prefLabel "Containment boundary" ;
+.
+fonm:CoplanarOrient
+  rdf:type owl:Class ;
+  rdfs:comment "Objects share two cartesian axis." ;
+  rdfs:label "Coplanar orient" ;
+  rdfs:subClassOf fonm:Orient ;
+  skos:prefLabel "Coplanar orient" ;
+.
+fonm:Cord
+  rdf:type owl:Class ;
+  rdfs:label "Rope" ;
+  rdfs:subClassOf fonm:Tension ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  skos:prefLabel "Rope" ;
+.
+fonm:Corner
+  rdf:type owl:Class ;
+  rdfs:label "Corner" ;
+  rdfs:subClassOf fonm:Boundary ;
+  skos:prefLabel "Corner" ;
+.
+fonm:Crack
+  rdf:type fonm:Region ;
+  rdf:type owl:Class ;
+  fonm:hasShape "concave" ;
+  fonm:hasSize "<<nom" ;
+  dc:description "A crack generally doesn't go all the way through a material, and its length is much greater than its width" ;
+  rdfs:label "Crack" ;
+  rdfs:subClassOf fonm:Indentation ;
+  skos:prefLabel "Crack" ;
+.
+fonm:Cylinder
+  rdf:type owl:Class ;
+  dc:description "A cylinder has a circular shape in one dimension and a rectangular shape in the other dimensions." ;
+  rdfs:label "Cylinder" ;
+  rdfs:subClassOf fonm:MultipleDimension ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "5"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:Center ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:CylinderCG ;
+      owl:onProperty fonm:hasLocation ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:CylinderEndALFL ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:CylinderEndALFR ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:CylinderLength ;
+      owl:onProperty fonm:hasSize ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:CylinderSurfaceFL ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:CylinderSurfaceFR ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:CylinderThickness ;
+      owl:onProperty fonm:hasSize ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "6"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasSize ;
+    ] ;
+  skos:definition "A cyclinder is circular in one cartesian dimension and rectangular in the other two." ;
+  skos:prefLabel "Cylinder" ;
+.
+fonm:CylinderCG
+  rdf:type fonm:CylinderLocations ;
+  fonm:hasDimv fonm:AL-MID ;
+  fonm:hasDimv fonm:AR-MID ;
+  rdfs:label "Cylinder CG" ;
+  skos:prefLabel "Cylinder CG" ;
+.
+fonm:CylinderCenter
+  rdf:type fonm:Center ;
+  fonm:hasLocation vaem:CylinderCenterLoc ;
+  rdfs:label "Cylinder center" ;
+  skos:prefLabel "Cylinder center" ;
+.
+fonm:CylinderCenterLocation
+  rdf:type owl:Class ;
+  rdfs:label "Center" ;
+  rdfs:subClassOf fonm:CylinderLocations ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDimv ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:AR-MID ;
+      owl:onProperty fonm:hasDimv ;
+    ] ;
+  skos:prefLabel "Center" ;
+.
+fonm:CylinderEndALFL
+  rdf:type fonm:FaceEnd ;
+  fonm:hasLocation fonm:CylinderEndFLLoc ;
+  rdfs:label "Cylinder End Along-Length Far-Left" ;
+  skos:prefLabel "Cylinder End Along-Length Far-Left" ;
+.
+fonm:CylinderEndALFR
+  rdf:type fonm:FaceEnd ;
+  fonm:hasLocation fonm:CylinderEndFRLoc ;
+  rdfs:label "Cylinder End Along-Length Far-Right" ;
+  skos:prefLabel "Cylinder End Along-Length Far-Right" ;
+.
+fonm:CylinderEndFLLoc
+  rdf:type fonm:CylinderEndLocation ;
+  fonm:hasDimv fonm:AL-FL ;
+  rdfs:label "Cylinder end FL Location" ;
+  skos:prefLabel "Cylinder end FL Location" ;
+.
+fonm:CylinderEndFRLoc
+  rdf:type fonm:CylinderEndLocation ;
+  fonm:hasDimv fonm:AL-FR ;
+  rdfs:label "Cylinder end FR Location" ;
+  skos:prefLabel "Cylinder end FR Location" ;
+.
+fonm:CylinderEndLocation
+  rdf:type owl:Class ;
+  rdfs:label "Cylinder end location" ;
+  rdfs:subClassOf fonm:CylinderLocations ;
+  skos:prefLabel "Cylinder end location" ;
+.
+fonm:CylinderLength
+  rdf:type fonm:Size ;
+  fonm:greaterThan fonm:CylinderThickness ;
+  fonm:hasDimension fonm:AlongLength ;
+  rdfs:label "Cylinder length" ;
+  skos:prefLabel "Cylinder length" ;
+.
+fonm:CylinderLocations
+  rdf:type owl:Class ;
+  rdfs:label "Cylinder locations" ;
+  rdfs:subClassOf fonm:Location ;
+  skos:prefLabel "Cylinder locations" ;
+.
+fonm:CylinderSize
+  rdf:type owl:Class ;
+  rdfs:label "Cylinder size" ;
+  rdfs:subClassOf fonm:SizeState ;
+  skos:prefLabel "Cylinder size" ;
+.
+fonm:CylinderSurfaceFL
+  rdf:type fonm:Surface ;
+  fonm:hasLocation fonm:CylinderSurfaceFLLoc ;
+  rdfs:label "Cylinder Surface FL" ;
+  skos:prefLabel "Cylinder Surface FL" ;
+.
+fonm:CylinderSurfaceFLLoc
+  rdf:type fonm:CylinderSurfaceLocation ;
+  fonm:hasDimv fonm:AR-FL ;
+  rdfs:label "Cylinder Surface FL Location" ;
+  skos:prefLabel "Cylinder Surface FL Location" ;
+.
+fonm:CylinderSurfaceFR
+  rdf:type fonm:Surface ;
+  fonm:hasLocation fonm:CylinderSurfaceFRLoc ;
+  rdfs:label "Cylinder Surface FR" ;
+  skos:prefLabel "Cylinder Surface FR" ;
+.
+fonm:CylinderSurfaceFRLoc
+  rdf:type fonm:CylinderSurfaceLocation ;
+  fonm:hasDimv fonm:AR-FR ;
+  rdfs:label "Cylinder Surface FR Location" ;
+  skos:prefLabel "Cylinder Surface FR Location" ;
+.
+fonm:CylinderSurfaceLocation
+  rdf:type owl:Class ;
+  rdfs:label "Cylinder surface location" ;
+  rdfs:subClassOf fonm:CylinderLocations ;
+  skos:prefLabel "Cylinder surface location" ;
+.
+fonm:CylinderThickness
+  rdf:type fonm:Size ;
+  fonm:hasDimension fonm:AlongRadius ;
+  rdfs:label "Cylinder thickness" ;
+  skos:prefLabel "Cylinder thickness" ;
+.
+fonm:CylinderThickness1
+  rdf:type owl:Class ;
+  rdfs:label "Cylinder Thickness" ;
+  rdfs:subClassOf fonm:CylinderSize ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:AlongRadius ;
+      owl:onProperty fonm:hasDimension ;
+    ] ;
+  skos:prefLabel "Cylinder Thickness" ;
+.
+fonm:Density
+  rdf:type qudt:QuantityKind ;
+  rdf:type owl:Class ;
+  rdfs:label "Density" ;
+  rdfs:subClassOf fonm:MaterialProperties ;
+  skos:prefLabel "Density" ;
+.
+fonm:Dim
+  rdf:type owl:Class ;
+  rdfs:label "Dimension vector - DIM" ;
+  rdfs:subClassOf fonm:Concept ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "6"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDimension ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDimension ;
+    ] ;
+  skos:definition "Dim describes a dimension vector for orientations." ;
+  skos:prefLabel "Dimension and Direction - DIMR" ;
+.
+fonm:DimABD
+  rdf:type fonm:DimCoaxial ;
+  fonm:hasDimension fonm:AboutDepth ;
+  rdfs:label "Dim ABOUT_DEPTH" ;
+.
+fonm:DimABL
+  rdf:type fonm:DimCoaxial ;
+  fonm:hasDimension fonm:AboutLength ;
+  rdfs:label "Dim ABOUT_LENGTH" ;
+.
+fonm:DimABR
+  rdf:type fonm:DimCoaxial ;
+  fonm:hasDimension fonm:AboutRadius ;
+  rdfs:label "Dim ABOUT_RADIUS" ;
+.
+fonm:DimABW
+  rdf:type fonm:DimCoaxial ;
+  fonm:hasDimension fonm:AboutWidth ;
+  rdfs:label "Dim ABOUT_WIDTH" ;
+.
+fonm:DimALD
+  rdf:type fonm:DimColinear ;
+  fonm:hasDimension fonm:AlongDepth ;
+  rdfs:label "Dim ALONG_DEPTH" ;
+.
+fonm:DimALL
+  rdf:type fonm:DimColinear ;
+  fonm:hasDimension fonm:AboutLength ;
+  rdfs:label "Dim ALONG_LENGTH" ;
+.
+fonm:DimALLALD
+  rdf:type fonm:DimCoplanar ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongLength ;
+  rdfs:label "Dim ALONG_LENGTH and ALONG_DEPTH" ;
+.
+fonm:DimALLALW
+  rdf:type fonm:DimCoplanar ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Dim ALONG_LENGTH and ALONG_WIDTH" ;
+.
+fonm:DimALLALWALD
+  rdf:type fonm:DimCoincident ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongLength ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Dim ALONG_LENGTH ALONG_WIDTH ALONG_DEPTH" ;
+.
+fonm:DimALR
+  rdf:type fonm:DimColinear ;
+  fonm:hasDimension fonm:AlongRadius ;
+  rdfs:label "Dim ALONG_RADIUS" ;
+.
+fonm:DimALW
+  rdf:type fonm:DimColinear ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Dim ALONG_WIDTH" ;
+.
+fonm:DimALWALD
+  rdf:type fonm:DimCoplanar ;
+  fonm:hasDimension fonm:AlongDepth ;
+  fonm:hasDimension fonm:AlongWidth ;
+  rdfs:label "Dim ALONG_WIDTH and ALONG_DEPTH" ;
+.
+fonm:DimCoaxial
+  rdf:type owl:Class ;
+  rdfs:label "Dim coaxial" ;
+  rdfs:subClassOf fonm:Dim ;
+.
+fonm:DimCoincident
+  rdf:type owl:Class ;
+  rdfs:label "Dim coincident" ;
+  rdfs:subClassOf fonm:Dim ;
+.
+fonm:DimColinear
+  rdf:type owl:Class ;
+  rdfs:label "Dim colinear" ;
+  rdfs:subClassOf fonm:Dim ;
+.
+fonm:DimCoplanar
+  rdf:type owl:Class ;
+  rdfs:label "Dim coplanar" ;
+  rdfs:subClassOf fonm:Dim ;
+.
+fonm:DimDir
+  rdf:type owl:Class ;
+  rdfs:label "Dimension and Direction - DIMR" ;
+  rdfs:subClassOf fonm:Concept ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "12"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDirection ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "6"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDimension ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDirection ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDimension ;
+    ] ;
+  skos:definition "DimDir, or DIMR, describes a dimension and direction, generally of an constrain or transform process applied to a phys-obj. DimDir is used to represent a degree-of-freedom, since a degree of freedom at a point, is described by dimensions and directions. Interpret no (as well as both) direction as both directions. So in terms of restraint, a region is 'fixed' it it has all 6 dimensions and either zero or 12 directions." ;
+  skos:prefLabel "Dimension and Direction - DIMR" ;
+.
+fonm:DimShapeSize
+  rdf:type owl:Class ;
+  rdfs:label "Dimension Shape and and Size - DSS" ;
+  rdfs:subClassOf fonm:Concept ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDimension ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasShape ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasSize ;
+    ] ;
+  skos:definition "DimShapeSize, or DSS, describes a geometric object by its size and shape in a specific dimension. It must have a single value for each." ;
+  skos:prefLabel "Dimension Shape and and Size - DSS" ;
+.
+fonm:Dimv
+  rdf:type owl:Class ;
+  rdfs:label "Dimv" ;
+  rdfs:subClassOf fonm:Concept ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDimension ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasPosition ;
+    ] ;
+  skos:prefLabel "Dimv" ;
+.
+fonm:Edge
+  rdf:type fonm:Region ;
+  rdf:type owl:Class ;
+  fonm:hasShape "straight" ;
+  rdfs:label "Edge" ;
+  rdfs:subClassOf fonm:Boundary ;
+  skos:prefLabel "Edge" ;
+.
+fonm:Face
+  rdf:type fonm:Region ;
+  rdf:type owl:Class ;
+  fonm:hasShape "flat" ;
+  rdfs:label "Face" ;
+  rdfs:subClassOf fonm:Surface ;
+  skos:prefLabel "Face" ;
+.
+fonm:FaceEnd
+  rdf:type owl:Class ;
+  rdfs:label "End" ;
+  rdfs:subClassOf fonm:Face ;
+  skos:prefLabel "End" ;
+.
+fonm:Filament
+  rdf:type owl:Class ;
+  rdfs:label "Filament" ;
+  rdfs:subClassOf fonm:Tension ;
+  skos:prefLabel "Filament" ;
+.
+fonm:FixedRestraintState
+  rdf:type owl:Class ;
+  rdfs:comment "All degrees of freedom (all dimensions and directions)." ;
+  rdfs:label "Fixed restraint state" ;
+  rdfs:subClassOf fonm:RestraintState ;
+  skos:prefLabel "Fixed restraint state" ;
+.
+fonm:FreeRestraintState
+  rdf:type owl:Class ;
+  rdfs:comment "No degrees of freedom are restrained" ;
+  rdfs:label "Free restraint state" ;
+  rdfs:subClassOf fonm:RestraintState ;
+  skos:prefLabel "Free restraint state" ;
+.
+fonm:Gas
+  rdf:type fonm:Phys-Obj ;
+  rdf:type owl:Class ;
+  rdfs:label "Gas" ;
+  rdfs:subClassOf fonm:Stuff ;
+  skos:prefLabel "Gas" ;
+.
+fonm:GearObject
+  rdf:type owl:Class ;
+  rdfs:label "Gear object" ;
+  rdfs:subClassOf fonm:CircularPlate ;
+  rdfs:subClassOf fonm:ObjectPrimitive ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasRegion ;
+      owl:someValuesFrom fonm:GearTooth ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasRegion ;
+      owl:someValuesFrom fonm:WheelAxle ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasRegion ;
+      owl:someValuesFrom fonm:WheelCenter ;
+    ] ;
+  skos:prefLabel "Gear object" ;
+.
+fonm:GearTooth
+  rdf:type owl:Class ;
+  rdfs:label "Gear tooth" ;
+  rdfs:subClassOf fonm:Bump ;
+  skos:prefLabel "Gear tooth" ;
+.
+fonm:GeometricPrimitive
+  rdf:type owl:Class ;
+  rdfs:label "Geometric primitive" ;
+  rdfs:subClassOf fonm:Phys-Obj ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "2"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDimShapeSize ;
+    ] ;
+  skos:prefLabel "Geometric primitive" ;
+.
+fonm:Hole
+  rdf:type fonm:Region ;
+  rdf:type owl:Class ;
+  fonm:hasShape "concave" ;
+  fonm:hasSize "nom" ;
+  rdfs:label "Hole" ;
+  rdfs:subClassOf fonm:Indentation ;
+  skos:prefLabel "Hole" ;
+.
+fonm:IForce
+  rdf:type qudt:QuantityKind ;
+  rdf:type owl:Class ;
+  rdfs:label "Internal Force" ;
+  rdfs:subClassOf fonm:QuantKind ;
+  skos:definition "Internal force is associated with energy and deformation." ;
+  skos:prefLabel "Internal Force" ;
+.
+fonm:IForceState
+  rdf:type owl:Class ;
+  rdfs:label "IForce state" ;
+  rdfs:subClassOf fonm:State ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:IForce ;
+      owl:onProperty fonm:hasProp ;
+    ] ;
+.
+fonm:Indentation
+  rdf:type fonm:Region ;
+  rdf:type owl:Class ;
+  fonm:hasShape "concave" ;
+  rdfs:label "Indentation" ;
+  rdfs:subClassOf fonm:Surface ;
+  skos:prefLabel "Indentation" ;
+.
+fonm:Knob
+  rdf:type fonm:Region ;
+  rdf:type owl:Class ;
+  fonm:hasShape "convex" ;
+  fonm:hasSize "<nom" ;
+  rdfs:label "Knob" ;
+  rdfs:subClassOf fonm:Protuberance ;
+  skos:prefLabel "Knob" ;
+.
+fonm:LeftOfPlace
+  rdf:type owl:Class ;
+  rdfs:label "Left of place" ;
+  rdfs:subClassOf fonm:Place ;
+  owl:disjointWith fonm:RightOfPlace ;
+  skos:prefLabel "Left of place" ;
+.
+fonm:LeverObject
+  rdf:type owl:Class ;
+  rdfs:comment "Level has a 'pivot' region. Need to add it." ;
+  rdfs:label "Lever object" ;
+  rdfs:subClassOf fonm:Linkage ;
+  rdfs:subClassOf fonm:ObjectPrimitive ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "3"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  skos:prefLabel "Lever object" ;
+.
+fonm:Linkage
+  rdf:type owl:Class ;
+  rdfs:label "Linkage" ;
+  rdfs:subClassOf fonm:GeometricPrimitive ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "2"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:LinkageEndALFL ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:LinkageEndALFR ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  skos:definition "An elastic object, meaning that it can transmit mechanical force in at least one direction along at least one of its dimensional axes. Linkages make up the constituent components of mechanical devices." ;
+  skos:prefLabel "Linkage" ;
+.
+fonm:LinkageEndALFL
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFLLoc ;
+  rdfs:label "Linakge End Along-Length Far-Left" ;
+  skos:prefLabel "Linkage End Along-Length Far-Left" ;
+.
+fonm:LinkageEndALFR
+  rdf:type fonm:ProtuberanceEnd ;
+  fonm:hasLocation fonm:LinkageEndFRLoc ;
+  rdfs:label "Linakge End Along-Length Far-Right" ;
+  skos:prefLabel "Linkage End Along-Length Far-Right" ;
+.
+fonm:LinkageEndFLLoc
+  rdf:type fonm:LinkageEndLocation ;
+  fonm:hasDimv fonm:AL-FL ;
+  rdfs:label "Linkage end FL Location" ;
+  skos:prefLabel "Linkage end FL Location" ;
+.
+fonm:LinkageEndFRLoc
+  rdf:type fonm:LinkageEndLocation ;
+  fonm:hasDimv fonm:AL-FR ;
+  rdfs:label "Linkage end FR Location" ;
+  skos:prefLabel "Linkage end FR Location" ;
+.
+fonm:LinkageEndLocation
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Linkage end location" ;
+  rdfs:subClassOf fonm:LinkageLocations ;
+  skos:prefLabel "Linkage end location" ;
+.
+fonm:LinkageLocations
+  rdf:type owl:Class ;
+  rdf:type sh:Shape ;
+  rdfs:label "Linkage locations" ;
+  rdfs:subClassOf fonm:Location ;
+  skos:prefLabel "Linkage locations" ;
+.
+fonm:LinkageObject
+  rdf:type owl:Class ;
+  rdfs:label "Linkage object" ;
+  rdfs:subClassOf fonm:Linkage ;
+  rdfs:subClassOf fonm:ObjectPrimitive ;
+  skos:prefLabel "Linkage object" ;
+.
+fonm:LinkageStiffness
+  rdf:type fonm:StiffnessState ;
+  rdfs:label "Linkage stiffness" ;
+  skos:prefLabel "Linkage stiffness" ;
+.
+fonm:Lip
+  rdf:type fonm:Region ;
+  rdf:type owl:Class ;
+  fonm:hasLocation "middle" ;
+  fonm:hasShape "convex" ;
+  fonm:hasSize "nom" ;
+  rdfs:label "Lip" ;
+  rdfs:subClassOf fonm:Outcroppping ;
+  skos:prefLabel "Lip" ;
+.
+fonm:Liquid
+  rdf:type fonm:Phys-Obj ;
+  rdf:type owl:Class ;
+  rdfs:label "Liquid" ;
+  rdfs:subClassOf fonm:Stuff ;
+  skos:prefLabel "Liquid" ;
+.
+fonm:Location
+  rdf:type owl:Class ;
+  rdfs:label "Location" ;
+  rdfs:subClassOf fonm:Concept ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:Phys-Obj ;
+      owl:allValuesFrom fonm:Region ;
+      owl:onProperty fonm:hasRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "6"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDimv ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "6"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasRef ;
+    ] ;
+  skos:prefLabel "Location" ;
+.
+fonm:MaterialProperties
+  rdf:type qudt:QuantityKind ;
+  rdf:type owl:Class ;
+  rdfs:label "Material properties" ;
+  rdfs:subClassOf fonm:QuantKind ;
+  skos:prefLabel "Material properties" ;
+.
+fonm:MultipleDimension
+  rdf:type fonm:Phys-Obj ;
+  rdf:type owl:Class ;
+  rdfs:label "Multiple dimension" ;
+  rdfs:subClassOf fonm:Linkage ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "2"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDimShapeSize ;
+    ] ;
+  skos:prefLabel "Multiple dimension" ;
+.
+fonm:Niche
+  rdf:type fonm:Region ;
+  rdf:type owl:Class ;
+  fonm:hasShape "concave" ;
+  fonm:hasSize "<nom" ;
+  rdfs:label "Niche" ;
+  rdfs:subClassOf fonm:Indentation ;
+  skos:prefLabel "Niche" ;
+.
+fonm:NominalLinkageStiffness
+  rdf:type fonm:Quant ;
+  fonm:hasQVal fonm:GreaterThanNominal ;
+  qudt:baseUnitDimensions "unit:LBF-PER-IN" ;
+  rdfs:label "Nominal linkage stiffness" ;
+  skos:prefLabel "Nominal linkage stiffness" ;
+.
+fonm:ObjectPrimitive
+  rdf:type owl:Class ;
+  rdfs:label "Object primitive" ;
+  rdfs:subClassOf fonm:GeometricPrimitive ;
+  rdfs:subClassOf fonm:Phys-Obj ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "3"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDimShapeSize ;
+    ] ;
+  skos:prefLabel "Object primitive" ;
+.
+fonm:OnPlace
+  rdf:type owl:Class ;
+  rdfs:label "On place" ;
+  rdfs:subClassOf fonm:AbovePlace ;
+  skos:prefLabel "On place" ;
+.
+fonm:Opacity
+  rdf:type qudt:QuantityKind ;
+  rdf:type owl:Class ;
+  rdfs:label "Opacity" ;
+  rdfs:subClassOf fonm:MaterialProperties ;
+  skos:prefLabel "Opacity" ;
+.
+fonm:Orient
+  rdf:type owl:Class ;
+  rdfs:label "Orient" ;
+  rdfs:subClassOf fonm:Concept ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:Dim ;
+      owl:onProperty fonm:hasDim ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:Phys-Obj ;
+      owl:onProperty fonm:hasObject ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDim ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDimv ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "2"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasObject ;
+    ] ;
+  skos:definition "Describes an object orientation." ;
+  skos:prefLabel "Orient" ;
+.
+fonm:Outcroppping
+  rdf:type fonm:Region ;
+  rdf:type owl:Class ;
+  fonm:hasShape "convex" ;
+  fonm:hasSize "nom" ;
+  rdfs:label "Outcroppping" ;
+  rdfs:subClassOf fonm:Protuberance ;
+  skos:prefLabel "Outcroppping" ;
+.
+fonm:ParallelOrient
+  rdf:type owl:Class ;
+  rdfs:comment "Objects share a cartesian axis but offset by some amount." ;
+  rdfs:label "Parallel orient" ;
+  rdfs:subClassOf fonm:Orient ;
+  owl:disjointWith fonm:CoaxialOrient ;
+  skos:prefLabel "Parallel orient" ;
+.
+fonm:PerpendicularOrient
+  rdf:type owl:Class ;
+  rdfs:comment "Objects have a cartesian axis with an angular offset of 90 degrees." ;
+  rdfs:label "Perpendicular orient" ;
+  rdfs:subClassOf fonm:Orient ;
+  owl:disjointWith fonm:SkewOrient ;
+  skos:prefLabel "Perpendicular orient" ;
+.
+fonm:Phys-Obj
+  rdf:type owl:Class ;
+  rdfs:label "Phys-Obj" ;
+  rdfs:subClassOf fonm:Concept ;
+  rdfs:subClassOf <http://www.loa-cnr.it/ontologies/DUL.owl#PhysicalObject> ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasState ;
+    ] ;
+  skos:definition "Describes a primitive which further description of requires a set of states describing its properties and property values, and a set of regions which have functional significance." ;
+  skos:prefLabel "Phys-Obj" ;
+.
+fonm:PinnedRestraintState
+  rdf:type owl:Class ;
+  rdfs:comment "All cartesian coordinates and two rotational dimensions." ;
+  rdfs:label "Pinned restraint state" ;
+  rdfs:subClassOf fonm:RestraintState ;
+  skos:prefLabel "Pinned restraint state" ;
+.
+fonm:PivotedRestraintState
+  rdf:type owl:Class ;
+  rdfs:comment "One cartesian dimension but not the rotational dimension at the contact point." ;
+  rdfs:label "Pivoted restraint state" ;
+  rdfs:subClassOf fonm:RestraintState ;
+  skos:prefLabel "Pivoted restraint state" ;
+.
+fonm:Place
+  rdf:type owl:Class ;
+  rdfs:label "Place" ;
+  rdfs:subClassOf fonm:Concept ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:DimDir ;
+      owl:onProperty fonm:hasDimr ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:Dimv ;
+      owl:onProperty fonm:hasDimv ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:Region ;
+      owl:onProperty fonm:hasObject ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:Region ;
+      owl:onProperty fonm:hasRef ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDimr ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDimv ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasObject ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasRef ;
+    ] ;
+  skos:definition "Decribes a location on a physical object, a region or a position. The obj property describes the region on the object being located and defaults to the object's cg. The dimr property describes the dimension and direction with respect to the obj property. The ref property describes the reference object or region. The dimv property describes the pertinent dimension and value with respect to the reference object's static description. A book laid on top of table can be said to be 'above' the table if the book's cover (region) in the downward dimension and direction (ALONG-DEPTH NEG) in reference to the table top and its dimension and value ALONG-DEPTH FAR-LEFT." ;
+  skos:prefLabel "Place" ;
+.
+fonm:PlaneObject
+  rdf:type owl:Class ;
+  rdfs:label "Plane object" ;
+  rdfs:subClassOf fonm:ObjectPrimitive ;
+  rdfs:subClassOf fonm:Wedge ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasRegion ;
+      owl:someValuesFrom fonm:Face ;
+    ] ;
+  skos:prefLabel "Plane object" ;
+.
+fonm:Plate
+  rdf:type owl:Class ;
+  dc:description "A plate has two dimensions about the same size but significantly larger than the size in the third dimension." ;
+  rdfs:label "Plate" ;
+  rdfs:subClassOf fonm:Block ;
+  skos:prefLabel "Plate" ;
+.
+fonm:PlateSize
+  rdf:type owl:Class ;
+  rdfs:label "Plate size" ;
+  rdfs:subClassOf fonm:SizeState ;
+  skos:prefLabel "Plate size" ;
+.
+fonm:Point
+  rdf:type owl:Class ;
+  rdfs:label "Point" ;
+  rdfs:subClassOf fonm:Protuberance ;
+  skos:prefLabel "Point" ;
+.
+fonm:Position
+  rdf:type qudt:QuantityKind ;
+  rdf:type owl:Class ;
+  rdfs:label "Position" ;
+  rdfs:subClassOf fonm:QuantKind ;
+  skos:definition "Position is associated with a location in space. For a cartesian coordinate system it would be an x, y, z value. For a polar coordinate system it would be a r, theta value." ;
+  skos:prefLabel "Position" ;
+.
+fonm:PositionState
+  rdf:type owl:Class ;
+  rdfs:label "Position state" ;
+  rdfs:subClassOf fonm:State ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:Position ;
+      owl:onProperty fonm:hasProp ;
+    ] ;
+.
+fonm:Protuberance
+  rdf:type fonm:Region ;
+  rdf:type owl:Class ;
+  fonm:hasShape "convex" ;
+  rdfs:label "Protuberance" ;
+  rdfs:subClassOf fonm:Surface ;
+  skos:prefLabel "Protuberance" ;
+.
+fonm:ProtuberanceEnd
+  rdf:type fonm:Region ;
+  rdf:type owl:Class ;
+  fonm:hasLocation "extreme" ;
+  fonm:hasShape "convex" ;
+  fonm:hasSize "nom" ;
+  rdfs:label "End" ;
+  rdfs:subClassOf fonm:Outcroppping ;
+  skos:prefLabel "End" ;
+.
+fonm:PulleyObject
+  rdf:type owl:Class ;
+  rdfs:label "Pulley object" ;
+  rdfs:subClassOf fonm:CircularPlate ;
+  rdfs:subClassOf fonm:ObjectPrimitive ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasRegion ;
+      owl:someValuesFrom fonm:PulleySlot ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasRegion ;
+      owl:someValuesFrom fonm:WheelAxle ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty fonm:hasRegion ;
+      owl:someValuesFrom fonm:WheelCenter ;
+    ] ;
+  skos:prefLabel "Pulley object" ;
+.
+fonm:PulleySlot
+  rdf:type owl:Class ;
+  rdfs:label "Pulley slot" ;
+  rdfs:subClassOf fonm:Slot ;
+  skos:prefLabel "Pulley slot" ;
+.
+fonm:Pyramid
+  rdf:type owl:Class ;
+  dc:description "A pyramid has a square shape in one dimension and a triangular shape in the other dimensions." ;
+  rdfs:label "Pyramid" ;
+  rdfs:subClassOf fonm:Wedge ;
+  skos:prefLabel "Pyramid" ;
+.
+fonm:QuadrilateralShape
+  rdf:type fonm:ShapeState ;
+  fonm:hasPVal fonm:Quadrilateral ;
+  fonm:hasProp fonm:Shape ;
+  rdfs:label "Quadrilateral Shape" ;
+  skos:prefLabel "Quadrilateral Shape" ;
+.
+fonm:Quant
+  rdf:type owl:Class ;
+  rdfs:comment "Same as qudt:Quantity, which defines a quantity kind, unit, and value. Used to have a restriction of 'fonm:hasQVal min 1' but I don't know why so I removed it. QVal is specific to shape or size, so it is a Qualitative Value. So I'll add it back with the correct cardinality (max 1)." ;
+  rdfs:label "Quant" ;
+  rdfs:subClassOf <http://purl.oclc.org/NET/ssnx/ssn#ObservationValue> ;
+  rdfs:subClassOf qudt:Quantity ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasQVal ;
+    ] ;
+  skos:definition "A FONM quantity." ;
+  skos:prefLabel "Quant" ;
+.
+fonm:QuantKind
+  rdf:type owl:Class ;
+  rdfs:label "Quant kind" ;
+  rdfs:subClassOf fonm:Concept ;
+  rdfs:subClassOf qudt:QuantityKind ;
+  skos:prefLabel "Quant kind" ;
+.
+fonm:Region
+  rdf:type owl:Class ;
+  rdfs:label "Region" ;
+  rdfs:subClassOf fonm:Concept ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:allValuesFrom fonm:Phys-Obj ;
+      owl:onProperty fonm:hasObject ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasLocation ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasObject ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasShape ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasSize ;
+    ] ;
+  skos:definition "A region describes a significant physical area/surface or volume on a complex object, and that have something to do with their behavior or functionality." ;
+  skos:prefLabel "Region" ;
+.
+fonm:Restraint
+  rdf:type qudt:QuantityKind ;
+  rdf:type owl:Class ;
+  rdfs:label "Restraint" ;
+  rdfs:subClassOf fonm:QuantKind ;
+  skos:definition "Restraint is a way of describing degrees of freedom on an object, and is associated with Constrain processes." ;
+  skos:prefLabel "Restraint" ;
+.
+fonm:RestraintState
+  rdf:type owl:Class ;
+  rdfs:label "Restraint state" ;
+  rdfs:subClassOf fonm:State ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:Restraint ;
+      owl:onProperty fonm:hasProp ;
+    ] ;
+.
+fonm:RightOfPlace
+  rdf:type owl:Class ;
+  rdfs:label "Right of place" ;
+  rdfs:subClassOf fonm:Place ;
+  owl:disjointWith fonm:LeftOfPlace ;
+  skos:prefLabel "Right of place" ;
+.
+fonm:RigidRestraintState
+  rdf:type owl:Class ;
+  rdfs:comment "All local degrees of freedom (all dimensions and directions at a point)." ;
+  rdfs:label "Rigid restraint state" ;
+  rdfs:subClassOf fonm:RestraintState ;
+  skos:prefLabel "Rigid restraint state" ;
+.
+fonm:Rim
+  rdf:type fonm:Region ;
+  rdf:type owl:Class ;
+  fonm:hasShape "curved" ;
+  rdfs:label "Rim" ;
+  rdfs:subClassOf fonm:Boundary ;
+  skos:prefLabel "Rim" ;
+.
+fonm:ScrewObject
+  rdf:type owl:Class ;
+  rdfs:label "Screw object" ;
+  rdfs:subClassOf fonm:ObjectPrimitive ;
+  skos:prefLabel "Screw object" ;
+.
+fonm:Shape
+  rdf:type owl:Class ;
+  rdfs:label "Shape" ;
+  rdfs:subClassOf fonm:QuantKind ;
+  skos:prefLabel "Shape" ;
+.
+fonm:ShapeState
+  rdf:type fonm:State ;
+  rdf:type owl:Class ;
+  rdfs:label "Shape state" ;
+  rdfs:subClassOf fonm:State ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:Shape ;
+      owl:onProperty fonm:hasProp ;
+    ] ;
+  skos:prefLabel "Shape state" ;
+.
+fonm:SingleDimension
+  rdf:type fonm:Phys-Obj ;
+  rdf:type owl:Class ;
+  rdfs:label "Single dimension" ;
+  rdfs:subClassOf fonm:Linkage ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDimShapeSize ;
+    ] ;
+  skos:prefLabel "Single dimension" ;
+.
+fonm:Size
+  rdf:type qudt:QuantityKind ;
+  rdf:type owl:Class ;
+  rdfs:label "Size" ;
+  rdfs:subClassOf fonm:QuantKind ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "6"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDimension ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "6"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasQuant ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDimension ;
+    ] ;
+  skos:definition "Size describes an object's volume." ;
+  skos:prefLabel "Size" ;
+.
+fonm:SizeState
+  rdf:type owl:Class ;
+  rdfs:label "Size state" ;
+  rdfs:subClassOf fonm:State ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDimension ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:Size ;
+      owl:onProperty fonm:hasProp ;
+    ] ;
+  skos:prefLabel "Size state" ;
+.
+fonm:SkewOrient
+  rdf:type owl:Class ;
+  rdfs:comment "Objects have an axis which have an angular offset that is not 90 degrees." ;
+  rdfs:label "Skew orient" ;
+  rdfs:subClassOf fonm:Orient ;
+  owl:disjointWith fonm:PerpendicularOrient ;
+  skos:prefLabel "Skew orient" ;
+.
+fonm:Slot
+  rdf:type owl:Class ;
+  rdfs:label "Slot" ;
+  rdfs:subClassOf fonm:Indentation ;
+  skos:prefLabel "Slot" ;
+.
+fonm:Sphere
+  rdf:type owl:Class ;
+  dc:description "A sphere has a circular shape in every dimension." ;
+  rdfs:label "Sphere" ;
+  rdfs:subClassOf fonm:MultipleDimension ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "3"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:CircularShape ;
+      owl:onProperty fonm:hasState ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:SphereCG ;
+      owl:onProperty fonm:hasLocation ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:SphereCenter ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:SphereSurfaceFL ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:SphereSurfaceFR ;
+      owl:onProperty fonm:hasRegion ;
+    ] ;
+  skos:definition "A sphere is an object that is cicular in all three cartesian dimensions." ;
+  skos:prefLabel "Sphere" ;
+.
+fonm:SphereCG
+  rdf:type fonm:SphereLocations ;
+  fonm:hasDimv fonm:AR-MID ;
+  rdfs:label "Sphere CG" ;
+  skos:prefLabel "Sphere CG" ;
+.
+fonm:SphereCenter
+  rdf:type fonm:Center ;
+  fonm:hasLocation vaem:SphereCenterLoc ;
+  rdfs:label "Sphere center" ;
+  skos:prefLabel "Sphere center" ;
+.
+fonm:SphereCenterLocation
+  rdf:type owl:Class ;
+  rdfs:label "Sphere center location" ;
+  rdfs:subClassOf fonm:SphereLocations ;
+  skos:prefLabel "Sphere center location" ;
+.
+fonm:SphereLocations
+  rdf:type owl:Class ;
+  rdfs:label "Sphere locations" ;
+  rdfs:subClassOf fonm:Location ;
+  skos:prefLabel "Sphere locations" ;
+.
+fonm:SphereSurfaceFL
+  rdf:type fonm:Surface ;
+  fonm:hasLocation fonm:SphereSurfaceFLLoc ;
+  rdfs:label "Sphere Surface FL" ;
+  skos:prefLabel "Sphere Surface FL" ;
+.
+fonm:SphereSurfaceFLLoc
+  rdf:type fonm:SphereSurfaceLocation ;
+  fonm:hasDimv fonm:AR-FL ;
+  rdfs:label "Sphere Surface FL Location" ;
+  skos:prefLabel "Sphere Surface FL Location" ;
+.
+fonm:SphereSurfaceFR
+  rdf:type fonm:Surface ;
+  fonm:hasLocation fonm:SphereSurfaceFRLoc ;
+  rdfs:label "Sphere Surface FR" ;
+  skos:prefLabel "Sphere Surface FR" ;
+.
+fonm:SphereSurfaceFRLoc
+  rdf:type fonm:SphereSurfaceLocation ;
+  fonm:hasDimv fonm:AR-FR ;
+  rdfs:label "Sphere Surface FR Location" ;
+  skos:prefLabel "Sphere Surface FR Location" ;
+.
+fonm:SphereSurfaceLocation
+  rdf:type owl:Class ;
+  rdfs:label "Sphere surface location" ;
+  rdfs:subClassOf fonm:SphereLocations ;
+  skos:prefLabel "Sphere surface location" ;
+.
+fonm:SpringObject
+  rdf:type owl:Class ;
+  rdfs:label "Spring object" ;
+  rdfs:subClassOf fonm:ObjectPrimitive ;
+  skos:prefLabel "Spring object" ;
+.
+fonm:State
+  rdf:type owl:Class ;
+  rdfs:label "State" ;
+  rdfs:subClassOf fonm:Concept ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasObject ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasDimr ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasPVal ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:achieves ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:blocks ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:disables ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:enables ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:initiates ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:motivates ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:terminates ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:violates ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty fonm:hasProp ;
+    ] ;
+  skos:prefLabel "State" ;
+.
+fonm:Stiffness
+  rdf:type qudt:QuantityKind ;
+  rdf:type owl:Class ;
+  rdfs:label "Stiffness" ;
+  rdfs:subClassOf fonm:MaterialProperties ;
+  skos:prefLabel "Stiffness" ;
+.
+fonm:StiffnessState
+  rdf:type owl:Class ;
+  rdfs:label "Stiffness state" ;
+  rdfs:subClassOf fonm:State ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:Stiffness ;
+      owl:onProperty fonm:hasProp ;
+    ] ;
+  skos:prefLabel "Stiffness state" ;
+.
+fonm:Strength
+  rdf:type qudt:QuantityKind ;
+  rdf:type owl:Class ;
+  rdfs:label "Strength" ;
+  rdfs:subClassOf fonm:MaterialProperties ;
+  skos:prefLabel "Strength" ;
+.
+fonm:Stuff
+  rdf:type fonm:Phys-Obj ;
+  rdf:type owl:Class ;
+  rdfs:label "Stuff" ;
+  rdfs:subClassOf fonm:Phys-Obj ;
+  owl:disjointWith fonm:Linkage ;
+  skos:definition "An object which cannot, alone, transmit force in any dimension or direction. In FONM, anything that isn't a Linkage. Liquids and gases are examples of Stuff since they cannot, alone, transmit force." ;
+  skos:prefLabel "Stuff" ;
+.
+fonm:Surface
+  rdf:type fonm:Region ;
+  rdf:type owl:Class ;
+  rdfs:label "Surface" ;
+  rdfs:subClassOf fonm:Region ;
+  skos:prefLabel "Surface" ;
+.
+fonm:SurfaceIntersection
+  rdf:type fonm:Region ;
+  rdf:type owl:Class ;
+  rdfs:label "Surface" ;
+  rdfs:subClassOf fonm:Region ;
+  skos:prefLabel "Surface" ;
+.
+fonm:Tension
+  rdf:type fonm:Phys-Obj ;
+  rdf:type owl:Class ;
+  rdfs:label "Single dimension tension" ;
+  rdfs:subClassOf fonm:SingleDimension ;
+  skos:prefLabel "Single dimension tension" ;
+.
+fonm:Tetrahedron
+  rdf:type owl:Class ;
+  dc:description "A tetrahedron has a triangular shape in every dimension." ;
+  rdfs:label "Tetrahedron" ;
+  rdfs:subClassOf fonm:MultipleDimension ;
+  skos:prefLabel "Tetrahedron" ;
+.
+fonm:ThreadEdge
+  rdf:type owl:Class ;
+  rdfs:label "Thread edge" ;
+  rdfs:subClassOf fonm:Edge ;
+  skos:prefLabel "Thread edge" ;
+.
+fonm:TorqueState
+  rdf:type owl:Class ;
+  rdfs:comment "Torque is an applied force along a rotational dimension. That is, and angular force." ;
+  rdfs:label "Torque state" ;
+  rdfs:subClassOf fonm:AForceState ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue <http://qudt.org/vocab/quantity#Torque> ;
+      owl:onProperty fonm:hasProp ;
+    ] ;
+  skos:prefLabel "Torque state" ;
+.
+fonm:ValueEnumeration
+  dtype:value fonm:MuchGreaterThanNominal ;
+  dtype:value fonm:MuchLessThanNominal ;
+.
+fonm:Wedge
+  rdf:type owl:Class ;
+  dc:description "A wedge has a triangular shape in one dimension." ;
+  rdfs:label "Wedge" ;
+  rdfs:subClassOf fonm:Block ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:WedgeCG ;
+      owl:onProperty fonm:hasLocation ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:WedgeSize ;
+      owl:onProperty fonm:hasState ;
+    ] ;
+  skos:prefLabel "Wedge" ;
+.
+fonm:WedgeBALFLEdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv fonm:AL-FL ;
+  fonm:hasRef fonm:BlockBottomADFR ;
+  rdfs:label "Wedge Bottom Along-Length Far-Left Edge" ;
+  skos:prefLabel "Wedge Bottom Along-Length Far-Left Edge" ;
+.
+fonm:WedgeBALFREdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv fonm:AL-FR ;
+  fonm:hasRef fonm:BlockBottomADFR ;
+  rdfs:label "Wedge Bottom Along-Length Far-Right Edge" ;
+  skos:prefLabel "Wedge Bottom Along-Length Far-Right Edge" ;
+.
+fonm:WedgeBAWFLEdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv fonm:AL-FL ;
+  fonm:hasRef fonm:BlockBottomADFR ;
+  rdfs:label "Wedge Bottom Along-Length Far-Left Edge" ;
+  skos:prefLabel "Wedge Bottom Along-Length Far-Left Edge" ;
+.
+fonm:WedgeBAWFREdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv fonm:AL-FR ;
+  fonm:hasRef fonm:BlockBottomADFR ;
+  rdfs:label "Wedge Bottom Along-Length Far-Right Edge" ;
+  skos:prefLabel "Wedge Bottom Along-Length Far-Right Edge" ;
+.
+fonm:WedgeBKADFLEdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv fonm:AD-FL ;
+  fonm:hasRef fonm:BlockBackAWFR ;
+  rdfs:label "Wedge Back Along-Depth Far-Left Edge" ;
+  skos:prefLabel "Wedge Back Along-Depth Far-Left Edge" ;
+.
+fonm:WedgeBKADFREdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv fonm:AD-FR ;
+  fonm:hasRef fonm:BlockBackAWFR ;
+  rdfs:label "Wedge Back Along-Depth Far-Right Edge" ;
+  skos:prefLabel "Wedge Back Along-Depth Far-Right Edge" ;
+.
+fonm:WedgeBKALFREdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv fonm:AL-FR ;
+  fonm:hasRef fonm:BlockBackAWFR ;
+  rdfs:label "Wedge Back Along-Length Far-Right Edge" ;
+  skos:prefLabel "Wedge Back Along-Length Far-Right Edge" ;
+.
+fonm:WedgeBKBEdge
+  rdf:type fonm:WedgeEdge ;
+  fonm:hasLocation fonm:WedgeBALFREdgeLoc ;
+  fonm:hasLocation fonm:WedgeBKADFREdgeLoc ;
+  rdfs:label "Wedge Back Bottom Edge" ;
+  skos:prefLabel "Wedge Back Bottom Edge" ;
+.
+fonm:WedgeBKTEdge
+  rdf:type fonm:WedgeEdge ;
+  fonm:hasLocation fonm:WedgeBKADFREdgeLoc ;
+  fonm:hasLocation fonm:WedgeTALFREdgeLoc ;
+  rdfs:label "Wedge Back Top Edge" ;
+  skos:prefLabel "Wedge Back Top Edge" ;
+.
+fonm:WedgeBackAWFR
+  rdf:type fonm:Face ;
+  fonm:hasLocation fonm:WedgeBackFRLoc ;
+  rdfs:label "Wedge Back Along-Width Far-Right" ;
+  skos:prefLabel "Wedge Back Along-Width Far-Right" ;
+.
+fonm:WedgeBackFRLoc
+  rdf:type fonm:WedgeFaceLocation ;
+  fonm:hasDimv fonm:AW-FR ;
+  rdfs:label "Wedge Back Along-Width Far-Right Location" ;
+  skos:prefLabel "Wedge Back Along-Width Far-Right Location" ;
+.
+fonm:WedgeBottomADFR
+  rdf:type fonm:Face ;
+  fonm:hasLocation fonm:WedgeBottomFRLoc ;
+  rdfs:label "Wedge Bottom Along-Depth Far-Right" ;
+  skos:prefLabel "Wedge Bottom Along-Depth Far-Right" ;
+.
+fonm:WedgeBottomFRLoc
+  rdf:type fonm:WedgeFaceLocation ;
+  fonm:hasDimv fonm:AD-FR ;
+  rdfs:label "Wedge Bottom Along-Depth Far-Right Location" ;
+  skos:prefLabel "Wedge Bottom Along-Depth Far-Right Location" ;
+.
+fonm:WedgeCG
+  rdf:type fonm:WedgeLocations ;
+  fonm:hasDimv fonm:AD-MID ;
+  fonm:hasDimv fonm:AL-1S3MID ;
+  fonm:hasDimv fonm:AW-MID ;
+  rdfs:label "Wedge CG" ;
+  skos:prefLabel "Wedge CG" ;
+.
+fonm:WedgeCornerLocation
+  rdf:type owl:Class ;
+  rdfs:label "Wedge Corner Location" ;
+  rdfs:subClassOf fonm:WedgeLocations ;
+  skos:prefLabel "Wedge Corner Location" ;
+.
+fonm:WedgeEADFLEdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv fonm:AD-FL ;
+  fonm:hasRef fonm:BlockEndALFL ;
+  rdfs:label "Wedge End Along-Depth Far-Left Edge" ;
+  skos:prefLabel "Wedge End Along-Depth Far-Left Edge" ;
+.
+fonm:WedgeEADFREdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv fonm:AD-FR ;
+  fonm:hasRef fonm:BlockEndALFL ;
+  rdfs:label "Wedge End Along-Depth Far-Right Edge" ;
+  skos:prefLabel "Wedge End Along-Depth Far-Right Edge" ;
+.
+fonm:WedgeEAWFLEdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv fonm:AW-FL ;
+  fonm:hasRef fonm:BlockEndALFL ;
+  rdfs:label "Wedge End Along-Width Far-Left Edge" ;
+  skos:prefLabel "Wedge End Along-Width Far-Left Edge" ;
+.
+fonm:WedgeEAWFREdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv fonm:AW-FR ;
+  fonm:hasRef fonm:BlockEndALFL ;
+  rdfs:label "Wedge End Along-Width Far-Right Edge" ;
+  skos:prefLabel "Wedge End Along-Width Far-Right Edge" ;
+.
+fonm:WedgeEBBKCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Wedge End Bottom Back Corner" ;
+  skos:prefLabel "Wedge End Bottom Back Corner" ;
+.
+fonm:WedgeEBEdge
+  rdf:type fonm:WedgeEdge ;
+  fonm:hasLocation fonm:WedgeBALFREdgeLoc ;
+  fonm:hasLocation fonm:WedgeEAWFREdgeLoc ;
+  rdfs:label "Wedge End Bottom Edge" ;
+  skos:prefLabel "Wedge End Bottom Edge" ;
+.
+fonm:WedgeEBFCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Wedge End Bottom Back Corner" ;
+  skos:prefLabel "Wedge End Bottom Back Corner" ;
+.
+fonm:WedgeEBKEdge
+  rdf:type fonm:WedgeEdge ;
+  fonm:hasLocation fonm:WedgeEAWFREdgeLoc ;
+  fonm:hasLocation fonm:WedgeFALFREdgeLoc ;
+  rdfs:label "Wedge End Back Edge" ;
+  skos:prefLabel "Wedge End Back Edge" ;
+.
+fonm:WedgeEFEdge
+  rdf:type fonm:WedgeEdge ;
+  fonm:hasLocation fonm:WedgeEAWFLEdgeLoc ;
+  fonm:hasLocation fonm:WedgeFALFREdgeLoc ;
+  rdfs:label "Wedge End Front Edge" ;
+  skos:prefLabel "Wedge End Front Edge" ;
+.
+fonm:WedgeETBKCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Wedge End Top Back Corner" ;
+  skos:prefLabel "Wedge End Top Back Corner" ;
+.
+fonm:WedgeETEdge
+  rdf:type fonm:WedgeEdge ;
+  fonm:hasLocation fonm:WedgeEAWFREdgeLoc ;
+  fonm:hasLocation fonm:WedgeTALFREdgeLoc ;
+  rdfs:label "Wedge End Top Edge" ;
+  skos:prefLabel "Wedge End Top Edge" ;
+.
+fonm:WedgeETFCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Wedge End Top Back Corner" ;
+  skos:prefLabel "Wedge End Top Back Corner" ;
+.
+fonm:WedgeEdge
+  rdf:type owl:Class ;
+  rdfs:label "Wedge edge" ;
+  rdfs:subClassOf fonm:Edge ;
+  skos:prefLabel "Wedge edge" ;
+.
+fonm:WedgeEdgeALFLEdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv fonm:AL-FL ;
+  fonm:hasRef fonm:BlockFrontAWFL ;
+  rdfs:label "Wedge Edge Along-Length Far-Left Edge" ;
+  skos:prefLabel "Wedge Edge Along-Length Far-Left Edge" ;
+.
+fonm:WedgeEdgeBEdge
+  rdf:type fonm:WedgeEdge ;
+  fonm:hasLocation fonm:BlockBALFREdgeLoc ;
+  fonm:hasLocation fonm:WedgeTAWFREdgeLoc ;
+  rdfs:label "Wedge Edge Edge" ;
+  skos:prefLabel "Wedge Edge Edge" ;
+.
+fonm:WedgeEdgeFRLoc
+  rdf:type fonm:WedgeLocations ;
+  fonm:hasDimv fonm:AL-FR ;
+  rdfs:label "Wedge Edge FR Location" ;
+  skos:prefLabel "Wedge Edge FR Location" ;
+.
+fonm:WedgeEdgeLocation
+  rdf:type owl:Class ;
+  rdfs:label "Wedge Edge Location" ;
+  rdfs:subClassOf fonm:WedgeLocations ;
+  skos:prefLabel "Wedge Edge Location" ;
+.
+fonm:WedgeEndALFR
+  rdf:type fonm:FaceEnd ;
+  fonm:hasLocation fonm:WedgeEndFRLoc ;
+  rdfs:label "Wedge End Along-Length Far-Right" ;
+  skos:prefLabel "Wedge End Along-Length Far-Right" ;
+.
+fonm:WedgeEndFRLoc
+  rdf:type fonm:WedgeFaceLocation ;
+  fonm:hasDimv fonm:AL-FR ;
+  rdfs:label "Wedge End Along-Length Far-Right Location" ;
+  skos:prefLabel "Wedge End Along-Length Far-Right Location" ;
+.
+fonm:WedgeFADFLEdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv fonm:AD-FL ;
+  fonm:hasRef fonm:BlockFrontAWFL ;
+  rdfs:label "Wedge Front Along-Depth Far-Left Edge" ;
+  skos:prefLabel "Wedge Front Along-Depth Far-Left Edge" ;
+.
+fonm:WedgeFADFREdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv fonm:AD-FR ;
+  fonm:hasRef fonm:BlockFrontAWFL ;
+  rdfs:label "Wedge Front Along-Depth Far-Right Edge" ;
+  skos:prefLabel "Wedge Front Along-Depth Far-Right Edge" ;
+.
+fonm:WedgeFALFREdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv fonm:AL-FR ;
+  fonm:hasRef fonm:BlockFrontAWFL ;
+  rdfs:label "Wedge Front Along-Length Far-Right Edge" ;
+  skos:prefLabel "Wedge Front Along-Length Far-Right Edge" ;
+.
+fonm:WedgeFBEdge
+  rdf:type fonm:WedgeEdge ;
+  fonm:hasLocation fonm:WedgeBALFREdgeLoc ;
+  fonm:hasLocation fonm:WedgeFADFREdgeLoc ;
+  rdfs:label "Wedge Front Bottom Edge" ;
+  skos:prefLabel "Wedge Front Bottom Edge" ;
+.
+fonm:WedgeFTEdge
+  rdf:type fonm:WedgeEdge ;
+  fonm:hasLocation fonm:WedgeFADFREdgeLoc ;
+  fonm:hasLocation fonm:WedgeTALFREdgeLoc ;
+  rdfs:label "Wedge Front Top Edge" ;
+  skos:prefLabel "Wedge Front Top Edge" ;
+.
+fonm:WedgeFaceLocation
+  rdf:type owl:Class ;
+  rdfs:label "Wedge Face Location" ;
+  rdfs:subClassOf fonm:WedgeLocations ;
+  skos:prefLabel "Wedge Face Location" ;
+.
+fonm:WedgeFrontAWFL
+  rdf:type fonm:Face ;
+  fonm:hasLocation fonm:WedgeFrontFLLoc ;
+  rdfs:label "Wedge Front Along-Width Far-Left" ;
+  skos:prefLabel "Wedge Front Along-Width Far-Left" ;
+.
+fonm:WedgeFrontFLLoc
+  rdf:type fonm:WedgeFaceLocation ;
+  fonm:hasDimv fonm:AW-FL ;
+  rdfs:label "Wedge Front Along-Width Far-Left Location" ;
+  skos:prefLabel "Wedge Front Along-Width Far-Left Location" ;
+.
+fonm:WedgeLocations
+  rdf:type owl:Class ;
+  rdfs:label "Wedge locations" ;
+  rdfs:subClassOf fonm:Location ;
+  skos:prefLabel "Wedge locations" ;
+.
+fonm:WedgeSize
+  rdf:type owl:Class ;
+  rdfs:label "Wedge size" ;
+  rdfs:subClassOf fonm:SizeState ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:AlongDepth ;
+      owl:onProperty fonm:hasDimr ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:MuchLessThanNominal ;
+      owl:onProperty fonm:hasQuantValue ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:hasValue fonm:Size ;
+      owl:onProperty fonm:hasProp ;
+    ] ;
+  skos:prefLabel "Wedge size" ;
+.
+fonm:WedgeTALFLEdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv fonm:AL-FL ;
+  fonm:hasRef fonm:BlockTopADFL ;
+  rdfs:label "Wedge Top Along-Length Far-Left Edge" ;
+  skos:prefLabel "Wedge Top Along-Length Far-Left Edge" ;
+.
+fonm:WedgeTALFREdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv fonm:AL-FR ;
+  fonm:hasRef fonm:BlockTopADFL ;
+  rdfs:label "Wedge Top Along-Length Far-Right Edge" ;
+  skos:prefLabel "Wedge Top Along-Length Far-Right Edge" ;
+.
+fonm:WedgeTAWFLEdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv fonm:AW-FL ;
+  fonm:hasRef fonm:BlockTopADFL ;
+  rdfs:label "Wedge Top Along-Width Far-Left Edge" ;
+  skos:prefLabel "Wedge Top Along-Width Far-Left Edge" ;
+.
+fonm:WedgeTAWFREdgeLoc
+  rdf:type fonm:WedgeEdgeLocation ;
+  fonm:hasDimv fonm:AW-FR ;
+  fonm:hasRef fonm:BlockTopADFL ;
+  rdfs:label "Wedge Top Along-Width Far-Right Edge" ;
+  skos:prefLabel "Wedge Top Along-Width Far-Right Edge" ;
+.
+fonm:WedgeTBBKCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Wedge Top Bottom Back Corner" ;
+  skos:prefLabel "Wedge Top Bottom Back Corner" ;
+.
+fonm:WedgeTBFCorner
+  rdf:type fonm:Corner ;
+  rdfs:label "Wedge Top Bottom Front Corner" ;
+  skos:prefLabel "Wedge Top Bottom Front Corner" ;
+.
+fonm:WedgeTopADFL
+  rdf:type fonm:Face ;
+  fonm:hasLocation fonm:WedgeTopFLLoc ;
+  rdfs:label "Wedge Top Along-Depth Far-Left" ;
+  skos:prefLabel "Wedge Top Along-Depth Far-Left" ;
+.
+fonm:WedgeTopFLLoc
+  rdf:type fonm:WedgeFaceLocation ;
+  fonm:hasDimv fonm:AD-FL ;
+  rdfs:label "Wedge Top Along-Depth Far-Left Location" ;
+  skos:prefLabel "Wedge Top Along-Depth Far-Left Location" ;
+.
+fonm:WheelAxle
+  rdf:type owl:Class ;
+  rdfs:label "Wheel axle" ;
+  rdfs:subClassOf fonm:Axle ;
+  skos:prefLabel "Wheel axle" ;
+.
+fonm:WheelCenter
+  rdf:type owl:Class ;
+  rdfs:label "Wheel center" ;
+  rdfs:subClassOf fonm:Center ;
+  skos:prefLabel "Wheel center" ;
+.
+fonm:WheelEdge
+  rdf:type owl:Class ;
+  rdfs:label "Wheel edge" ;
+  rdfs:subClassOf fonm:Edge ;
+  skos:prefLabel "Wheel edge" ;
+.
+fonm:WheelObject
+  rdf:type owl:Class ;
+  rdfs:label "Wheel object" ;
+  rdfs:subClassOf fonm:ObjectPrimitive ;
+  skos:prefLabel "Wheel object" ;
+.
+fonm:greaterThan
+  rdf:type rdf:Property ;
+  rdfs:domain fonm:Size ;
+  rdfs:label "greater than" ;
+  rdfs:range fonm:Size ;
+  skos:prefLabel "greater than" ;
+.
+fonm:hasDim
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fonm:Orient ;
+  rdfs:label "has dim" ;
+  rdfs:range fonm:Dim ;
+  skos:prefLabel "has dim" ;
+.
+fonm:hasDimShapeSize
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fonm:GeometricPrimitive ;
+  rdfs:label "has dimension shape and size" ;
+  rdfs:range fonm:DimShapeSize ;
+  skos:prefLabel "has dimension shape and size" ;
+.
+fonm:hasDimension
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has dimension" ;
+  rdfs:range fonm:DimensionType ;
+  skos:prefLabel "has dimension" ;
+.
+fonm:hasDimr
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "hasDimr points to a DimDir object, which is a collection of dimensions and directions." ;
+  rdfs:domain fonm:State ;
+  rdfs:label "has dimr" ;
+  rdfs:range fonm:DimDir ;
+  skos:prefLabel "has dimr" ;
+.
+fonm:hasDimv
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fonm:Location ;
+  rdfs:label "has dimv" ;
+  rdfs:range fonm:Dimv ;
+  skos:prefLabel "has dimv" ;
+.
+fonm:hasDirection
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has Direction" ;
+  rdfs:range fonm:DirectionType ;
+  skos:prefLabel "has Direction" ;
+.
+fonm:hasLocation
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fonm:Region ;
+  rdfs:label "has location" ;
+  rdfs:range fonm:Location ;
+  skos:prefLabel "has location" ;
+.
+fonm:hasObject
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fonm:State ;
+  rdfs:label "has object" ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          fonm:Phys-Obj
+          fonm:Region
+        ) ;
+    ] ;
+  skos:prefLabel "has object" ;
+.
+fonm:hasPVal
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fonm:State ;
+  rdfs:label "Has Property Value" ;
+  rdfs:range fonm:Quant ;
+  skos:prefLabel "Has Property Value" ;
+.
+fonm:hasPosition
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "has Position" ;
+  rdfs:range fonm:DimvType ;
+  skos:prefLabel "has Position" ;
+.
+fonm:hasProp
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fonm:State ;
+  rdfs:label "has property" ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          fonm:QuantKind
+          qudt:Quantity
+        ) ;
+    ] ;
+  skos:prefLabel "has property" ;
+.
+fonm:hasQVal
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fonm:Quant ;
+  rdfs:label "has QVal" ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          fonm:ShapeType
+          fonm:SizeType
+        ) ;
+    ] ;
+  skos:prefLabel "has QVal" ;
+.
+fonm:hasQuant
+  rdf:type rdf:Property ;
+  rdfs:domain fonm:Phys-Obj ;
+  rdfs:label "has quant" ;
+  rdfs:range fonm:Quant ;
+  skos:prefLabel "has quant" ;
+.
+fonm:hasQuantKind
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fonm:Quant ;
+  rdfs:label "has quant kind" ;
+  rdfs:range fonm:QuantKind ;
+  skos:prefLabel "has quant kind" ;
+.
+fonm:hasQuantValue
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fonm:Quant ;
+  rdfs:label "quant value" ;
+  rdfs:range fonm:ShapeType ;
+  rdfs:range fonm:SizeType ;
+  skos:prefLabel "quant value" ;
+.
+fonm:hasRef
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fonm:Location ;
+  rdfs:label "has ref" ;
+  rdfs:range [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          fonm:Phys-Obj
+          fonm:Region
+        ) ;
+    ] ;
+  skos:prefLabel "has ref" ;
+.
+fonm:hasRegion
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fonm:Phys-Obj ;
+  rdfs:label "has region" ;
+  rdfs:range fonm:Region ;
+  skos:prefLabel "has region" ;
+.
+fonm:hasShape
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain fonm:Region ;
+  rdfs:label "shape" ;
+  skos:prefLabel "shape" ;
+.
+fonm:hasSize
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fonm:Region ;
+  rdfs:label "has size" ;
+  rdfs:range fonm:SizeType ;
+  skos:prefLabel "has size" ;
+.
+fonm:hasState
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain fonm:Phys-Obj ;
+  rdfs:label "has state" ;
+  rdfs:range fonm:State ;
+  skos:definition "Describes a physical state of being, associated with a property (quantity kind) and value (quantity)." ;
+  skos:prefLabel "has state" ;
+.
+dc:contributor
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "contributor" ;
+  rdfs:range xsd:string ;
+.
+dc:creator
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "creator" ;
+  rdfs:range xsd:string ;
+.
+dc:description
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "description" ;
+  rdfs:range xsd:string ;
+.
+dc:rights
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "rights" ;
+  rdfs:range xsd:string ;
+.
+dc:subject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "subject" ;
+  rdfs:range xsd:string ;
+.
+dc:title
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "title" ;
+  rdfs:range xsd:string ;
+.
+vaem:CylinderCenterLoc
+  rdf:type fonm:CylinderCenterLocation ;
+  fonm:hasDimv fonm:AR-MID ;
+  rdfs:label "Cylinder center loc" ;
+  skos:prefLabel "Cylinder center loc" ;
+.
+vaem:SphereCenterLoc
+  rdf:type fonm:SphereCenterLocation ;
+  fonm:hasDimv fonm:AR-MID ;
+  rdfs:label "Sphere center loc" ;
+  skos:prefLabel "Sphere center loc" ;
+.
